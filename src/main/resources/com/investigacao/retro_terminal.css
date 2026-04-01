@@ -1,0 +1,593 @@
+/* ═══════════════════════════════════════════════════════════════
+   FORENSYS — RETRO TERMINAL CSS  |  JavaFX Stylesheet
+   Estética: CRT Monitor Anos 90 / Terminal Forense
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────
+   VARIÁVEIS DE COR (via looks-alike em JavaFX)
+   Paleta principal do sistema
+─────────────────────────────────────────── */
+
+/* Verde fósforo principal   : #39D353  */
+/* Verde fósforo brilhante   : #57FF57  */
+/* Verde fósforo escuro      : #1A6B1A  */
+/* Verde fósforo opaco       : #2A8C2A  */
+/* Fundo preto profundo      : #050A05  */
+/* Fundo painel              : #080D08  */
+/* Fundo terminal            : #030703  */
+/* Borda/linha               : #1C3A1C  */
+/* Branco envelhecido        : #C8D4B8  */
+/* Cinza terminal            : #6E8A6E  */
+/* Vermelho alerta           : #D42B2B  */
+/* Vermelho brilhante        : #FF3A3A  */
+/* Âmbar aviso               : #C8820A  */
+/* Âmbar brilhante           : #FFAA00  */
+
+/* ───────────────────────────────────────────
+   ROOT / BASE
+─────────────────────────────────────────── */
+
+.root-pane {
+    -fx-background-color: #050A05;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+}
+
+/* ───────────────────────────────────────────
+   BARRA SUPERIOR — STATUS DO SISTEMA
+─────────────────────────────────────────── */
+
+.status-bar-top {
+    -fx-background-color: #080D08;
+    -fx-border-color: transparent transparent #1C3A1C transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 32px;
+    -fx-max-height: 32px;
+    -fx-padding: 0;
+}
+
+.status-block {
+    -fx-padding: 0 16 0 16;
+    -fx-min-height: 32px;
+}
+
+.status-block-sm {
+    -fx-padding: 0 10 0 10;
+}
+
+.status-separator {
+    -fx-text-fill: #1C3A1C;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 20px;
+    -fx-padding: 0;
+}
+
+.status-system-name {
+    -fx-text-fill: #57FF57;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #39D353, 4, 0.6, 0, 0);
+}
+
+.status-dot-online {
+    -fx-text-fill: #39D353;
+    -fx-font-size: 10px;
+    -fx-effect: dropshadow(gaussian, #39D353, 6, 0.8, 0, 0);
+}
+
+.status-dot-offline {
+    -fx-text-fill: #D42B2B;
+    -fx-font-size: 10px;
+    -fx-effect: dropshadow(gaussian, #D42B2B, 6, 0.8, 0, 0);
+}
+
+.status-dot-warning {
+    -fx-text-fill: #FFAA00;
+    -fx-font-size: 10px;
+    -fx-effect: dropshadow(gaussian, #FFAA00, 6, 0.8, 0, 0);
+}
+
+.status-text {
+    -fx-text-fill: #C8D4B8;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+}
+
+.status-text-highlight {
+    -fx-text-fill: #57FF57;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-case-id {
+    -fx-text-fill: #FFAA00;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #C8820A, 3, 0.4, 0, 0);
+}
+
+.status-label-dim {
+    -fx-text-fill: #2A8C2A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+}
+
+.status-clock {
+    -fx-text-fill: #57FF57;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #39D353, 5, 0.5, 0, 0);
+}
+
+/* ───────────────────────────────────────────
+   BARRA INFERIOR — INFO DO SISTEMA
+─────────────────────────────────────────── */
+
+.status-bar-bottom {
+    -fx-background-color: #080D08;
+    -fx-border-color: #1C3A1C transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-min-height: 26px;
+    -fx-max-height: 26px;
+    -fx-padding: 0;
+}
+
+.status-message {
+    -fx-text-fill: #6E8A6E;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-font-style: italic;
+}
+
+.status-message-error {
+    -fx-text-fill: #FF3A3A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-effect: dropshadow(gaussian, #D42B2B, 3, 0.5, 0, 0);
+}
+
+.status-message-warning {
+    -fx-text-fill: #FFAA00;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+}
+
+/* ───────────────────────────────────────────
+   PAINEL DE ARQUIVOS — LATERAL ESQUERDO
+─────────────────────────────────────────── */
+
+.file-panel {
+    -fx-background-color: #060B06;
+    -fx-border-color: transparent #1C3A1C transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 0;
+    -fx-spacing: 0;
+}
+
+.panel-header {
+    -fx-background-color: #0A120A;
+    -fx-padding: 6 10 6 10;
+    -fx-border-color: transparent transparent #1C3A1C transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 32px;
+    -fx-max-height: 32px;
+}
+
+.panel-header-text {
+    -fx-text-fill: #39D353;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.header-bracket {
+    -fx-text-fill: #1A6B1A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.current-path-bar {
+    -fx-background-color: #030703;
+    -fx-padding: 4 10 4 10;
+    -fx-border-color: transparent transparent #0F260F transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.current-path {
+    -fx-text-fill: #6E8A6E;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+}
+
+.panel-separator {
+    -fx-text-fill: #0F260F;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+    -fx-padding: 0 6 0 6;
+}
+
+/* ── TreeView de Arquivos ── */
+
+.file-tree {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4 0 4 0;
+}
+
+.file-tree .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8AAD8A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+    -fx-padding: 2 6 2 6;
+    -fx-border-color: transparent;
+}
+
+.file-tree .tree-cell:selected {
+    -fx-background-color: #0F260F;
+    -fx-text-fill: #57FF57;
+    -fx-effect: dropshadow(gaussian, #39D353, 2, 0.3, 0, 0);
+}
+
+.file-tree .tree-cell:hover {
+    -fx-background-color: #0A1A0A;
+    -fx-text-fill: #C8D4B8;
+}
+
+.file-tree .tree-cell .arrow {
+    -fx-background-color: #2A8C2A;
+    -fx-shape: "M0,-4 L8,0 L0,4 Z";
+}
+
+.file-tree .scroll-bar {
+    -fx-background-color: #060B06;
+}
+
+.file-tree .scroll-bar .thumb {
+    -fx-background-color: #1C3A1C;
+    -fx-background-radius: 0;
+}
+
+/* ── Info e atalhos do painel ── */
+
+.file-info-box {
+    -fx-padding: 6 10 6 10;
+    -fx-background-color: transparent;
+}
+
+.file-info-label {
+    -fx-text-fill: #1A6B1A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+.file-info-value {
+    -fx-text-fill: #6E8A6E;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-padding: 0 0 4 4;
+}
+
+.quick-commands {
+    -fx-padding: 6 10 8 10;
+}
+
+.quick-btn {
+    -fx-background-color: #0A120A;
+    -fx-text-fill: #39D353;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-border-color: #1C3A1C;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 3 8 3 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.quick-btn:hover {
+    -fx-background-color: #0F260F;
+    -fx-text-fill: #57FF57;
+    -fx-border-color: #39D353;
+    -fx-effect: dropshadow(gaussian, #39D353, 3, 0.3, 0, 0);
+}
+
+.quick-btn:pressed {
+    -fx-background-color: #1A3A1A;
+    -fx-text-fill: #C8D4B8;
+}
+
+/* ───────────────────────────────────────────
+   TERMINAL — PAINEL CENTRAL
+─────────────────────────────────────────── */
+
+.terminal-panel {
+    -fx-background-color: #030703;
+    -fx-spacing: 0;
+    -fx-padding: 0;
+}
+
+.terminal-header {
+    -fx-background-color: #060B06;
+    -fx-padding: 6 14 6 14;
+    -fx-border-color: transparent transparent #1C3A1C transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 32px;
+    -fx-max-height: 32px;
+}
+
+.terminal-status-ready {
+    -fx-text-fill: #39D353;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.terminal-status-busy {
+    -fx-text-fill: #FFAA00;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #C8820A, 4, 0.5, 0, 0);
+}
+
+.terminal-status-error {
+    -fx-text-fill: #FF3A3A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #D42B2B, 4, 0.5, 0, 0);
+}
+
+/* ── Área de saída do terminal ── */
+
+.terminal-scroll {
+    -fx-background: #030703;
+    -fx-background-color: #030703;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.terminal-scroll .viewport {
+    -fx-background-color: #030703;
+}
+
+.terminal-scroll .scroll-bar:vertical {
+    -fx-background-color: #050A05;
+    -fx-pref-width: 8px;
+}
+
+.terminal-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #1C3A1C;
+    -fx-background-radius: 0;
+}
+
+.terminal-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.terminal-scroll .scroll-bar:vertical .increment-button,
+.terminal-scroll .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.terminal-scroll .corner {
+    -fx-background-color: #050A05;
+}
+
+.terminal-output-box {
+    -fx-background-color: #030703;
+    -fx-padding: 10 14 10 14;
+}
+
+/* ── Tipos de linha do terminal ── */
+
+/* Linha padrão — texto do sistema */
+.term-line-system {
+    -fx-text-fill: #8AAD8A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}
+
+/* Linha de comando digitado pelo usuário */
+.term-line-input {
+    -fx-text-fill: #C8D4B8;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+}
+
+/* Linha de resposta / output */
+.term-line-output {
+    -fx-text-fill: #57FF57;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, #39D353, 2, 0.2, 0, 0);
+}
+
+/* Linha de erro */
+.term-line-error {
+    -fx-text-fill: #FF3A3A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, #D42B2B, 4, 0.4, 0, 0);
+}
+
+/* Linha de aviso */
+.term-line-warning {
+    -fx-text-fill: #FFAA00;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, #C8820A, 3, 0.3, 0, 0);
+}
+
+/* Linha de dado / evidência encontrada */
+.term-line-data {
+    -fx-text-fill: #A8C8FF;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}
+
+/* Linha de separador/divisão visual */
+.term-line-divider {
+    -fx-text-fill: #1A6B1A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+    -fx-wrap-text: false;
+}
+
+/* Linha de cabeçalho de seção */
+.term-line-header {
+    -fx-text-fill: #39D353;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, #39D353, 5, 0.5, 0, 0);
+}
+
+/* Linha de glitch / corrupta */
+.term-line-glitch {
+    -fx-text-fill: #D42B2B;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-opacity: 0.7;
+}
+
+/* Linha de destaque crítico */
+.term-line-critical {
+    -fx-background-color: #1A0000;
+    -fx-text-fill: #FF3A3A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-padding: 2 6 2 6;
+    -fx-effect: dropshadow(gaussian, #D42B2B, 6, 0.6, 0, 0);
+}
+
+/* ── Linha divisória animada ── */
+
+.terminal-divider {
+    -fx-background-color: transparent;
+    -fx-min-height: 2px;
+    -fx-max-height: 2px;
+    -fx-padding: 0;
+}
+
+.scanline-bar {
+    -fx-text-fill: #1C3A1C;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11px;
+}
+
+/* ───────────────────────────────────────────
+   ÁREA DE ENTRADA DE COMANDO
+─────────────────────────────────────────── */
+
+.command-input-area {
+    -fx-background-color: #050A05;
+    -fx-border-color: #1C3A1C transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 8 12 8 12;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-spacing: 0;
+}
+
+.command-prompt {
+    -fx-text-fill: #39D353;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #39D353, 4, 0.5, 0, 0);
+}
+
+.command-textfield {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #C8D4B8;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: #2A8C2A;
+    -fx-highlight-fill: #1C3A1C;
+    -fx-highlight-text-fill: #57FF57;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-padding: 0;
+}
+
+.command-textfield:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.cursor-blink {
+    -fx-text-fill: #57FF57;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, #39D353, 5, 0.7, 0, 0);
+}
+
+/* ───────────────────────────────────────────
+   SCROLLBAR GLOBAL
+─────────────────────────────────────────── */
+
+.scroll-bar {
+    -fx-background-color: #050A05;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #1C3A1C;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #2A8C2A;
+    -fx-shape: " ";
+    -fx-padding: 2;
+}
+
+/* ───────────────────────────────────────────
+   TOOLTIP CUSTOMIZADO
+─────────────────────────────────────────── */
+
+.tooltip {
+    -fx-background-color: #0A120A;
+    -fx-text-fill: #8AAD8A;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 10px;
+    -fx-border-color: #1C3A1C;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
