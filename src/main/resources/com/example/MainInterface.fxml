@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="768" prefWidth="1024" styleClass="root-pane" stylesheets="@retro_terminal.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.investigacao.controller.GameController">
+<BorderPane prefHeight="768" prefWidth="1024" styleClass="root-pane" stylesheets="@retro_terminal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.GameController">
 
     <!-- ═══════════════════════════════════════════════════
          BARRA SUPERIOR — STATUS DO SISTEMA

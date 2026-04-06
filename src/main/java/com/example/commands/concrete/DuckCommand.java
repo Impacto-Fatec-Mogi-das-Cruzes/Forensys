@@ -1,8 +1,8 @@
-package com.investigacao.commands.concrete;
+package com.example.commands.concrete;
 
 import java.util.List;
 
-import com.investigacao.commands.Command;
+import com.example.commands.Command;
 
 // Concrete implementation o Command Interface
 public class DuckCommand implements Command{

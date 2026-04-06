@@ -1,7 +1,7 @@
-module com.investigacao {
+module com.example {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens com.investigacao.controllers to javafx.fxml;
-    exports com.investigacao;
+    opens com.example.controllers to javafx.fxml;
+    exports com.example;
 }

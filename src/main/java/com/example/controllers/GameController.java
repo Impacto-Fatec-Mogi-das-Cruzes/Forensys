@@ -1,4 +1,4 @@
-package com.investigacao.controllers;
+package com.example.controllers;
 
 //import javafx.animation.*;
 import javafx.application.Platform;
@@ -15,9 +15,9 @@ import java.net.URL;
 //import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import com.investigacao.commands.CommandParser;
-import com.investigacao.commands.ParsedCommand;
-import com.investigacao.commands.concrete.DuckCommand;
+import com.example.commands.CommandParser;
+import com.example.commands.ParsedCommand;
+import com.example.commands.concrete.DuckCommand;
 
 public class GameController implements Initializable {
 

@@ -1,4 +1,4 @@
-package com.investigacao.commands;
+package com.example.commands;
 
 import java.util.List;
 
