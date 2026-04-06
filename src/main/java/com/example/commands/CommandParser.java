@@ -19,7 +19,7 @@ public class CommandParser {
 
     public ParsedCommand parse(String rawInput) {
         String command;
-        List<String> args = new ArrayList<>(Arrays.asList(rawInput.split(" ")));
+        List<String> args = new ArrayList<>(Arrays.asList(rawInput.split("\\s+")));
 
         command = args.getFirst();
         args.remove(command);

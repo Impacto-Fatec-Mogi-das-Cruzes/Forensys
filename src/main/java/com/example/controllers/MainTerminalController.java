@@ -21,24 +21,24 @@ import com.example.commands.concrete.DuckCommand;
 
 public class MainTerminalController implements Initializable {
 
-    @FXML private Label clockLabel;
-    @FXML private Label statusIndicator;
-    @FXML private Label statusLabel;
-    @FXML private Label caseIdLabel;
-    @FXML private Label userLabel;
-    @FXML private Label currentPathLabel;
-    @FXML private Label selectedFileName;
-    @FXML private Label selectedFileSize;
-    @FXML private Label selectedFileDate;
-    @FXML private Label terminalStatusLabel;
-    @FXML private Label commandCountLabel;
-    @FXML private Label systemMessageLabel;
-    @FXML private Label memoryLabel;
-    @FXML private Label diskLabel;
-    @FXML private Label modeLabel;
-    @FXML private Label errorCountLabel;
-    @FXML private Label promptLabel;
-    @FXML private Label cursorLabel;
+    // @FXML private Label clockLabel;
+    // @FXML private Label statusIndicator;
+    // @FXML private Label statusLabel;
+    // @FXML private Label caseIdLabel;
+    // @FXML private Label userLabel;
+    // @FXML private Label currentPathLabel;
+    // @FXML private Label selectedFileName;
+    // @FXML private Label selectedFileSize;
+    // @FXML private Label selectedFileDate;
+    // @FXML private Label terminalStatusLabel;
+    // @FXML private Label commandCountLabel;
+    // @FXML private Label systemMessageLabel;
+    // @FXML private Label memoryLabel;
+    // @FXML private Label diskLabel;
+    // @FXML private Label modeLabel;
+    // @FXML private Label errorCountLabel;
+    // @FXML private Label promptLabel;
+    // @FXML private Label cursorLabel;
 
     @FXML private ScrollPane terminalScrollPane;
     @FXML private VBox terminalOutput;
@@ -62,15 +62,15 @@ public class MainTerminalController implements Initializable {
                 output = new DuckCommand().execute(parsedCommand.args());
                 break;
             default:
-                output = parsedCommand.command();
+                output = "Command: " + parsedCommand.command() + "\nArgs: \n\t";
                 for (String arg : parsedCommand.args()) {
                     output += " [" + arg + "]";
                 }
                 break;
         }
 
-        addTerminalLine(output, "term-line-system");
-
+        addTerminalLine(output, "term-line-system");   
+        scrollToBottom();
         commandInput.clear();
     }
 
@@ -88,7 +88,7 @@ public class MainTerminalController implements Initializable {
     }
 
     private void scrollToBottom() {
-            Platform.runLater(() -> terminalScrollPane.setVvalue(1.0));
+        Platform.runLater(() -> terminalScrollPane.setVvalue(1.0));
     }
 
     // Some Template Methods
