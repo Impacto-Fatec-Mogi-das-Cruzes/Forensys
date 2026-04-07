@@ -7,7 +7,7 @@ import com.example.commands.TerminalCommand;
 public class DuckCommand extends TerminalCommand{
 
     public DuckCommand() {
-        super("duck", "Displays a duck");
+        super("duck", "Displays a duck", "nothing here to be seen");
     }
 
     // TODO: find a way to deal with args

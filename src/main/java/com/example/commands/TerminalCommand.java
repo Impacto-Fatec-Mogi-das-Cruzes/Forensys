@@ -5,20 +5,26 @@ import java.util.List;
 public abstract class TerminalCommand {
 
     private final String commandName;
-    private final String helpMessage;
+    private final String helpMessageBrief;
+    private final String helpMessageLong;
     private String output;
 
-    public TerminalCommand(String commandName, String helpMessage) {
+    public TerminalCommand(String commandName, String helpMessageBrief, String helpMessageLong) {
         this.commandName = commandName;
-        this.helpMessage = helpMessage;
+        this.helpMessageBrief = helpMessageBrief;
+        this.helpMessageLong = helpMessageLong;
     }
     
     public String getCommandName(){
         return this.commandName;
     }
     
-    public String getHelpMessage(){
-        return this.helpMessage;
+    public String getHelpMessageBrief(){
+        return this.helpMessageBrief;
+    }
+
+    public String getHelpMessageLong(){
+        return this.helpMessageLong;
     }
     
     public String getOutput() {
