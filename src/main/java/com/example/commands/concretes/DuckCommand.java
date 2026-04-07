@@ -1,4 +1,4 @@
-package com.example.commands.concrete;
+package com.example.commands.concretes;
 
 import java.util.List;
 

@@ -17,7 +17,7 @@ import java.util.*;
 
 import com.example.commands.CommandParser;
 import com.example.commands.ParsedCommand;
-import com.example.commands.concrete.DuckCommand;
+import com.example.commands.concretes.DuckCommand;
 
 public class MainTerminalController implements Initializable {
 
