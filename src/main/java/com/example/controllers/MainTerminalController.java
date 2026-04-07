@@ -15,9 +15,10 @@ import java.net.URL;
 //import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import com.example.commands.Command;
 import com.example.commands.CommandParser;
 import com.example.commands.ParsedCommand;
+import com.example.commands.TerminalCommand;
+import com.example.commands.concretes.DuckCommand;
 import com.example.commands.registries.CommandRegistry;
 
 public class MainTerminalController implements Initializable {
@@ -46,7 +47,10 @@ public class MainTerminalController implements Initializable {
     @FXML private TextField commandInput;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        CommandRegistry commandRegistry = CommandRegistry.getInstance();
+        registerAllCommands(commandRegistry);
+    }
     
     @FXML
     private void onCommandEntered() {
@@ -56,12 +60,20 @@ public class MainTerminalController implements Initializable {
         CommandParser commandParser = CommandParser.getInstance();
         ParsedCommand parsedCommand = commandParser.parse(rawInput);
 
-        Command command = CommandRegistry.getInstance().get(parsedCommand.command());
-
+        TerminalCommand command = CommandRegistry.getInstance().get(parsedCommand.command());
+        
         // TODO: implement a class to format output
-        String output = command != null ? command.execute(parsedCommand.args()) : "Invalid Command, please use the help command";
+        String output = "", styleClass = "";
+        if (command != null) {
+            command.run(parsedCommand.args());
+            output = command.getOutput();
+            styleClass = "term-line-system";
+        } else {
+            output = "Invalid Command, please enter a valid command or use the {help} command for more information";
+            styleClass = "term-line-error";
+        }
+        addTerminalLine(output, styleClass);   
 
-        addTerminalLine(output, "term-line-system");   
         scrollToBottom();
         commandInput.clear();
     }
@@ -81,6 +93,10 @@ public class MainTerminalController implements Initializable {
 
     private void scrollToBottom() {
         Platform.runLater(() -> terminalScrollPane.setVvalue(1.0));
+    }
+
+    private void registerAllCommands(CommandRegistry commandRegistry) {
+        commandRegistry.register(new DuckCommand());        
     }
 
     // Some Template Methods

@@ -2,14 +2,18 @@ package com.example.commands.concretes;
 
 import java.util.List;
 
-import com.example.commands.Command;
+import com.example.commands.TerminalCommand;
 
-// Concrete implementation o Command Interface
-public class DuckCommand implements Command{
+public class DuckCommand extends TerminalCommand{
+
+    public DuckCommand() {
+        super("duck", "Displays a duck");
+    }
+
     // TODO: find a way to deal with args
     @Override
-    public String execute(List<String> args) {
-        return """
+    public void run(List<String> args) {
+        setOutput("""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠿⠿⠷⣶⣄⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⢀⣀⡀⠙⣷⡀⠀⠀⠀
 ⠀⠀⠀⡀⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠘⠿⠃⠀⢸⣿⣿⣿⣿   Quack
@@ -21,6 +25,6 @@ public class DuckCommand implements Command{
 ⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀
 ⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀
 ⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀
-                """;
+                """);
     }
 }
