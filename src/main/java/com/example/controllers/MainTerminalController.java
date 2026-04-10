@@ -48,8 +48,7 @@ public class MainTerminalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        CommandRegistry commandRegistry = CommandRegistry.getInstance();
-        registerAllCommands(commandRegistry);
+        registerAllCommands(CommandRegistry.getInstance());
     }
     
     @FXML
