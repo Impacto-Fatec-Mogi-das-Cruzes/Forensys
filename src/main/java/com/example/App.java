@@ -14,7 +14,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         try {
             FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("interfaces/MainTerminalInterface.fxml")
+                getClass().getResource("/interfaces/MainTerminalInterface.fxml")
             );
             Parent root = loader.load();
     
@@ -23,7 +23,7 @@ public class App extends Application {
             stage.setTitle("Projeto POO");
             stage.setScene(scene);
     
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("assets/icon.png")));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/icon.png")));
     
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setResizable(false);
