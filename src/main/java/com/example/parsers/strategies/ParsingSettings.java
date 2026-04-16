@@ -7,11 +7,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // Settings Parsing Strategy
 public class ParsingSettings implements ParsingStrategy<Settings>{
     @Override
-    public Settings parse(String resourceFile) {
+    public Settings parse(String resource) {
         Settings data = null;
         ObjectMapper mapper = new ObjectMapper();
         try {
-            InputStream is = getClass().getResourceAsStream("/config/" + resourceFile);
+            InputStream is = getClass().getResourceAsStream("/config/" + resource);
             if (is == null) {
                throw new RuntimeException("File not found");
             }
