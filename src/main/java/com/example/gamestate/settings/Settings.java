@@ -1,7 +1,7 @@
 package com.example.gamestate.settings;
 
 public class Settings {
-    Screen screen;
+    private Screen screen;
     
     public Settings() {}
 
