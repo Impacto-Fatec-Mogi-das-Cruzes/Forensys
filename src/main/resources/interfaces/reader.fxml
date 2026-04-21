@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@terminal.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- TOP -->
+    <top>
+        <Label text="*** File.txt ***"
+               styleClass="label-header"
+               maxWidth="Infinity"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- CENTER -->
+    <center>
+        <VBox>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <TextArea editable="false"
+                          styleClass="text-area"
+                          VBox.vgrow="ALWAYS"
+                          maxWidth="Infinity"/>
+            </children>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM (now just the hint) -->
+    <bottom>
+        <Label text="press q to quit"
+               styleClass="label-hint"
+               maxWidth="Infinity"
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="5" right="10" bottom="10" left="10"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+
+</BorderPane>

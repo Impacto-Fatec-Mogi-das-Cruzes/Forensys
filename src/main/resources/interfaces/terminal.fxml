@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane prefWidth="800.0" prefHeight="500.0"
+            stylesheets="@terminal.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- TOP (Custom Title Bar with Close Button) -->
+    <top>
+        <HBox styleClass="custom-titlebar">
+            <children>
+                <Label text="*** Alfa Bash v1.0 ***"
+                       styleClass="label-header"
+                       HBox.hgrow="ALWAYS"/>
+                <Button text="X"
+                        styleClass="close-button"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- CENTER (OUTPUT) -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <content>
+                <TextFlow fx:id="outputArea"
+                          styleClass="vbox-chat"/>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- BOTTOM (INPUT) -->
+    <bottom>
+        <HBox styleClass="hbox-input" spacing="5">
+            <children>
+                <Label text="user@host" styleClass="label-prompt"/>
+                <TextField fx:id="inputField" HBox.hgrow="ALWAYS"/>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>

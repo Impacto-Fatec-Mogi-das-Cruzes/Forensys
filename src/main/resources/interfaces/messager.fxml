@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?> 
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@terminal.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- TOP -->
+    <top>
+        <Label text="*** Messenger v1.0 ***"
+               styleClass="label-header"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- CENTER -->
+    <center>
+        <SplitPane dividerPositions="0.30">
+
+            <!-- CONTACTS -->
+            <VBox styleClass="vbox-contatos">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <children>
+                    <Label text="[ CONTATOS ]"
+                           styleClass="label-header"/>
+
+                    <ListView fx:id="contactListView" VBox.vgrow="ALWAYS"/>
+                </children>
+            </VBox>
+
+            <!-- CHAT -->
+            <VBox styleClass="vbox-chat">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <children>
+                    <Label fx:id="selectedContactLabel" text="[CHAT COM:]"
+                           styleClass="label-header"/>
+
+                    <!-- Messages List -->
+                    <ListView fx:id="messagesListView" VBox.vgrow="ALWAYS"/>
+                </children>
+            </VBox>
+
+        </SplitPane>
+    </center>
+
+    <!-- BOTTOM HINT -->
+    <bottom>
+        <Label text="digite /help para comandos disponíveis"
+               styleClass="label-hint"
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="5" right="10" bottom="10" left="10"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+
+</BorderPane>

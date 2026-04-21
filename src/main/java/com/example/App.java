@@ -14,7 +14,7 @@ import javafx.stage.StageStyle;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         try {
             FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/interfaces/MainTerminalInterface.fxml")
@@ -24,7 +24,7 @@ public class App extends Application {
             Settings settings = SettingsParser.getInstance().parse("config.json");
             Scene scene = new Scene(root, settings.getScreen().getWidth(), settings.getScreen().getHeight());
     
-            stage.setTitle("Projeto POO");
+            stage.setTitle("MainTerminalInterface");
             stage.setScene(scene);
     
             stage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/icon.png")));
