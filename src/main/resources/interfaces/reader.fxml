@@ -8,14 +8,17 @@
 
 <BorderPane stylesheets="@terminal.css"
             xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.ui.controllers.ReaderControler"
+            fx:id="root">
 
     <!-- TOP -->
     <top>
         <Label text="*** File.txt ***"
                styleClass="label-header"
                maxWidth="Infinity"
-               BorderPane.alignment="CENTER"/>
+               BorderPane.alignment="CENTER"
+               fx:id="tittle"/>
     </top>
 
     <!-- CENTER -->

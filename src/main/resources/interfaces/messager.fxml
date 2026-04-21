@@ -10,7 +10,8 @@
 
 <BorderPane stylesheets="@terminal.css"
             xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.ui.controllers.MessagerController">
 
     <!-- TOP -->
     <top>
