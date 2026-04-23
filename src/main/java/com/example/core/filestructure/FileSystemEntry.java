@@ -5,7 +5,12 @@ import com.example.core.filestructure.concrete.TextFile;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME, 
+    include = JsonTypeInfo.As.PROPERTY, 
+    property = "type",
+    visible = true
+)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Directory.class, name = "directory"),
         @JsonSubTypes.Type(value = TextFile.class, name = "text")
