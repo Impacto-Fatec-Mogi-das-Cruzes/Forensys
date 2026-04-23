@@ -1,8 +1,7 @@
-package com.example.service.parser;
+package com.example.ui;
 
 import com.example.common.parser.Parser;
 import com.example.core.filestructure.FileSystemEntry;
-import com.example.service.parser.strategy.ParsingFileStrucure;
 
 public class FileStructureParser extends Parser<FileSystemEntry> {
 

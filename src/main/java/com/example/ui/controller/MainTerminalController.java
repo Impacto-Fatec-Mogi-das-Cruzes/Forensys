@@ -15,7 +15,7 @@ import java.net.URL;
 //import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import com.example.service.parser.FileStructureParser;
+import com.example.ui.FileStructureParser;
 import com.example.service.registry.CommandRegistry;
 import com.example.ui.CommandParser;
 import com.example.ui.ParsedCommand;

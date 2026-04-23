@@ -1,11 +1,10 @@
-package com.example.service.parser.strategy;
+package com.example.ui;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.example.common.parser.ParsingStrategy;
-import com.example.ui.ParsedCommand;
 
 // Command Parsing Strategy
 public class ParsingCommand implements ParsingStrategy<ParsedCommand>{
