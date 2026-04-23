@@ -1,70 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.SplitPane?> 
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane stylesheets="@terminal.css"
+<BorderPane stylesheets="@messager.css"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.ui.controller.MessagerController">
+            fx:controller="com.example.ui.controller.MessagerController"
+            styleClass="game-root">
 
-    <!-- TOP -->
+    <!-- ================= TOP HUD BAR ================= -->
     <top>
-        <Label text="*** Messenger v1.0 ***"
-               styleClass="label-header"
-               BorderPane.alignment="CENTER"/>
+        <HBox styleClass="hud-topbar" spacing="10">
+            <padding>
+                <Insets top="8" right="10" bottom="8" left="10"/>
+            </padding>
+
+            <children>
+                <Label text="AlfaTalk v1.0"
+                       styleClass="hud-title"
+                       HBox.hgrow="ALWAYS"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="✕"
+                        styleClass="hud-close-btn"/>
+            </children>
+        </HBox>
     </top>
 
-    <!-- CENTER -->
+    <!-- ================= CENTER GAME AREA ================= -->
     <center>
-        <SplitPane dividerPositions="0.30">
+        <BorderPane styleClass="game-center">
 
-            <!-- CONTACTS -->
-            <VBox styleClass="vbox-contatos">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
+            <center>
+                <SplitPane dividerPositions="0.30"
+                           styleClass="game-split">
 
-                <children>
-                    <Label text="[ CONTATOS ]"
-                           styleClass="label-header"/>
+                    <!-- ===== CONTACTS ===== -->
+                    <VBox styleClass="panel panel-left">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
 
-                    <ListView fx:id="contactListView" VBox.vgrow="ALWAYS"/>
-                </children>
-            </VBox>
+                        <children>
+                            <Label text="[ CONTATOS ]"
+                                   styleClass="panel-title"/>
 
-            <!-- CHAT -->
-            <VBox styleClass="vbox-chat">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
+                            <ListView fx:id="contactListView"
+                                      VBox.vgrow="ALWAYS"
+                                      styleClass="game-list"/>
+                        </children>
+                    </VBox>
 
-                <children>
-                    <Label fx:id="selectedContactLabel" text="[CHAT COM:]"
-                           styleClass="label-header"/>
+                    <!-- ===== CHAT ===== -->
+                    <VBox styleClass="panel panel-right">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
 
-                    <!-- Messages List -->
-                    <ListView fx:id="messagesListView" VBox.vgrow="ALWAYS"/>
-                </children>
-            </VBox>
+                        <children>
+                            <Label fx:id="selectedContactLabel"
+                                   text="[ CHAT ]"
+                                   styleClass="panel-title"/>
 
-        </SplitPane>
+                            <ListView fx:id="messagesListView"
+                                      VBox.vgrow="ALWAYS"
+                                      styleClass="game-list"/>
+                        </children>
+                    </VBox>
+
+                </SplitPane>
+            </center>
+
+        </BorderPane>
     </center>
 
-    <!-- BOTTOM HINT -->
+    <!-- ================= BOTTOM STATUS BAR ================= -->
     <bottom>
-        <Label text="digite /help para comandos disponíveis"
-               styleClass="label-hint"
-               BorderPane.alignment="CENTER">
-            <BorderPane.margin>
-                <Insets top="5" right="10" bottom="10" left="10"/>
-            </BorderPane.margin>
-        </Label>
+        <HBox styleClass="hud-bottombar">
+            <padding>
+                <Insets top="6" right="10" bottom="6" left="10"/>
+            </padding>
+
+            <children>
+                <Label text="TIP: 'q' para sair"
+                       styleClass="hud-hint"/>
+            </children>
+        </HBox>
     </bottom>
 
 </BorderPane>

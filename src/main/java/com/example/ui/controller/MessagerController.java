@@ -85,10 +85,10 @@ public class MessagerController {
 
         if (isUserMessage) {
             messageBox.setStyle("-fx-alignment: CENTER_RIGHT;");
-            messageLabel.setStyle("-fx-text-fill: #00ff41;");
+            messageLabel.setStyle("-fx-text-fill: #cbd5e1;");
         } else {
             messageBox.setStyle("-fx-alignment: CENTER_LEFT;");
-            messageLabel.setStyle("-fx-text-fill: #00ff41;");
+            messageLabel.setStyle("-fx-text-fill: #cbd5e1;");
         }
 
         messageBox.getChildren().add(messageLabel);

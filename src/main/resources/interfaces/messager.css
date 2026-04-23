@@ -1,0 +1,142 @@
+/* =========================
+   BASE / BACKGROUND FRAME
+========================= */
+
+.game-root {
+    -fx-background-color: #0f131c;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 2px;
+    -fx-font-family: "Consolas";
+}
+
+/* =========================
+   TOP HUD BAR
+========================= */
+
+.hud-topbar {
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 0 0 2px 0;
+    -fx-alignment: center-left;
+}
+
+.hud-title {
+    -fx-text-fill: #4cc9f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    /* -fx-font-family: "Consolas"; */
+    -fx-letter-spacing: 1px;
+}
+
+.hud-close-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff5c5c;
+    -fx-border-color: #ff5c5c;
+    -fx-border-width: 1px;
+    -fx-font-weight: bold;
+}
+
+.hud-close-btn:hover {
+    -fx-background-color: #ff5c5c;
+    -fx-text-fill: #0f131c;
+}
+
+/* =========================
+   CENTER GAME AREA
+========================= */
+
+.game-center {
+    -fx-background-color: #0f131c;
+}
+
+.game-split {
+    -fx-background-color: transparent;
+}
+
+/* Split divider */
+.split-pane-divider {
+    -fx-background-color: #2a2f3a;
+    -fx-padding: 1px;
+}
+
+/* =========================
+   PANELS
+========================= */
+
+.panel {
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 1px;
+}
+
+.panel-title {
+    -fx-text-fill: #ffd166;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    /* -fx-font-family: "Consolas"; */
+}
+
+/* =========================
+   LIST VIEW (GAME UI STYLE)
+========================= */
+
+.game-list {
+    -fx-background-color: #0f131c;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 1px;
+    -fx-control-inner-background: #0f131c;
+    -fx-text-fill: #cbd5e1;
+}
+
+/* itens da lista */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd5e1;
+    -fx-padding: 6px;
+    /* -fx-font-family: "Consolas"; */
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #1b263b;
+    -fx-text-fill: #4cc9f0;
+    -fx-border-color: #4cc9f0;
+    -fx-border-width: 0 0 0 2px;
+}
+
+/* hover estilo game menu */
+.list-cell:filled:hover {
+    -fx-background-color: #162033;
+}
+
+/* =========================
+   BOTTOM HUD BAR
+========================= */
+
+.hud-bottombar {
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 2px 0 0 0;
+}
+
+.hud-hint {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    /* -fx-font-family: "Consolas"; */
+}
+
+/* =========================
+   SCROLLBAR (PIXEL CLEAN)
+========================= */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #2a2f3a;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #0f131c;
+}
