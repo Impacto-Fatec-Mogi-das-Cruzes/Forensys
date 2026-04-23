@@ -19,7 +19,15 @@ public abstract class FileSystemEntry {
         return metadata;
     }
 
+    public void setMetadata(FileMetadata metadata) {
+        this.metadata = metadata;
+    }
+
     public String getType() {
         return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
