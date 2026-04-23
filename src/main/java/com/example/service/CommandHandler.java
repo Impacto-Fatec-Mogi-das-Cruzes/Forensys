@@ -4,7 +4,7 @@ import com.example.core.command.CommandOutput;
 import com.example.core.command.TerminalCommand;
 import com.example.core.command.concrete.InvalidCommand;
 import com.example.service.registry.CommandRegistry;
-import com.example.ui.ParsedCommand;
+import com.example.ui.parser.ParsedCommand;
 
 // Takes a parsed command from the controller, runs it, check the result and tells back the controller what 
 public class CommandHandler {

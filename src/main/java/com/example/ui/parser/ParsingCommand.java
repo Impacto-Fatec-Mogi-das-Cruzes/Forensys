@@ -1,4 +1,4 @@
-package com.example.ui;
+package com.example.ui.parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
