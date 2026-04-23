@@ -10,6 +10,7 @@ import com.example.core.command.CommandOutput;
 import com.example.core.command.TerminalCommand;
 import com.example.core.command.concrete.DuckCommand;
 import com.example.core.command.concrete.GoCommand;
+import com.example.core.command.concrete.ListCommand;
 import com.example.core.command.concrete.SayCommand;
 import com.example.core.filestructure.FileSystemEntry;
 import com.example.core.filestructure.concrete.Directory;
@@ -48,7 +49,8 @@ public class TerminalController {
         commandsToRegister.addAll(Arrays.asList(
             new DuckCommand(),
             new SayCommand(),
-            new GoCommand()
+            new GoCommand(),
+            new ListCommand()
         ));
         registerAllCommands(commandsToRegister);
     }
