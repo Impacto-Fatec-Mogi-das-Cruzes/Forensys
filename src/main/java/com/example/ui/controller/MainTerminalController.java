@@ -15,9 +15,9 @@ import java.net.URL;
 //import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import com.example.ui.parser.CommandParser;
-import com.example.ui.parser.FileStructureParser;
-import com.example.ui.parser.ParsedCommand;
+import com.example.ui.command.CommandParser;
+import com.example.ui.command.ParsedCommand;
+import com.example.ui.filestructure.FileStructureParser;
 import com.example.core.command.TerminalCommand;
 import com.example.core.command.concrete.DuckCommand;
 import com.example.core.filestructure.FileSystemEntry;

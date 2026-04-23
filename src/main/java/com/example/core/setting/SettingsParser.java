@@ -1,6 +1,6 @@
-package com.example.common.parser;
+package com.example.core.setting;
 
-import com.example.core.setting.Settings;
+import com.example.common.parser.Parser;
 
 public class SettingsParser extends Parser<Settings>{
     private static SettingsParser instance;

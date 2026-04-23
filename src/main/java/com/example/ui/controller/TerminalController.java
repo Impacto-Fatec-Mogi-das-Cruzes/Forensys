@@ -16,9 +16,9 @@ import com.example.core.filestructure.FileSystemEntry;
 import com.example.core.filestructure.concrete.Directory;
 import com.example.service.CommandHandler;
 import com.example.service.CommandRegistry;
-import com.example.ui.parser.CommandParser;
-import com.example.ui.parser.FileStructureParser;
-import com.example.ui.parser.ParsedCommand;
+import com.example.ui.command.CommandParser;
+import com.example.ui.command.ParsedCommand;
+import com.example.ui.filestructure.FileStructureParser;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

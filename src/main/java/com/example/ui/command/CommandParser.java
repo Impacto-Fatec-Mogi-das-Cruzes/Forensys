@@ -1,4 +1,4 @@
-package com.example.ui.parser;
+package com.example.ui.command;
 
 import com.example.common.parser.Parser;
 

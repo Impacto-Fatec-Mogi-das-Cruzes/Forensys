@@ -1,4 +1,4 @@
-package com.example.ui.parser;
+package com.example.ui.filestructure;
 
 import java.io.InputStream;
 

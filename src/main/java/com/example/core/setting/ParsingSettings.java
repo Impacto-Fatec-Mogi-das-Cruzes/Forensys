@@ -1,8 +1,8 @@
-package com.example.common.parser;
+package com.example.core.setting;
 
 import java.io.InputStream;
 
-import com.example.core.setting.Settings;
+import com.example.common.parser.ParsingStrategy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 // Settings Parsing Strategy

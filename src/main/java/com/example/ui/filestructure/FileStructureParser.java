@@ -1,4 +1,4 @@
-package com.example.ui.parser;
+package com.example.ui.filestructure;
 
 import com.example.common.parser.Parser;
 import com.example.core.filestructure.FileSystemEntry;
