@@ -1,4 +1,4 @@
-package com.example.service.registry;
+package com.example.service;
 
 import com.example.common.Registry;
 import com.example.core.command.TerminalCommand;

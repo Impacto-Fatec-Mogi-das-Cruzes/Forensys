@@ -15,7 +15,7 @@ import com.example.core.command.concrete.SayCommand;
 import com.example.core.filestructure.FileSystemEntry;
 import com.example.core.filestructure.concrete.Directory;
 import com.example.service.CommandHandler;
-import com.example.service.registry.CommandRegistry;
+import com.example.service.CommandRegistry;
 import com.example.ui.parser.CommandParser;
 import com.example.ui.parser.FileStructureParser;
 import com.example.ui.parser.ParsedCommand;
