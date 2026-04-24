@@ -25,9 +25,9 @@ public class ListCommand extends TerminalCommand {
         outputBuilder.text("In the current directory you have:");
         for (FileSystemEntry entry : context.getCurrentDirectory().getChildren()) {
             if (entry instanceof Directory) {
-                outputBuilder.text("\t" + entry.getMetadata().getName() + "/");
+                outputBuilder.text("\t" + entry.getMetadata().name() + "/");
             } else {
-                outputBuilder.text("\t" + entry.getMetadata().getName());
+                outputBuilder.text("\t" + entry.getMetadata().name());
             }
         }
 

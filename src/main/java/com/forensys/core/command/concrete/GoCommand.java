@@ -36,7 +36,7 @@ public class GoCommand extends TerminalCommand {
             try {
                 context.restore();
                 outputBuilder
-                        .text("Back to directory " + context.getCurrentDirectory().getMetadata().getName())
+                        .text("Back to directory " + context.getCurrentDirectory().getMetadata().name())
                         .exitCode(CommandExitCode.SUCESS);
             } catch (NoSuchElementException e) {
                 outputBuilder
@@ -49,7 +49,7 @@ public class GoCommand extends TerminalCommand {
         Optional<FileSystemEntry> entry = context.getCurrentDirectory()
                 .getChildren()
                 .stream()
-                .filter(obj -> obj.getMetadata().getName().equals(target))
+                .filter(obj -> obj.getMetadata().name().equals(target))
                 .findFirst();
 
         if (entry.isEmpty() || !(entry.get() instanceof Directory directory)) {
