@@ -1,5 +1,6 @@
 package com.forensys.core.command;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommandOutput {
@@ -14,7 +15,7 @@ public class CommandOutput {
     }
 
     public List<String> getSegments() {
-        return segments;
+        return new ArrayList<String>(segments);
     }
 
     public CommandExitCode getExitCode() {
