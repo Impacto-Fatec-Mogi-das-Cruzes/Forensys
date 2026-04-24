@@ -1,4 +1,4 @@
-package com.forensys.common;
+package com.forensys.core;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -2,7 +2,7 @@ package com.forensys.core.command.concrete;
 
 import java.util.List;
 
-import com.forensys.common.ApplicationContext;
+import com.forensys.core.ApplicationContext;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
