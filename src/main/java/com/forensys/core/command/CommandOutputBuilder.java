@@ -18,8 +18,8 @@ public class CommandOutputBuilder {
         return this;
     }
 
-    public CommandOutputBuilder exitCode(CommandExitCode failure) {
-        this.exitCode = failure;
+    public CommandOutputBuilder exitCode(CommandExitCode exitCode) {
+        this.exitCode = exitCode;
         return this;
     }
     
