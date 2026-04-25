@@ -1,5 +1,6 @@
 package com.forensys.core.filestructure.concrete;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.forensys.core.filestructure.FileSystemEntry;
@@ -11,6 +12,6 @@ public class Directory extends FileSystemEntry {
     public Directory() {}
 
     public List<FileSystemEntry> getChildren() {
-        return children;
+        return new ArrayList<>(children);
     }
 }
