@@ -7,7 +7,7 @@
 <BorderPane stylesheets="@messager.css"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.forensys.ui.controller.MessagerController"
+            fx:controller="com.forensys.ui.controller.ChatController"
             styleClass="game-root">
 
     <!-- ================= TOP HUD BAR ================= -->

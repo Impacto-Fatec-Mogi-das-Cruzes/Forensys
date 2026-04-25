@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MessagerController {
+public class ChatController {
     public class Message {
         private String text;
         private boolean isUserMessage;
