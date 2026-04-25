@@ -23,7 +23,7 @@ public class App extends Application {
             Parent root = loader.load();
     
             Settings settings = SettingsParser.getInstance().parse("config.json");
-            Scene scene = new Scene(root, settings.getScreen().getWidth(), settings.getScreen().getHeight());
+            Scene scene = new Scene(root, settings.getScreen().width(), settings.getScreen().height());
     
             stage.setTitle("MainTerminalInterface");
             stage.setScene(scene);
