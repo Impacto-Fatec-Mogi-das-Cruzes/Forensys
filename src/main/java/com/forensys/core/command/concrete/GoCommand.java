@@ -20,7 +20,6 @@ public class GoCommand extends TerminalCommand {
                 "hint: you can use back, if you want to go back"));
     }
 
-    // TODO: Needs refactoring...
     @Override
     public CommandOutput run(List<String> args) {
         ApplicationContext context = ApplicationContext.getInstance();
