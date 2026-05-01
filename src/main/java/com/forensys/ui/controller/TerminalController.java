@@ -1,9 +1,5 @@
 package com.forensys.ui.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import com.forensys.core.ApplicationContext;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
@@ -45,17 +41,15 @@ public class TerminalController {
         FileSystemEntry root = fileStructureParser.parse("example.json");
         context.setCurrentDirectory((Directory) root);
 
-        List<TerminalCommand> commandsToRegister = new ArrayList<>();
-        commandsToRegister.addAll(Arrays.asList(
+        registerAllCommands(
             new DuckCommand(),
             new SayCommand(),
             new GoCommand(),
             new ListCommand()
-        ));
-        registerAllCommands(commandsToRegister);
+        );
     }
 
-    private void registerAllCommands(List<TerminalCommand> commandsToRegister) {
+    private void registerAllCommands(TerminalCommand... commandsToRegister) {
         CommandRegistry commandRegistry =  CommandRegistry.getInstance();
         for (TerminalCommand terminalCommand : commandsToRegister) {
             commandRegistry.register(terminalCommand.getCommandName(), terminalCommand);
