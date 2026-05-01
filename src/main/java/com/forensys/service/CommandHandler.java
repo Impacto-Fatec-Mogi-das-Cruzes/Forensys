@@ -2,7 +2,7 @@ package com.forensys.service;
 
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.TerminalCommand;
-import com.forensys.core.command.concrete.InvalidCommand;
+import com.forensys.core.command.concrete.invalid.InvalidCommand;
 import com.forensys.ui.command.ParsedCommand;
 
 // Takes a parsed command from the controller, runs it, check the result and tells back the controller what 

@@ -1,4 +1,4 @@
-package com.forensys.core.command.concrete;
+package com.forensys.core.command.concrete.go;
 
 import java.util.List;
 import java.util.NoSuchElementException;

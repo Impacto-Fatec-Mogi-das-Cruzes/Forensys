@@ -1,4 +1,4 @@
-package com.forensys.core.command.concrete;
+package com.forensys.core.command.concrete.invalid;
 
 import java.util.List;
 
@@ -8,22 +8,21 @@ import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.TerminalCommand;
 
-public class SayCommand extends TerminalCommand {
+public class InvalidCommand extends TerminalCommand {
 
-    public SayCommand() {
-        super(new CommandMetadata("say", "Make your terminal say something", "Using this command you can make the terminal say something by doing 'say {text}'"));
+    public InvalidCommand() {
+        super(new CommandMetadata("", "", ""));
     }
 
     @Override
     public CommandOutput run(List<String> args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
-
-        String phrase = "";
-        for (String arg : args) {
-            phrase += arg + " ";
-        }
         
-        outputBuilder.text(phrase).exitCode(CommandExitCode.SUCESS);
+        outputBuilder
+            .text("Invalid Command, plase input a valid command")
+            .exitCode(CommandExitCode.FAILURE);
+            
         return outputBuilder.build();
     }
+
 }

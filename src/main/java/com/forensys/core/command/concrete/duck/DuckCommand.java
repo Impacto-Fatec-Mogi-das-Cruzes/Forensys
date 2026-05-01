@@ -1,4 +1,4 @@
-package com.forensys.core.command.concrete;
+package com.forensys.core.command.concrete.duck;
 
 import java.util.List;
 

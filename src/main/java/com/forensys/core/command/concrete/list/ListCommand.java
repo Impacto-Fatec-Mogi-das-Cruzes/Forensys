@@ -1,4 +1,4 @@
-package com.forensys.core.command.concrete;
+package com.forensys.core.command.concrete.list;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.Directory;
 
+// TODO: Apply a decorator pattern to the behaviors of listing with metadata and/or hidden
 public class ListCommand extends TerminalCommand {
 
     public ListCommand() {
