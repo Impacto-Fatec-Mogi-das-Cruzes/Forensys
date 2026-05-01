@@ -14,12 +14,12 @@ public abstract class TerminalCommand {
         return this.metadata.commandName();
     }
     
-    public String getHelpMessageBrief(){
-        return this.metadata.helpMessageBrief();
+    public String getHelpMessage(){
+        return this.metadata.helpMessage();
     }
 
-    public String getHelpMessageLong(){
-        return this.metadata.helpMessageLong();
+    public String getDescription(){
+        return this.metadata.description();
     }
 
     // TODO: find a clean way to deal with args
