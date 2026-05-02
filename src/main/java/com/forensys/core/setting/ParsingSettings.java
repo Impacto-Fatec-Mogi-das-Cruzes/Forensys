@@ -12,10 +12,7 @@ public class ParsingSettings implements ParsingStrategy<Settings>{
         Settings data = null;
         ObjectMapper mapper = new ObjectMapper();
         try {
-            InputStream is = getClass().getResourceAsStream("/config/" + resource);
-            if (is == null) {
-               throw new RuntimeException("File not found");
-            }
+            InputStream is = SettingsLoader.getInstance().load(resource);
             data = mapper.readValue(is, Settings.class);
         } catch (Exception e) {
             System.err.println(e);

@@ -11,7 +11,7 @@ public abstract class Parser<T> {
         return getParseStrategy().parse(resourceFile);
     };
 
-    protected ParsingStrategy<T> getParseStrategy() {
+    private ParsingStrategy<T> getParseStrategy() {
         return this.parseStrategy;
     }
 }

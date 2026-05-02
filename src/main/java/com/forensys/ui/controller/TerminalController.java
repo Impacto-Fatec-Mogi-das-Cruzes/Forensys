@@ -38,8 +38,12 @@ public class TerminalController {
 
         ApplicationContext context = ApplicationContext.getInstance();
         FileStructureParser fileStructureParser = FileStructureParser.getInstance();
-        FileSystemEntry root = fileStructureParser.parse("example.json");
-        context.setCurrentDirectory((Directory) root);
+        try {
+            FileSystemEntry root = fileStructureParser.parse("example");
+            context.setCurrentDirectory((Directory) root);
+        } catch (Exception e) {
+            System.err.println(e);
+        }
 
         registerAllCommands(
             new DuckCommand(),

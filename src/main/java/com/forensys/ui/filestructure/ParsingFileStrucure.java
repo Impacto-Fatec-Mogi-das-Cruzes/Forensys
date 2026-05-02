@@ -10,18 +10,16 @@ import com.forensys.core.filestructure.FileSystemEntry;
 public class ParsingFileStrucure implements ParsingStrategy<FileSystemEntry> {
     @Override
     public FileSystemEntry parse(String resource) {
-        FileSystemEntry data = null;
 
         ObjectMapper mapper = new ObjectMapper();
+        FileSystemEntry data = null;
         try {
-            InputStream is = getClass().getResourceAsStream("/filestructure/" + resource);
-            if (is == null) {
-               throw new RuntimeException("File not found");
-            }
+            InputStream is = FileStructureLoader.getInstance().load(resource);
             data = mapper.readValue(is, FileSystemEntry.class);
         } catch (Exception e) {
             System.err.println(e);
         }
+
         return data;
     }
 }
