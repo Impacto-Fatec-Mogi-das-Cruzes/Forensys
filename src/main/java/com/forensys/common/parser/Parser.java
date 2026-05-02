@@ -7,7 +7,9 @@ public abstract class Parser<T> {
         this.parseStrategy = parseStrategy;
     }
 
-    protected abstract T parse(String resourceFile);
+    public T parse(String resourceFile) {
+        return getParseStrategy().parse(resourceFile);
+    };
 
     protected ParsingStrategy<T> getParseStrategy() {
         return this.parseStrategy;

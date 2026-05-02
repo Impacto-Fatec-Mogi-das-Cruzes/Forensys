@@ -18,8 +18,4 @@ public class FileStructureParser extends Parser<FileSystemEntry> {
         return instance;
     }
 
-    @Override
-    public FileSystemEntry parse(String resource) {
-        return getParseStrategy().parse(resource);
-    }
 }

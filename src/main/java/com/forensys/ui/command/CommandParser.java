@@ -15,9 +15,5 @@ public class CommandParser extends Parser<ParsedCommand> {
         }
         return instance;
     }
-
-    @Override
-    public ParsedCommand parse(String rawInput) {
-        return getParseStrategy().parse(rawInput);
-    }
+    
 }

@@ -15,10 +15,5 @@ public class SettingsParser extends Parser<Settings>{
         }
         return instance;
     }
-
-    @Override
-    public Settings parse(String resource) {
-        return getParseStrategy().parse(resource);
-    }
     
 }
