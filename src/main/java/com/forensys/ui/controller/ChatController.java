@@ -3,6 +3,7 @@ package com.forensys.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
@@ -29,6 +30,9 @@ public class ChatController {
             return isUserMessage;
         }
     }
+
+    @FXML
+    private BorderPane root;
 
     @FXML
     private ListView<HBox> messagesListView;
@@ -74,6 +78,12 @@ public class ChatController {
                     HBox messageBox = createMessageBox(message.getText(), message.isUserMessage());
                     messagesListView.getItems().add(messageBox);
                 }
+            }
+        });
+
+        root.setOnKeyReleased(event -> {
+            if (event.getCode().toString().equals("Q")) {
+                throw new UnsupportedOperationException("Unimplemented feature quit");
             }
         });
     }

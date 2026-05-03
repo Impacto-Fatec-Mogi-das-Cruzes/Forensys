@@ -1,9 +1,9 @@
 package com.forensys.core.setting;
 
 public class Settings {
-    private Screen screen;
+    private Window window;
 
-    public Screen getScreen() {
-        return screen;
+    public Window getWindow() {
+        return window;
     }
 }

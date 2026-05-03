@@ -1,5 +1,10 @@
 {
-    "screen": {
+    "window": {
+        "title": "Forensys",
+        "icon": "icon.png",
+        "style": "TRANSPARENT",
+        "resizable": false,
+        "fullscreen": true,
         "width": 1024,
         "height": 700
     }

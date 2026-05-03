@@ -1,42 +1,35 @@
 package com.forensys;
 
-import com.forensys.core.setting.Settings;
-import com.forensys.core.setting.SettingsParser;
+import com.forensys.ui.navigation.InterfaceParser;
+import com.forensys.ui.navigation.SceneRegistry;
+import com.forensys.ui.navigation.StageManager;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class App extends Application {
 
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/interfaces/terminal.fxml")
-            );
-            Parent root = loader.load();
-    
-            Settings settings = SettingsParser.getInstance().parse("config");
-            Scene scene = new Scene(root, settings.getScreen().width(), settings.getScreen().height());
-    
-            stage.setTitle("MainTerminalInterface");
-            stage.setScene(scene);
-    
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/icon.png")));
-    
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setResizable(false);
-
-            stage.show();
+            registerAllScenes("terminal", "chat", "reader");
+            StageManager.init(stage);
+            StageManager.getInstance().switchScene("terminal");
         } catch (Exception e) {
             System.err.println(e);
             Platform.exit();
+        }
+    }
+
+    private void registerAllScenes(String... resources) {
+        SceneRegistry sceneRegistry = SceneRegistry.getInstance();
+        for (String resource : resources) {
+            sceneRegistry.register(
+                    resource,
+                    () -> {
+                        return InterfaceParser.getInstance().parse(resource);
+                    });
         }
     }
 
