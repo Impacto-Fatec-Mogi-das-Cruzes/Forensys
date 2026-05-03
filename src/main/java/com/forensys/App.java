@@ -10,6 +10,10 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage) {
         try {
@@ -31,9 +35,5 @@ public class App extends Application {
                         return InterfaceParser.getInstance().parse(resource);
                     });
         }
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
