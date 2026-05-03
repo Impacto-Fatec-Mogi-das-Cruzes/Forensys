@@ -2,6 +2,7 @@ package com.forensys.ui.navigation;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
 import com.forensys.core.setting.SettingsParser;
@@ -58,9 +59,10 @@ public class StageManager {
     }
 
     public void restoreScene() {
-        if (!history.isEmpty()) {
-            stage.setScene(history.pop());
+        if (history.isEmpty()) {
+            throw new NoSuchElementException("Deque is empty no item to be removed");
         }
+        stage.setScene(history.pop());
     }
 
     public void applySettings() {
