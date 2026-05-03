@@ -4,11 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane stylesheets="@messager.css"
+<BorderPane stylesheets="@chat.css"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.forensys.ui.controller.ChatController"
-            styleClass="game-root">
+            styleClass="game-root"
+            fx:id="root">
 
     <!-- ================= TOP HUD BAR ================= -->
     <top>
@@ -22,10 +23,6 @@
                        styleClass="hud-title"
                        HBox.hgrow="ALWAYS"/>
 
-                <Region HBox.hgrow="ALWAYS"/>
-
-                <Button text="✕"
-                        styleClass="hud-close-btn"/>
             </children>
         </HBox>
     </top>
