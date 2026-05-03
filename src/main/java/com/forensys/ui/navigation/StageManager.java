@@ -11,13 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-/* TODO: funções da SceneManager
-- Recebe uma stage e permite mudar os atributos da stage
-- Gerenciamento de Scenes: 
-    - Adicionar as cenas a um registry
-    - Adicionar pilhas de cenas
-    - Mudar de cenas
-*/
 public class StageManager {
 
     private static StageManager instance;
