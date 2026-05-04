@@ -6,6 +6,7 @@ import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.command.concrete.duck.DuckCommand;
 import com.forensys.core.command.concrete.go.GoCommand;
 import com.forensys.core.command.concrete.list.ListCommand;
+import com.forensys.core.command.concrete.read.ReadCommand;
 import com.forensys.core.command.concrete.say.SayCommand;
 import com.forensys.service.CommandHandler;
 import com.forensys.service.CommandRegistry;
@@ -35,7 +36,8 @@ public class TerminalController {
             new DuckCommand(),
             new SayCommand(),
             new GoCommand(),
-            new ListCommand()
+            new ListCommand(),
+            new ReadCommand()
         );
     }
 
