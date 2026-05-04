@@ -45,7 +45,7 @@ public class ReadCommand extends TerminalCommand {
         } else {
             context.setTextFile(textFile);
             outputBuilder
-                    .text("Getting contents of " + target)
+                    .text("Opening file reader " + target)
                     .exitCode(CommandExitCode.SUCESS);
         }
 
