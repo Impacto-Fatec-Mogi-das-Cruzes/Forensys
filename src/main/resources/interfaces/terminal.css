@@ -114,22 +114,27 @@
 ========================= */
 .system {
     -fx-text-fill: #cbd5e1;
+    -fx-font-family: "Consolas";
 }
 
 .success {
     -fx-text-fill: #22c55e;
+    -fx-font-family: "Consolas";
 }
 
 .error {
     -fx-text-fill: #ff5c5c;
+    -fx-font-family: "Consolas";
 }
 
 .warning {
     -fx-text-fill: #ffd166;
+    -fx-font-family: "Consolas";
 }
 
 .info {
     -fx-text-fill: #4cc9f0;
+    -fx-font-family: "Consolas";
 }
 
 /* =========================
