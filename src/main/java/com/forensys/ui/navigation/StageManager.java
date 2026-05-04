@@ -5,6 +5,9 @@ import java.util.Deque;
 import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
+import com.forensys.common.observer.Observer;
+import com.forensys.common.observer.Operation;
+import com.forensys.core.context.ContextOperation;
 import com.forensys.core.setting.SettingsParser;
 import com.forensys.core.setting.Window;
 
@@ -12,7 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class StageManager {
+public class StageManager implements Observer {
 
     private static StageManager instance;
     private Stage stage;
@@ -73,6 +76,15 @@ public class StageManager {
         this.stage.setResizable(window.resizable());
         this.stage.setHeight(window.height());
         this.stage.setWidth(window.width());
+    }
+
+    @Override
+    public void update(Operation operation) {
+        if (operation == ContextOperation.OPEN_FILE.getOperation()) {
+            switchScene("reader");
+        } else if (operation == ContextOperation.CLOSE_FILE.getOperation()) {
+            stage.setScene(history.pop());
+        }
     }
 
 }

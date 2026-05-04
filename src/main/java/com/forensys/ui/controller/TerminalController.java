@@ -7,14 +7,10 @@ import com.forensys.core.command.concrete.duck.DuckCommand;
 import com.forensys.core.command.concrete.go.GoCommand;
 import com.forensys.core.command.concrete.list.ListCommand;
 import com.forensys.core.command.concrete.say.SayCommand;
-import com.forensys.core.context.ApplicationContext;
-import com.forensys.core.filestructure.FileSystemEntry;
-import com.forensys.core.filestructure.concrete.Directory;
 import com.forensys.service.CommandHandler;
 import com.forensys.service.CommandRegistry;
 import com.forensys.ui.command.CommandParser;
 import com.forensys.ui.command.ParsedCommand;
-import com.forensys.ui.filestructure.FileStructureParser;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -35,16 +31,6 @@ public class TerminalController {
 
     @FXML
     private void initialize() {
-
-        ApplicationContext context = ApplicationContext.getInstance();
-        FileStructureParser fileStructureParser = FileStructureParser.getInstance();
-        try {
-            FileSystemEntry root = fileStructureParser.parse("example");
-            context.setCurrentDirectory((Directory) root);
-        } catch (Exception e) {
-            System.err.println(e);
-        }
-
         registerAllCommands(
             new DuckCommand(),
             new SayCommand(),
