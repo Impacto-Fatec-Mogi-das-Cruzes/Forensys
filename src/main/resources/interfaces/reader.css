@@ -4,16 +4,16 @@
 
 .root {
     -fx-font-family: "Consolas", "Courier New", monospace;
-    -fx-background-color: #0b0f17;
+    -fx-background-color: #0f131c;
 }
 
 /* =========================
-   FRAME (janela do jogo)
+   FRAME (janela principal)
 ========================= */
 
 .frame {
     -fx-background-color: #0f131c;
-    -fx-border-color: #4cc9f0;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 2px;
     -fx-padding: 4px;
 }
@@ -23,8 +23,8 @@
 ========================= */
 
 .top-bar {
-    -fx-background-color: #121826;
-    -fx-border-color: #4cc9f0;
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 0 0 2px 0;
     -fx-padding: 6px 10px;
     -fx-alignment: center-left;
@@ -34,6 +34,7 @@
     -fx-text-fill: #4cc9f0;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
 }
 
 .hud-close {
@@ -42,6 +43,7 @@
     -fx-padding: 2px 8px;
     -fx-border-color: #ff5c5c;
     -fx-border-width: 1px;
+    -fx-background-color: transparent;
 }
 
 .hud-close:hover {
@@ -60,27 +62,46 @@
 /* TEXT AREA estilo terminal */
 .terminal-area {
     -fx-control-inner-background: #0f131c;
-    -fx-text-fill: #d9e1ff;
-    -fx-highlight-fill: #4cc9f0;
-    -fx-highlight-text-fill: #0f131c;
+    -fx-text-fill: #cbd5e1;
+    -fx-highlight-fill: #1b263b;
+    -fx-highlight-text-fill: #4cc9f0;
+
     -fx-background-insets: 0;
-    -fx-border-color: #1f2a44;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 1px;
     -fx-padding: 8px;
 }
 
-/* remove borda padrão feia */
+/* remove fundo padrão interno */
 .terminal-area .content {
     -fx-background-color: #0f131c;
 }
 
-/* scroll */
-.terminal-area .scroll-bar:vertical {
+/* caret (cursor) */
+.text-area .caret {
+    -fx-background-color: #4cc9f0;
+}
+
+/* foco estilo game */
+.text-area:focused {
+    -fx-border-color: #4cc9f0;
+}
+
+/* =========================
+   SCROLLBAR (padronizado)
+========================= */
+
+.terminal-area .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.terminal-area .scroll-bar .track {
     -fx-background-color: #0f131c;
 }
 
-.terminal-area .thumb {
-    -fx-background-color: #4cc9f0;
+.terminal-area .scroll-bar .thumb {
+    -fx-background-color: #2a2f3a;
+    -fx-background-radius: 0;
 }
 
 /* =========================
@@ -88,18 +109,18 @@
 ========================= */
 
 .command-bar {
-    -fx-background-color: #121826;
-    -fx-border-color: #4cc9f0;
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 2px 0 0 0;
 }
 
 .command-text {
-    -fx-text-fill: #4cc9f0;
-    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
 }
 
 /* =========================
-   STATUS COLORS (pra usar depois)
+   STATUS COLORS
 ========================= */
 
 .success {
@@ -115,20 +136,20 @@
 }
 
 /* =========================
-   PIXEL FEEL (detalhes)
+   DETALHES PIXEL CLEAN
 ========================= */
 
-/* linhas finas tipo scanline leve */
+/* remove qualquer sombra automática */
 .frame {
     -fx-effect: null;
 }
 
-/* foco estilo game */
-.text-area:focused {
-    -fx-border-color: #4cc9f0;
+/* seleção mais consistente */
+.text-area {
+    -fx-highlight-fill: #1b263b;
 }
 
-/* caret */
-.text-area .caret {
-    -fx-background-color: #4cc9f0;
+/* opcional: leve feedback hover global (bem sutil) */
+.label:hover {
+    -fx-opacity: 0.9;
 }

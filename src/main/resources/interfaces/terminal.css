@@ -10,9 +10,8 @@
    GAME FRAME (WINDOW STYLE)
 ========================= */
 .game-frame {
-    -fx-background-color: #121826;
-    /* -fx-border-color: #4cc9f0; */
-    -fx-border-color: transparent;
+    -fx-background-color: #0f131c;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 2px;
     -fx-padding: 10;
 }
@@ -21,18 +20,19 @@
    HUD BAR (TOP)
 ========================= */
 .hud-bar {
-    -fx-background-color: #121826;
-    -fx-border-color: #4cc9f0;
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 0 0 2px 0;
     -fx-padding: 8 12 8 12;
     -fx-alignment: center-left;
 }
 
-/* 🎯 TÍTULO (AGORA DOURADO RPG UI) */
+/* TÍTULO (accent RPG controlado) */
 .hud-title {
     -fx-text-fill: #ffd166;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
 }
 
 /* BOTÃO FECHAR */
@@ -59,18 +59,19 @@
 }
 
 .game-scroll .viewport  {
-    -fx-background-color: #121826;
+    -fx-background-color: #0f131c;
 }
 
 .game-output {
-    -fx-background-color: #121826;
+    -fx-background-color: #0f131c;
     -fx-spacing: 0;
     -fx-padding: 12;
 }
 
 /* TEXT OUTPUT */
 .game-output .label {
-    -fx-background-color: #121826;
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd5e1;
     -fx-font-size: 13px;
 }
 
@@ -78,8 +79,8 @@
    COMMAND BAR (BOTTOM)
 ========================= */
 .command-bar {
-    -fx-background-color: #121826;
-    -fx-border-color: #4cc9f0;
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 2px 0 0 0;
     -fx-padding: 10;
     -fx-spacing: 10;
@@ -97,16 +98,17 @@
 ========================= */
 .command-input {
     -fx-background-color: #0f131c;
-    -fx-text-fill: #ffd166;
-    -fx-border-color: #4cc9f0;
+    -fx-text-fill: #cbd5e1;
+    -fx-border-color: #2a2f3a;
     -fx-border-width: 1px;
     -fx-padding: 6;
-    -fx-highlight-fill: #4cc9f0;
+    -fx-highlight-fill: #1b263b;
+    -fx-highlight-text-fill: #4cc9f0;
 }
 
-/* foco estilo "seleção de sistema" */
+/* foco estilo game */
 .command-input:focused {
-    -fx-border-color: #ffd166;
+    -fx-border-color: #4cc9f0;
 }
 
 /* =========================
@@ -114,37 +116,36 @@
 ========================= */
 .system {
     -fx-text-fill: #cbd5e1;
-    -fx-font-family: "Consolas";
 }
 
 .success {
     -fx-text-fill: #22c55e;
-    -fx-font-family: "Consolas";
 }
 
 .error {
     -fx-text-fill: #ff5c5c;
-    -fx-font-family: "Consolas";
 }
 
 .warning {
     -fx-text-fill: #ffd166;
-    -fx-font-family: "Consolas";
 }
 
 .info {
     -fx-text-fill: #4cc9f0;
-    -fx-font-family: "Consolas";
 }
 
 /* =========================
    SCROLLBAR (MINIMAL GAME UI)
 ========================= */
 .scroll-bar:vertical {
-    -fx-background-color: #121826;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #0f131c;
 }
 
 .scroll-bar:vertical .thumb {
-    -fx-background-color: #4cc9f0;
+    -fx-background-color: #2a2f3a;
     -fx-background-radius: 0;
 }
