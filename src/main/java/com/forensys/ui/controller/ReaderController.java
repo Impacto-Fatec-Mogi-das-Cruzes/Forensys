@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 
-public class ReaderControler {
+public class ReaderController {
     @FXML
     private TextArea content;
 
