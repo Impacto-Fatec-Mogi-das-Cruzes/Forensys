@@ -36,7 +36,7 @@ public class GoCommand extends TerminalCommand {
                 context.restoreDirectory();
                 outputBuilder
                         .text("Back to directory " + context.getCurrentDirectory().getMetadata().name())
-                        .exitCode(CommandExitCode.SUCESS);
+                        .exitCode(CommandExitCode.SUCCESS);
             } catch (NoSuchElementException e) {
                 outputBuilder
                         .text("No parent directory to go back")
@@ -59,7 +59,7 @@ public class GoCommand extends TerminalCommand {
             context.setCurrentDirectory(directory);
             outputBuilder
                     .text("Current location whas changed to  " + target)
-                    .exitCode(CommandExitCode.SUCESS);
+                    .exitCode(CommandExitCode.SUCCESS);
         }
 
         return outputBuilder.build();

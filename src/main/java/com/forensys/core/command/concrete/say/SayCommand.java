@@ -23,7 +23,7 @@ public class SayCommand extends TerminalCommand {
             phrase += arg + " ";
         }
         
-        outputBuilder.text(phrase).exitCode(CommandExitCode.SUCESS);
+        outputBuilder.text(phrase).exitCode(CommandExitCode.SUCCESS);
         return outputBuilder.build();
     }
 }

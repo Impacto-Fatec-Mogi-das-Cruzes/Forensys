@@ -59,7 +59,7 @@ public class TerminalController {
         CommandOutput output = CommandHandler.getInstance().handle(parsedCommand);        
         String styleClass = "";
 
-        if (output.getExitCode() == CommandExitCode.SUCESS) {
+        if (output.getExitCode() == CommandExitCode.SUCCESS) {
             styleClass = "system";
         } else if (output.getExitCode() == CommandExitCode.FAILURE) {
             styleClass = "error";

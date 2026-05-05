@@ -32,7 +32,7 @@ public class ListCommand extends TerminalCommand {
             }
         }
 
-        return outputBuilder.exitCode(CommandExitCode.SUCESS).build();
+        return outputBuilder.exitCode(CommandExitCode.SUCCESS).build();
     }
 
 }

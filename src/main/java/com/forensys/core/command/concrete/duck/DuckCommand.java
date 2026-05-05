@@ -37,7 +37,7 @@ public class DuckCommand extends TerminalCommand{
             .text("⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀")
             .text("⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀")
             .text("⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀")
-            .exitCode(CommandExitCode.SUCESS);
+            .exitCode(CommandExitCode.SUCCESS);
         
         return outputBuilder.build();
     }

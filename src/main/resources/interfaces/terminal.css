@@ -115,23 +115,28 @@
    STATUS COLORS (LOG SYSTEM)
 ========================= */
 .system {
-    -fx-text-fill: #cbd5e1;
+    -fx-text-fill: #cbd5e1 !important;
+    -fx-font-family: "Consolas";
 }
 
 .success {
-    -fx-text-fill: #22c55e;
+    -fx-text-fill: #22c55e !important;
+    -fx-font-family: "Consolas";
 }
 
 .error {
-    -fx-text-fill: #ff5c5c;
+    -fx-text-fill: #ff5c5c !important;
+    -fx-font-family: "Consolas";
 }
 
 .warning {
-    -fx-text-fill: #ffd166;
+    -fx-text-fill: #ffd166 !important;
+    -fx-font-family: "Consolas";
 }
 
 .info {
-    -fx-text-fill: #4cc9f0;
+    -fx-text-fill: #4cc9f0 !important;
+    -fx-font-family: "Consolas";
 }
 
 /* =========================

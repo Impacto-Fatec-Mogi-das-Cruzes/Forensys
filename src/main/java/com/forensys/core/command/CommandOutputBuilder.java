@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CommandOutputBuilder {
     private List<String> segments = new ArrayList<>();
-    private CommandExitCode exitCode = CommandExitCode.SUCESS;
+    private CommandExitCode exitCode = CommandExitCode.SUCCESS;
     private boolean clearScreen = false;
 
     public CommandOutputBuilder text(String text) {
