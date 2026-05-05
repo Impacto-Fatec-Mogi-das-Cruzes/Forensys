@@ -1,1272 +1,1560 @@
 {
-  "root": {
-    "SYS": {
-      "name": "SYS",
+  "type": "directory",
+  "metadata": {
+    "name": "root",
+    "password": null,
+    "blocked": false,
+    "hidden": false,
+    "description": null,
+    "size": null,
+    "created": null,
+    "updated": null,
+    "readOnly": true
+  },
+  "children": [
+    {
       "type": "directory",
-      "password": null,
-      "blocked": false,
-      "hidden": false,
-      "description": null,
-      "size": null,
-      "created": "1997-11-04T08:00:00",
-      "updated": "1998-01-10T09:15:00",
-      "readOnly": true,
-      "bin": {
-        "name": "bin",
-        "type": "directory",
+      "metadata": {
+        "name": "SYS",
         "password": null,
         "blocked": false,
         "hidden": false,
         "description": null,
         "size": null,
-        "created": "1997-11-04T08:05:00",
-        "updated": "1998-01-10T09:20:00",
-        "readOnly": true,
-        "ls.bin": {
-          "name": "ls.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 14336,
-          "created": "1997-11-04T08:10:00",
-          "updated": "1998-01-10T09:22:00",
-          "readOnly": true
-        },
-        "cp.bin": {
-          "name": "cp.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 18432,
-          "created": "1997-11-04T08:10:00",
-          "updated": "1998-01-10T09:22:00",
-          "readOnly": true
-        },
-        "mv.bin": {
-          "name": "mv.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 16384,
-          "created": "1997-11-04T08:11:00",
-          "updated": "1998-01-10T09:23:00",
-          "readOnly": true
-        },
-        "rm.bin": {
-          "name": "rm.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 12288,
-          "created": "1997-11-04T08:11:00",
-          "updated": "1998-01-10T09:23:00",
-          "readOnly": true
-        },
-        "cat.bin": {
-          "name": "cat.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 10240,
-          "created": "1997-11-04T08:12:00",
-          "updated": "1998-01-10T09:24:00",
-          "readOnly": true
-        },
-        "grep.bin": {
-          "name": "grep.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 22528,
-          "created": "1997-11-04T08:12:00",
-          "updated": "1998-02-03T11:00:00",
-          "readOnly": true
-        },
-        "chmod.bin": {
-          "name": "chmod.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 13312,
-          "created": "1997-11-04T08:13:00",
-          "updated": "1998-01-10T09:25:00",
-          "readOnly": true
-        },
-        "chown.bin": {
-          "name": "chown.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 13312,
-          "created": "1997-11-04T08:13:00",
-          "updated": "1998-01-10T09:25:00",
-          "readOnly": true
-        },
-        "kill.bin": {
-          "name": "kill.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 9216,
-          "created": "1997-11-04T08:14:00",
-          "updated": "1998-01-10T09:26:00",
-          "readOnly": true
-        },
-        "ps.bin": {
-          "name": "ps.bin",
-          "type": "binary",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 20480,
-          "created": "1997-11-04T08:14:00",
-          "updated": "1998-02-03T11:05:00",
-          "readOnly": true
-        }
+        "created": "1997-11-04T08:00:00",
+        "updated": "1998-01-10T09:15:00",
+        "readOnly": true
       },
-      "libs": {
-        "name": "libs",
-        "type": "directory",
-        "password": null,
-        "blocked": false,
-        "hidden": false,
-        "description": null,
-        "size": null,
-        "created": "1997-11-04T08:20:00",
-        "updated": "1998-03-18T14:00:00",
-        "readOnly": true,
-        "libc.so": {
-          "name": "libc.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 1458176,
-          "created": "1997-11-04T08:22:00",
-          "updated": "1998-01-10T10:00:00",
-          "readOnly": true
-        },
-        "libm.so": {
-          "name": "libm.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 307200,
-          "created": "1997-11-04T08:22:00",
-          "updated": "1998-01-10T10:01:00",
-          "readOnly": true
-        },
-        "libssl.so": {
-          "name": "libssl.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 512000,
-          "created": "1998-01-15T09:00:00",
-          "updated": "1998-04-22T16:30:00",
-          "readOnly": true
-        },
-        "libcrypto.so": {
-          "name": "libcrypto.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 921600,
-          "created": "1998-01-15T09:05:00",
-          "updated": "1998-04-22T16:35:00",
-          "readOnly": true
-        },
-        "libnetware.so": {
-          "name": "libnetware.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 409600,
-          "created": "1998-02-10T10:30:00",
-          "updated": "1998-06-05T13:45:00",
-          "readOnly": true
-        },
-        "liboracle7.so": {
-          "name": "liboracle7.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 2097152,
-          "created": "1997-12-01T11:00:00",
-          "updated": "1998-03-18T14:00:00",
-          "readOnly": true
-        },
-        "libdl.so": {
-          "name": "libdl.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 20480,
-          "created": "1997-11-04T08:25:00",
-          "updated": "1998-01-10T10:05:00",
-          "readOnly": true
-        },
-        "libz.so": {
-          "name": "libz.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 102400,
-          "created": "1997-11-04T08:26:00",
-          "updated": "1998-01-10T10:06:00",
-          "readOnly": true
-        },
-        "libgcc_s.so": {
-          "name": "libgcc_s.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 65536,
-          "created": "1997-11-04T08:26:00",
-          "updated": "1998-01-10T10:07:00",
-          "readOnly": true
-        },
-        "librt.so": {
-          "name": "librt.so",
-          "type": "shared-object",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": 45056,
-          "created": "1997-11-04T08:27:00",
-          "updated": "1998-01-10T10:08:00",
-          "readOnly": true
-        }
-      }
-    },
-    "USR": {
-      "name": "USR",
-      "type": "directory",
-      "password": null,
-      "blocked": false,
-      "hidden": false,
-      "description": null,
-      "size": null,
-      "created": "1998-01-20T08:00:00",
-      "updated": "1998-11-30T17:00:00",
-      "readOnly": true,
-      "Media": {
-        "name": "Media",
-        "type": "directory",
-        "password": null,
-        "blocked": false,
-        "hidden": false,
-        "description": null,
-        "size": null,
-        "created": "1998-01-20T08:30:00",
-        "updated": "1998-11-30T17:00:00",
-        "readOnly": true,
-        "PROJECTS": {
-          "name": "PROJECTS",
+      "children": [
+        {
           "type": "directory",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": null,
-          "created": "1998-01-20T09:00:00",
-          "updated": "1998-11-30T17:00:00",
-          "readOnly": true,
-          "KalyB": {
-            "name": "KalyB",
-            "type": "directory",
-            "categoria": "Segurança-Rede",
+          "metadata": {
+            "name": "bin",
             "password": null,
             "blocked": false,
             "hidden": false,
             "description": null,
             "size": null,
-            "created": "1998-02-09T10:00:00",
-            "updated": "1998-10-14T15:30:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 4096,
-              "created": "1998-02-09T10:05:00",
-              "updated": "1998-10-14T15:30:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 2048,
-              "created": "1998-02-09T10:10:00",
-              "updated": "1998-09-03T11:00:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-02-09T10:15:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "netware_access.log": {
-                "name": "netware_access.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 819200,
-                "created": "1998-02-10T00:00:00",
-                "updated": "1998-11-28T23:58:00",
-                "readOnly": false
-              },
-              ".node_err94.tmp": {
-                "name": ".node_err94.tmp",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 512,
-                "created": "1998-07-22T03:14:00",
-                "updated": "1998-07-22T03:14:00",
-                "readOnly": true
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-02-09T10:20:00",
-              "updated": "1998-10-14T15:00:00",
-              "readOnly": true,
-              "kalnetmon.cpp": {
-                "name": "kalnetmon.cpp",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 36864,
-                "created": "1998-02-12T14:00:00",
-                "updated": "1998-10-14T15:00:00",
-                "readOnly": true
-              },
-              "packet_filter.cpp": {
-                "name": "packet_filter.cpp",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 28672,
-                "created": "1998-02-18T09:30:00",
-                "updated": "1998-09-27T10:45:00",
-                "readOnly": true
-              },
-              "libkalnet.so": {
-                "name": "libkalnet.so",
-                "type": "shared-object",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 131072,
-                "created": "1998-03-01T16:00:00",
-                "updated": "1998-10-14T15:05:00",
-                "readOnly": true
-              }
-            }
+            "created": "1997-11-04T08:05:00",
+            "updated": "1998-01-10T09:20:00",
+            "readOnly": true
           },
-          "Oh'sink": {
-            "name": "Oh'sink",
-            "type": "directory",
-            "categoria": "Gestão",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-26T09:00:00",
-            "updated": "1998-11-05T17:30:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 5120,
-              "created": "1998-01-26T09:10:00",
-              "updated": "1998-11-05T17:30:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 1536,
-              "created": "1998-01-26T09:15:00",
-              "updated": "1998-08-01T08:00:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-01-26T09:20:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "lancamentos.log": {
-                "name": "lancamentos.log",
-                "type": "log",
+          "children": [
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "ls.bin",
                 "password": null,
                 "blocked": false,
                 "hidden": false,
                 "description": null,
-                "size": 1048576,
-                "created": "1998-01-31T18:00:00",
-                "updated": "1998-11-28T18:00:00",
-                "readOnly": false
-              },
-              "cache_sync.log": {
-                "name": "cache_sync.log",
-                "type": "log",
+                "size": 14336,
+                "created": "1997-11-04T08:10:00",
+                "updated": "1998-01-10T09:22:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "cp.bin",
                 "password": null,
                 "blocked": false,
-                "hidden": true,
+                "hidden": false,
+                "description": null,
+                "size": 18432,
+                "created": "1997-11-04T08:10:00",
+                "updated": "1998-01-10T09:22:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "mv.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 16384,
+                "created": "1997-11-04T08:11:00",
+                "updated": "1998-01-10T09:23:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "rm.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 12288,
+                "created": "1997-11-04T08:11:00",
+                "updated": "1998-01-10T09:23:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "cat.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 10240,
+                "created": "1997-11-04T08:12:00",
+                "updated": "1998-01-10T09:24:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "grep.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 22528,
+                "created": "1997-11-04T08:12:00",
+                "updated": "1998-02-03T11:00:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "chmod.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 13312,
+                "created": "1997-11-04T08:13:00",
+                "updated": "1998-01-10T09:25:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "chown.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 13312,
+                "created": "1997-11-04T08:13:00",
+                "updated": "1998-01-10T09:25:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "kill.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 9216,
+                "created": "1997-11-04T08:14:00",
+                "updated": "1998-01-10T09:26:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "binary",
+              "metadata": {
+                "name": "ps.bin",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
                 "description": null,
                 "size": 20480,
-                "created": "1998-03-10T02:00:00",
-                "updated": "1998-11-28T02:00:00",
-                "readOnly": true
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-01-26T09:30:00",
-              "updated": "1998-10-20T14:00:00",
-              "readOnly": true,
-              "folha_pag.pas": {
-                "name": "folha_pag.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 45056,
-                "created": "1998-02-03T10:00:00",
-                "updated": "1998-10-20T14:00:00",
-                "readOnly": true
-              },
-              "banco_horas.pas": {
-                "name": "banco_horas.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 28672,
-                "created": "1998-02-10T11:00:00",
-                "updated": "1998-09-15T09:30:00",
-                "readOnly": true
-              },
-              "~relat_orig.bak": {
-                "name": "~relat_orig.bak",
-                "type": "backup",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 39936,
-                "created": "1998-05-28T22:17:00",
-                "updated": "1998-05-28T22:17:00",
+                "created": "1997-11-04T08:14:00",
+                "updated": "1998-02-03T11:05:00",
                 "readOnly": true
               }
             }
-          },
-          "iFind": {
-            "name": "iFind",
-            "type": "directory",
-            "categoria": "Rastreio",
+          ]
+        },
+        {
+          "type": "directory",
+          "metadata": {
+            "name": "libs",
             "password": null,
             "blocked": false,
             "hidden": false,
             "description": null,
             "size": null,
-            "created": "1998-03-02T08:00:00",
-            "updated": "1998-11-10T16:00:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 6144,
-              "created": "1998-03-02T08:10:00",
-              "updated": "1998-11-10T16:00:00",
-              "readOnly": true
+            "created": "1997-11-04T08:20:00",
+            "updated": "1998-03-18T14:00:00",
+            "readOnly": true
+          },
+          "children": [
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libc.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 1458176,
+                "created": "1997-11-04T08:22:00",
+                "updated": "1998-01-10T10:00:00",
+                "readOnly": true
+              }
             },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 2048,
-              "created": "1998-03-02T08:15:00",
-              "updated": "1998-07-14T10:00:00",
-              "readOnly": true
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libm.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 307200,
+                "created": "1997-11-04T08:22:00",
+                "updated": "1998-01-10T10:01:00",
+                "readOnly": true
+              }
             },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-03-02T08:20:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "contratos.log": {
-                "name": "contratos.log",
-                "type": "log",
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libssl.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 512000,
+                "created": "1998-01-15T09:00:00",
+                "updated": "1998-04-22T16:30:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libcrypto.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 921600,
+                "created": "1998-01-15T09:05:00",
+                "updated": "1998-04-22T16:35:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libnetware.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 409600,
+                "created": "1998-02-10T10:30:00",
+                "updated": "1998-06-05T13:45:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "liboracle7.so",
                 "password": null,
                 "blocked": false,
                 "hidden": false,
                 "description": null,
                 "size": 2097152,
-                "created": "1998-03-05T00:00:00",
-                "updated": "1998-11-28T23:59:00",
-                "readOnly": false
-              },
-              ".idx_rebuild94.log": {
-                "name": ".idx_rebuild94.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 8192,
-                "created": "1998-08-19T04:30:00",
-                "updated": "1998-08-19T05:45:00",
+                "created": "1997-12-01T11:00:00",
+                "updated": "1998-03-18T14:00:00",
                 "readOnly": true
               }
             },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-03-02T09:00:00",
-              "updated": "1998-11-10T15:00:00",
-              "readOnly": true,
-              "licit_track.pas": {
-                "name": "licit_track.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 53248,
-                "created": "1998-03-10T09:00:00",
-                "updated": "1998-11-10T15:00:00",
-                "readOnly": true
-              },
-              "contrato_parser.cpp": {
-                "name": "contrato_parser.cpp",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 32768,
-                "created": "1998-03-15T14:00:00",
-                "updated": "1998-10-02T11:30:00",
-                "readOnly": true
-              }
-            }
-          },
-          "SPHINX": {
-            "name": "SPHINX",
-            "type": "directory",
-            "categoria": "Segurança-Acesso",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-28T07:30:00",
-            "updated": "1998-11-20T18:00:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 7168,
-              "created": "1998-01-28T07:40:00",
-              "updated": "1998-11-20T18:00:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 3072,
-              "created": "1998-01-28T07:45:00",
-              "updated": "1998-10-08T09:00:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-01-28T08:00:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "auth_trail.log": {
-                "name": "auth_trail.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 4194304,
-                "created": "1998-01-30T00:00:00",
-                "updated": "1998-11-28T23:59:00",
-                "readOnly": false
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-01-28T08:30:00",
-              "updated": "1998-11-20T17:00:00",
-              "readOnly": true,
-              "acesso.pas": {
-                "name": "acesso.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 40960,
-                "created": "1998-02-05T10:00:00",
-                "updated": "1998-11-20T17:00:00",
-                "readOnly": true
-              },
-              "permissoes.pas": {
-                "name": "permissoes.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 30720,
-                "created": "1998-02-12T11:30:00",
-                "updated": "1998-10-30T14:00:00",
-                "readOnly": true
-              },
-              ".auth_shadow.cfg": {
-                "name": ".auth_shadow.cfg",
-                "type": "config",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 1024,
-                "created": "1998-02-05T10:05:00",
-                "updated": "1998-10-08T09:05:00",
-                "readOnly": true
-              },
-              "ghost_user.dbf": {
-                "name": "ghost_user.dbf",
-                "type": "database",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 16384,
-                "created": "1998-02-20T08:00:00",
-                "updated": "1998-06-15T12:00:00",
-                "readOnly": true
-              }
-            }
-          },
-          "ASAi": {
-            "name": "ASAi",
-            "type": "directory",
-            "categoria": "AI",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-04-06T09:00:00",
-            "updated": "1998-11-25T16:00:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 8192,
-              "created": "1998-04-06T09:10:00",
-              "updated": "1998-11-25T16:00:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 2560,
-              "created": "1998-04-06T09:15:00",
-              "updated": "1998-09-10T11:00:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-04-06T09:20:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "analise.log": {
-                "name": "analise.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 614400,
-                "created": "1998-04-10T00:00:00",
-                "updated": "1998-11-28T23:58:00",
-                "readOnly": false
-              },
-              ".dump_core94.log": {
-                "name": ".dump_core94.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 4096,
-                "created": "1998-09-03T11:22:00",
-                "updated": "1998-09-03T11:22:00",
-                "readOnly": true
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-04-06T09:30:00",
-              "updated": "1998-11-25T15:30:00",
-              "readOnly": true,
-              "indicadores.pas": {
-                "name": "indicadores.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 49152,
-                "created": "1998-04-14T10:00:00",
-                "updated": "1998-11-25T15:30:00",
-                "readOnly": true
-              },
-              "relat_exec.pas": {
-                "name": "relat_exec.pas",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 36864,
-                "created": "1998-04-21T14:00:00",
-                "updated": "1998-10-31T09:00:00",
-                "readOnly": true
-              }
-            }
-          },
-          "DuuL": {
-            "name": "DuuL",
-            "type": "directory",
-            "categoria": "DATA",
-            "flag": "*",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1997-12-15T10:00:00",
-            "updated": "1998-11-30T17:00:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 9216,
-              "created": "1997-12-15T10:10:00",
-              "updated": "1998-11-30T17:00:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 1024,
-              "created": "1997-12-15T10:15:00",
-              "updated": "1998-06-01T08:00:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1997-12-15T10:20:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "oracle_redo.log": {
-                "name": "oracle_redo.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 10485760,
-                "created": "1997-12-20T00:00:00",
-                "updated": "1998-11-28T23:59:00",
-                "readOnly": false
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1997-12-15T10:30:00",
-              "updated": "1998-11-15T12:00:00",
-              "readOnly": true,
-              "schema.sql": {
-                "name": "schema.sql",
-                "type": "sql",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 73728,
-                "created": "1997-12-20T09:00:00",
-                "updated": "1998-11-15T12:00:00",
-                "readOnly": true
-              },
-              "migrate.sql": {
-                "name": "migrate.sql",
-                "type": "sql",
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libdl.so",
                 "password": null,
                 "blocked": false,
                 "hidden": false,
                 "description": null,
                 "size": 20480,
-                "created": "1998-04-01T10:00:00",
-                "updated": "1998-11-15T11:30:00",
+                "created": "1997-11-04T08:25:00",
+                "updated": "1998-01-10T10:05:00",
                 "readOnly": true
-              },
-              "schema_93.bak": {
-                "name": "schema_93.bak",
-                "type": "backup",
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libz.so",
                 "password": null,
                 "blocked": false,
-                "hidden": true,
+                "hidden": false,
                 "description": null,
-                "size": 57344,
-                "created": "1993-08-10T09:00:00",
-                "updated": "1998-01-05T08:00:00",
+                "size": 102400,
+                "created": "1997-11-04T08:26:00",
+                "updated": "1998-01-10T10:06:00",
                 "readOnly": true
-              },
-              ".exp_shadow.sql": {
-                "name": ".exp_shadow.sql",
-                "type": "sql",
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "libgcc_s.so",
                 "password": null,
                 "blocked": false,
-                "hidden": true,
+                "hidden": false,
                 "description": null,
                 "size": 65536,
-                "created": "1998-06-30T22:00:00",
-                "updated": "1998-10-31T22:00:00",
+                "created": "1997-11-04T08:26:00",
+                "updated": "1998-01-10T10:07:00",
+                "readOnly": true
+              }
+            },
+            {
+              "type": "shared-object",
+              "metadata": {
+                "name": "librt.so",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": 45056,
+                "created": "1997-11-04T08:27:00",
+                "updated": "1998-01-10T10:08:00",
                 "readOnly": true
               }
             }
-          },
-          "ALisyc": {
-            "name": "ALisyc",
-            "type": "directory",
-            "categoria": null,
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-05-11T09:00:00",
-            "updated": "1998-11-22T14:00:00",
-            "readOnly": true,
-            "README.md": {
-              "name": "README.md",
-              "type": "markdown",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 5632,
-              "created": "1998-05-11T09:10:00",
-              "updated": "1998-11-22T14:00:00",
-              "readOnly": true
-            },
-            "config.ini": {
-              "name": "config.ini",
-              "type": "config",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 2048,
-              "created": "1998-05-11T09:15:00",
-              "updated": "1998-10-01T08:30:00",
-              "readOnly": true
-            },
-            "logs": {
-              "name": "logs",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-05-11T09:20:00",
-              "updated": "1998-11-28T23:59:00",
-              "readOnly": true,
-              "sync_jobs.log": {
-                "name": "sync_jobs.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 327680,
-                "created": "1998-05-15T00:00:00",
-                "updated": "1998-11-28T23:59:00",
-                "readOnly": false
-              },
-              ".residual_out94.log": {
-                "name": ".residual_out94.log",
-                "type": "log",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 2048,
-                "created": "1998-10-17T03:05:00",
-                "updated": "1998-10-17T03:05:00",
-                "readOnly": true
-              }
-            },
-            "src": {
-              "name": "src",
-              "type": "directory",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": null,
-              "created": "1998-05-11T09:30:00",
-              "updated": "1998-11-22T13:30:00",
-              "readOnly": true,
-              "sync_agent.cpp": {
-                "name": "sync_agent.cpp",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 57344,
-                "created": "1998-05-20T10:00:00",
-                "updated": "1998-11-22T13:30:00",
-                "readOnly": true
-              },
-              "watcher.cpp": {
-                "name": "watcher.cpp",
-                "type": "source",
-                "password": null,
-                "blocked": false,
-                "hidden": false,
-                "description": null,
-                "size": 36864,
-                "created": "1998-05-27T14:00:00",
-                "updated": "1998-10-15T11:00:00",
-                "readOnly": true
-              },
-              "cleanup_cron.sh": {
-                "name": "cleanup_cron.sh",
-                "type": "script",
-                "password": null,
-                "blocked": false,
-                "hidden": true,
-                "description": null,
-                "size": 4096,
-                "created": "1998-06-03T08:00:00",
-                "updated": "1998-10-01T08:35:00",
-                "readOnly": true
-              }
-            }
-          }
+          ]
         }
-      },
-      "MOUNT": {
-        "name": "MOUNT",
-        "type": "directory",
+      ]
+    },
+    {
+      "type": "directory",
+      "metadata": {
+        "name": "USR",
         "password": null,
         "blocked": false,
         "hidden": false,
         "description": null,
         "size": null,
         "created": "1998-01-20T08:00:00",
-        "updated": "1998-11-30T09:00:00",
-        "readOnly": true,
-        "Disc_alpha": {
-          "name": "Disc_alpha",
+        "updated": "1998-11-30T17:00:00",
+        "readOnly": true
+      },
+      "children": [
+        {
           "type": "directory",
-          "password": null,
-          "blocked": false,
-          "hidden": false,
-          "description": null,
-          "size": null,
-          "created": "1998-01-20T08:10:00",
-          "updated": "1998-11-30T09:00:00",
-          "readOnly": false,
-          "Documents": {
-            "name": "Documents",
-            "type": "directory",
+          "metadata": {
+            "name": "Media",
             "password": null,
             "blocked": false,
             "hidden": false,
             "description": null,
             "size": null,
-            "created": "1998-01-20T08:15:00",
-            "updated": "1998-11-29T17:00:00",
-            "readOnly": false
+            "created": "1998-01-20T08:30:00",
+            "updated": "1998-11-30T17:00:00",
+            "readOnly": true
           },
-          "Downloads": {
-            "name": "Downloads",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:15:00",
-            "updated": "1998-11-28T12:00:00",
-            "readOnly": false
-          },
-          "Music": {
-            "name": "Music",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:16:00",
-            "updated": "1998-09-12T20:00:00",
-            "readOnly": false
-          },
-          "Pictures": {
-            "name": "Pictures",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:16:00",
-            "updated": "1998-10-05T15:00:00",
-            "readOnly": false
-          },
-          "Videos": {
-            "name": "Videos",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:17:00",
-            "updated": "1998-08-20T19:00:00",
-            "readOnly": false
-          },
-          "Desktop": {
-            "name": "Desktop",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:18:00",
-            "updated": "1998-11-30T09:00:00",
-            "readOnly": false
-          },
-          "Applications": {
-            "name": "Applications",
-            "type": "directory",
-            "password": null,
-            "blocked": false,
-            "hidden": false,
-            "description": null,
-            "size": null,
-            "created": "1998-01-20T08:20:00",
-            "updated": "1998-10-10T11:00:00",
-            "readOnly": true,
-            "AlfaTalk": {
-              "name": "AlfaTalk",
-              "type": "application",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 2621440,
-              "created": "1998-03-25T10:00:00",
-              "updated": "1998-10-10T11:00:00",
-              "readOnly": true
-            },
-            "Vx Codex": {
-              "name": "Vx Codex",
-              "type": "application",
-              "password": null,
-              "blocked": false,
-              "hidden": false,
-              "description": null,
-              "size": 4194304,
-              "created": "1998-05-02T14:00:00",
-              "updated": "1998-10-10T11:05:00",
-              "readOnly": true
+          "children": [
+            {
+              "type": "directory",
+              "metadata": {
+                "name": "PROJECTS",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": null,
+                "created": "1998-01-20T09:00:00",
+                "updated": "1998-11-30T17:00:00",
+                "readOnly": true
+              },
+              "children": [
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "KalyB",
+                    "categoria": "Segurança-Rede",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-02-09T10:00:00",
+                    "updated": "1998-10-14T15:30:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 4096,
+                        "created": "1998-02-09T10:05:00",
+                        "updated": "1998-10-14T15:30:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 2048,
+                        "created": "1998-02-09T10:10:00",
+                        "updated": "1998-09-03T11:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-02-09T10:15:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "netware_access.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 819200,
+                            "created": "1998-02-10T00:00:00",
+                            "updated": "1998-11-28T23:58:00",
+                            "readOnly": false
+                          }
+                        },
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": ".node_err94.tmp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 512,
+                            "created": "1998-07-22T03:14:00",
+                            "updated": "1998-07-22T03:14:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-02-09T10:20:00",
+                        "updated": "1998-10-14T15:00:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "kalnetmon.cpp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 36864,
+                            "created": "1998-02-12T14:00:00",
+                            "updated": "1998-10-14T15:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "packet_filter.cpp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 28672,
+                            "created": "1998-02-18T09:30:00",
+                            "updated": "1998-09-27T10:45:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "shared-object",
+                          "metadata": {
+                            "name": "libkalnet.so",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 131072,
+                            "created": "1998-03-01T16:00:00",
+                            "updated": "1998-10-14T15:05:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Oh'sink",
+                    "categoria": "Gestão",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-26T09:00:00",
+                    "updated": "1998-11-05T17:30:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 5120,
+                        "created": "1998-01-26T09:10:00",
+                        "updated": "1998-11-05T17:30:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 1536,
+                        "created": "1998-01-26T09:15:00",
+                        "updated": "1998-08-01T08:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-01-26T09:20:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "lancamentos.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 1048576,
+                            "created": "1998-01-31T18:00:00",
+                            "updated": "1998-11-28T18:00:00",
+                            "readOnly": false
+                          }
+                        },
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "cache_sync.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 20480,
+                            "created": "1998-03-10T02:00:00",
+                            "updated": "1998-11-28T02:00:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-01-26T09:30:00",
+                        "updated": "1998-10-20T14:00:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "folha_pag.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 45056,
+                            "created": "1998-02-03T10:00:00",
+                            "updated": "1998-10-20T14:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "banco_horas.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 28672,
+                            "created": "1998-02-10T11:00:00",
+                            "updated": "1998-09-15T09:30:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "backup",
+                          "metadata": {
+                            "name": "~relat_orig.bak",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 39936,
+                            "created": "1998-05-28T22:17:00",
+                            "updated": "1998-05-28T22:17:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "iFind",
+                    "categoria": "Rastreio",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-03-02T08:00:00",
+                    "updated": "1998-11-10T16:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 6144,
+                        "created": "1998-03-02T08:10:00",
+                        "updated": "1998-11-10T16:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 2048,
+                        "created": "1998-03-02T08:15:00",
+                        "updated": "1998-07-14T10:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-03-02T08:20:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "contratos.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 2097152,
+                            "created": "1998-03-05T00:00:00",
+                            "updated": "1998-11-28T23:59:00",
+                            "readOnly": false
+                          }
+                        },
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": ".idx_rebuild94.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 8192,
+                            "created": "1998-08-19T04:30:00",
+                            "updated": "1998-08-19T05:45:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-03-02T09:00:00",
+                        "updated": "1998-11-10T15:00:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "licit_track.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 53248,
+                            "created": "1998-03-10T09:00:00",
+                            "updated": "1998-11-10T15:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "contrato_parser.cpp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 32768,
+                            "created": "1998-03-15T14:00:00",
+                            "updated": "1998-10-02T11:30:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "SPHINX",
+                    "categoria": "Segurança-Acesso",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-28T07:30:00",
+                    "updated": "1998-11-20T18:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 7168,
+                        "created": "1998-01-28T07:40:00",
+                        "updated": "1998-11-20T18:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 3072,
+                        "created": "1998-01-28T07:45:00",
+                        "updated": "1998-10-08T09:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-01-28T08:00:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "auth_trail.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 4194304,
+                            "created": "1998-01-30T00:00:00",
+                            "updated": "1998-11-28T23:59:00",
+                            "readOnly": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-01-28T08:30:00",
+                        "updated": "1998-11-20T17:00:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "acesso.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 40960,
+                            "created": "1998-02-05T10:00:00",
+                            "updated": "1998-11-20T17:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "permissoes.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 30720,
+                            "created": "1998-02-12T11:30:00",
+                            "updated": "1998-10-30T14:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "config",
+                          "metadata": {
+                            "name": ".auth_shadow.cfg",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 1024,
+                            "created": "1998-02-05T10:05:00",
+                            "updated": "1998-10-08T09:05:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "database",
+                          "metadata": {
+                            "name": "ghost_user.dbf",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 16384,
+                            "created": "1998-02-20T08:00:00",
+                            "updated": "1998-06-15T12:00:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "ASAi",
+                    "categoria": "AI",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-04-06T09:00:00",
+                    "updated": "1998-11-25T16:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 8192,
+                        "created": "1998-04-06T09:10:00",
+                        "updated": "1998-11-25T16:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 2560,
+                        "created": "1998-04-06T09:15:00",
+                        "updated": "1998-09-10T11:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-04-06T09:20:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "analise.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 614400,
+                            "created": "1998-04-10T00:00:00",
+                            "updated": "1998-11-28T23:58:00",
+                            "readOnly": false
+                          }
+                        },
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": ".dump_core94.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 4096,
+                            "created": "1998-09-03T11:22:00",
+                            "updated": "1998-09-03T11:22:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-04-06T09:30:00",
+                        "updated": "1998-11-25T15:30:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "indicadores.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 49152,
+                            "created": "1998-04-14T10:00:00",
+                            "updated": "1998-11-25T15:30:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "relat_exec.pas",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 36864,
+                            "created": "1998-04-21T14:00:00",
+                            "updated": "1998-10-31T09:00:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "DuuL",
+                    "categoria": "DATA",
+                    "flag": "*",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1997-12-15T10:00:00",
+                    "updated": "1998-11-30T17:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 9216,
+                        "created": "1997-12-15T10:10:00",
+                        "updated": "1998-11-30T17:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 1024,
+                        "created": "1997-12-15T10:15:00",
+                        "updated": "1998-06-01T08:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1997-12-15T10:20:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "oracle_redo.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 10485760,
+                            "created": "1997-12-20T00:00:00",
+                            "updated": "1998-11-28T23:59:00",
+                            "readOnly": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1997-12-15T10:30:00",
+                        "updated": "1998-11-15T12:00:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "sql",
+                          "metadata": {
+                            "name": "schema.sql",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 73728,
+                            "created": "1997-12-20T09:00:00",
+                            "updated": "1998-11-15T12:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "sql",
+                          "metadata": {
+                            "name": "migrate.sql",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 20480,
+                            "created": "1998-04-01T10:00:00",
+                            "updated": "1998-11-15T11:30:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "backup",
+                          "metadata": {
+                            "name": "schema_93.bak",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 57344,
+                            "created": "1993-08-10T09:00:00",
+                            "updated": "1998-01-05T08:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "sql",
+                          "metadata": {
+                            "name": ".exp_shadow.sql",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 65536,
+                            "created": "1998-06-30T22:00:00",
+                            "updated": "1998-10-31T22:00:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "ALisyc",
+                    "categoria": null,
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-05-11T09:00:00",
+                    "updated": "1998-11-22T14:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "markdown",
+                      "metadata": {
+                        "name": "README.md",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 5632,
+                        "created": "1998-05-11T09:10:00",
+                        "updated": "1998-11-22T14:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "config",
+                      "metadata": {
+                        "name": "config.ini",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 2048,
+                        "created": "1998-05-11T09:15:00",
+                        "updated": "1998-10-01T08:30:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "logs",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-05-11T09:20:00",
+                        "updated": "1998-11-28T23:59:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": "sync_jobs.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 327680,
+                            "created": "1998-05-15T00:00:00",
+                            "updated": "1998-11-28T23:59:00",
+                            "readOnly": false
+                          }
+                        },
+                        {
+                          "type": "log",
+                          "metadata": {
+                            "name": ".residual_out94.log",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 2048,
+                            "created": "1998-10-17T03:05:00",
+                            "updated": "1998-10-17T03:05:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "directory",
+                      "metadata": {
+                        "name": "src",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": null,
+                        "created": "1998-05-11T09:30:00",
+                        "updated": "1998-11-22T13:30:00",
+                        "readOnly": true
+                      },
+                      "children": [
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "sync_agent.cpp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 57344,
+                            "created": "1998-05-20T10:00:00",
+                            "updated": "1998-11-22T13:30:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "source",
+                          "metadata": {
+                            "name": "watcher.cpp",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": false,
+                            "description": null,
+                            "size": 36864,
+                            "created": "1998-05-27T14:00:00",
+                            "updated": "1998-10-15T11:00:00",
+                            "readOnly": true
+                          }
+                        },
+                        {
+                          "type": "script",
+                          "metadata": {
+                            "name": "cleanup_cron.sh",
+                            "password": null,
+                            "blocked": false,
+                            "hidden": true,
+                            "description": null,
+                            "size": 4096,
+                            "created": "1998-06-03T08:00:00",
+                            "updated": "1998-10-01T08:35:00",
+                            "readOnly": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
-          }
+          ]
+        },
+        {
+          "type": "directory",
+          "metadata": {
+            "name": "MOUNT",
+            "password": null,
+            "blocked": false,
+            "hidden": false,
+            "description": null,
+            "size": null,
+            "created": "1998-01-20T08:00:00",
+            "updated": "1998-11-30T09:00:00",
+            "readOnly": true
+          },
+          "children": [
+            {
+              "type": "directory",
+              "metadata": {
+                "name": "Disc_alpha",
+                "password": null,
+                "blocked": false,
+                "hidden": false,
+                "description": null,
+                "size": null,
+                "created": "1998-01-20T08:10:00",
+                "updated": "1998-11-30T09:00:00",
+                "readOnly": false
+              },
+              "children": [
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Documents",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:15:00",
+                    "updated": "1998-11-29T17:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Downloads",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:15:00",
+                    "updated": "1998-11-28T12:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Music",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:16:00",
+                    "updated": "1998-09-12T20:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Pictures",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:16:00",
+                    "updated": "1998-10-05T15:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Videos",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:17:00",
+                    "updated": "1998-08-20T19:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Desktop",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:18:00",
+                    "updated": "1998-11-30T09:00:00",
+                    "readOnly": false
+                  },
+                  "children": []
+                },
+                {
+                  "type": "directory",
+                  "metadata": {
+                    "name": "Applications",
+                    "password": null,
+                    "blocked": false,
+                    "hidden": false,
+                    "description": null,
+                    "size": null,
+                    "created": "1998-01-20T08:20:00",
+                    "updated": "1998-10-10T11:00:00",
+                    "readOnly": true
+                  },
+                  "children": [
+                    {
+                      "type": "application",
+                      "metadata": {
+                        "name": "AlfaTalk",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 2621440,
+                        "created": "1998-03-25T10:00:00",
+                        "updated": "1998-10-10T11:00:00",
+                        "readOnly": true
+                      }
+                    },
+                    {
+                      "type": "application",
+                      "metadata": {
+                        "name": "Vx Codex",
+                        "password": null,
+                        "blocked": false,
+                        "hidden": false,
+                        "description": null,
+                        "size": 4194304,
+                        "created": "1998-05-02T14:00:00",
+                        "updated": "1998-10-10T11:05:00",
+                        "readOnly": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
-      }
+      ]
     }
-  }
+  ]
 }
