@@ -31,7 +31,9 @@
                 <TextArea editable="false"
                           styleClass="text-area"
                           VBox.vgrow="ALWAYS"
-                          maxWidth="Infinity"/>
+                          maxWidth="Infinity"
+                          fx:id="content"
+                          />
             </children>
         </VBox>
     </center>
