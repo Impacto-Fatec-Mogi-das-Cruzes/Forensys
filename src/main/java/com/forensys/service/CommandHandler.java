@@ -1,6 +1,7 @@
 package com.forensys.service;
 
 import com.forensys.core.command.CommandOutput;
+import com.forensys.core.command.CommandRegistry;
 import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.command.concrete.invalid.InvalidCommand;
 import com.forensys.ui.command.ParsedCommand;

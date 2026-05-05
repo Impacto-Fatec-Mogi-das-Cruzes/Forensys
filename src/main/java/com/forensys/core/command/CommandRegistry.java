@@ -1,7 +1,6 @@
-package com.forensys.service;
+package com.forensys.core.command;
 
 import com.forensys.common.Registry;
-import com.forensys.core.command.TerminalCommand;
 
 public class CommandRegistry extends Registry<TerminalCommand> {
     private static final CommandRegistry instance = new CommandRegistry();
