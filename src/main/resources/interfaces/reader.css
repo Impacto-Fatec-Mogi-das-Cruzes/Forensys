@@ -1,0 +1,134 @@
+/* =========================
+   ROOT / BASE
+========================= */
+
+.root {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-background-color: #0b0f17;
+}
+
+/* =========================
+   FRAME (janela do jogo)
+========================= */
+
+.frame {
+    -fx-background-color: #0f131c;
+    -fx-border-color: #4cc9f0;
+    -fx-border-width: 2px;
+    -fx-padding: 4px;
+}
+
+/* =========================
+   TOP BAR (HUD)
+========================= */
+
+.top-bar {
+    -fx-background-color: #121826;
+    -fx-border-color: #4cc9f0;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 6px 10px;
+    -fx-alignment: center-left;
+}
+
+.hud-title {
+    -fx-text-fill: #4cc9f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.hud-close {
+    -fx-text-fill: #ff5c5c;
+    -fx-font-weight: bold;
+    -fx-padding: 2px 8px;
+    -fx-border-color: #ff5c5c;
+    -fx-border-width: 1px;
+}
+
+.hud-close:hover {
+    -fx-background-color: #ff5c5c;
+    -fx-text-fill: #0f131c;
+}
+
+/* =========================
+   GAME OUTPUT (centro)
+========================= */
+
+.game-output {
+    -fx-background-color: #0f131c;
+}
+
+/* TEXT AREA estilo terminal */
+.terminal-area {
+    -fx-control-inner-background: #0f131c;
+    -fx-text-fill: #d9e1ff;
+    -fx-highlight-fill: #4cc9f0;
+    -fx-highlight-text-fill: #0f131c;
+    -fx-background-insets: 0;
+    -fx-border-color: #1f2a44;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+}
+
+/* remove borda padrão feia */
+.terminal-area .content {
+    -fx-background-color: #0f131c;
+}
+
+/* scroll */
+.terminal-area .scroll-bar:vertical {
+    -fx-background-color: #0f131c;
+}
+
+.terminal-area .thumb {
+    -fx-background-color: #4cc9f0;
+}
+
+/* =========================
+   COMMAND BAR (bottom)
+========================= */
+
+.command-bar {
+    -fx-background-color: #121826;
+    -fx-border-color: #4cc9f0;
+    -fx-border-width: 2px 0 0 0;
+}
+
+.command-text {
+    -fx-text-fill: #4cc9f0;
+    -fx-font-size: 13px;
+}
+
+/* =========================
+   STATUS COLORS (pra usar depois)
+========================= */
+
+.success {
+    -fx-text-fill: #22c55e;
+}
+
+.error {
+    -fx-text-fill: #ff5c5c;
+}
+
+.warning {
+    -fx-text-fill: #ffd166;
+}
+
+/* =========================
+   PIXEL FEEL (detalhes)
+========================= */
+
+/* linhas finas tipo scanline leve */
+.frame {
+    -fx-effect: null;
+}
+
+/* foco estilo game */
+.text-area:focused {
+    -fx-border-color: #4cc9f0;
+}
+
+/* caret */
+.text-area .caret {
+    -fx-background-color: #4cc9f0;
+}
