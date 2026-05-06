@@ -41,6 +41,7 @@ public class TerminalController {
         );
     }
 
+    //TODO: make it a service
     private void registerAllCommands(TerminalCommand... commandsToRegister) {
         CommandRegistry commandRegistry =  CommandRegistry.getInstance();
         for (TerminalCommand terminalCommand : commandsToRegister) {
