@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.forensys.core.filestructure.concrete.Directory;
 import com.forensys.core.filestructure.concrete.TextFile;
+import com.forensys.core.filestructure.concrete.UnknownFile;
 
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME, 
     include = JsonTypeInfo.As.PROPERTY, 
     property = "type",
-    visible = true
+    visible = true,
+    defaultImpl = UnknownFile.class
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Directory.class, name = "directory"),

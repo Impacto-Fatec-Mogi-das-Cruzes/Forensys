@@ -22,7 +22,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FileSystemEntry root = FileStructureParser.getInstance().parse("example");
+            FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
             
             ApplicationContext.init((Directory) root);
             StageManager.init(stage);

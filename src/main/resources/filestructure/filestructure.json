@@ -386,7 +386,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "KalyB",
-                    "categoria": "Segurança-Rede",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -533,7 +532,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "Oh'sink",
-                    "categoria": "Gestão",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -680,7 +678,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "iFind",
-                    "categoria": "Rastreio",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -813,7 +810,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "SPHINX",
-                    "categoria": "Segurança-Acesso",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -960,7 +956,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "ASAi",
-                    "categoria": "AI",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -1093,8 +1088,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "DuuL",
-                    "categoria": "DATA",
-                    "flag": "*",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -1241,7 +1234,6 @@
                   "type": "directory",
                   "metadata": {
                     "name": "ALisyc",
-                    "categoria": null,
                     "password": null,
                     "blocked": false,
                     "hidden": false,
