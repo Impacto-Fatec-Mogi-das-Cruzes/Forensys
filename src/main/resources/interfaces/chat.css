@@ -28,19 +28,6 @@
     -fx-letter-spacing: 1px;
 }
 
-.hud-close-btn {
-    -fx-background-color: transparent;
-    -fx-text-fill: #ff5c5c;
-    -fx-border-color: #ff5c5c;
-    -fx-border-width: 1px;
-    -fx-font-weight: bold;
-}
-
-.hud-close-btn:hover {
-    -fx-background-color: #ff5c5c;
-    -fx-text-fill: #0f131c;
-}
-
 /* =========================
    CENTER GAME AREA
 ========================= */

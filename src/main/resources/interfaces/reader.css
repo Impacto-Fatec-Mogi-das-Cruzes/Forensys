@@ -37,20 +37,6 @@
     -fx-letter-spacing: 1px;
 }
 
-.hud-close {
-    -fx-text-fill: #ff5c5c;
-    -fx-font-weight: bold;
-    -fx-padding: 2px 8px;
-    -fx-border-color: #ff5c5c;
-    -fx-border-width: 1px;
-    -fx-background-color: transparent;
-}
-
-.hud-close:hover {
-    -fx-background-color: #ff5c5c;
-    -fx-text-fill: #0f131c;
-}
-
 /* =========================
    GAME OUTPUT (centro)
 ========================= */
