@@ -24,9 +24,6 @@
                            fx:id="tittle"
                            styleClass="hud-title"
                            HBox.hgrow="ALWAYS"/>
-
-                    <Label text="X"
-                           styleClass="hud-close"/>
                 </children>
             </HBox>
         </top>
