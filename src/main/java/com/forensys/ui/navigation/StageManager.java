@@ -68,7 +68,7 @@ public class StageManager implements Observer {
         stage.setScene(history.pop());
     }
 
-    public void applySettings() {
+    private void applySettings() {
         Window window = SettingsParser.getInstance().parse("config").getWindow();
         this.stage.setTitle(window.title());
         this.stage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/" + window.icon())));

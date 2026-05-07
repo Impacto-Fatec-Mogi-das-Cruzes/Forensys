@@ -43,7 +43,7 @@ public class ReadCommand extends TerminalCommand {
                     .text("File not found, please choose a valid file")
                     .exitCode(CommandExitCode.FAILURE);
         } else {
-            context.setTextFile(textFile);
+            context.openFile(textFile);
             outputBuilder
                     .text("Opening file reader " + target)
                     .exitCode(CommandExitCode.SUCCESS);

@@ -68,9 +68,20 @@ public class ApplicationContext implements Subject {
         return textFile;
     }
 
-    public void setTextFile(TextFile textFile) {
+    public void openFile(TextFile textFile) {
+        if (textFile == null) {
+            throw new IllegalStateException("Text file cannot be null when opening a file");
+        }
         this.textFile = textFile;
         notify(ContextOperation.OPEN_FILE.getOperation());
+    }
+
+    public void closeFile() {
+        if (this.textFile == null) {
+            throw new IllegalStateException("File is null, cannot be closed");
+        }
+        this.textFile = null;
+        notify(ContextOperation.CLOSE_FILE.getOperation());
     }
 
     @Override

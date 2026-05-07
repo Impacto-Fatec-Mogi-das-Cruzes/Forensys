@@ -2,7 +2,6 @@ package com.forensys.ui.controller;
 
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.TextFile;
-import com.forensys.ui.navigation.StageManager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -32,7 +31,7 @@ public class ReaderController {
 
         root.setOnKeyReleased(event -> {
             if (event.getCode().toString().equals("Q")) {
-                StageManager.getInstance().restoreScene();
+                ApplicationContext.getInstance().closeFile();
             }
         });
     }
