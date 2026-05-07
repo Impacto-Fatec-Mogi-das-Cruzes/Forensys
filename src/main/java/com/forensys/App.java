@@ -29,6 +29,8 @@ public class App extends Application {
             
             ApplicationContext.getInstance().subscribe(ContextOperation.OPEN_FILE.getOperation(), StageManager.getInstance());
             ApplicationContext.getInstance().subscribe(ContextOperation.CLOSE_FILE.getOperation(), StageManager.getInstance());
+            ApplicationContext.getInstance().subscribe(ContextOperation.OPEN_CONTACT.getOperation(), StageManager.getInstance());
+            ApplicationContext.getInstance().subscribe(ContextOperation.CLOSE_CONTACT.getOperation(), StageManager.getInstance());
             
             registerAllScenes("terminal", "chat", "reader");
             StageManager.getInstance().switchScene("terminal");

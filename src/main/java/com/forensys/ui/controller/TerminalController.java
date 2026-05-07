@@ -4,6 +4,7 @@ import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandRegistry;
 import com.forensys.core.command.TerminalCommand;
+import com.forensys.core.command.concrete.chat.ChatCommand;
 import com.forensys.core.command.concrete.duck.DuckCommand;
 import com.forensys.core.command.concrete.go.GoCommand;
 import com.forensys.core.command.concrete.list.ListCommand;
@@ -37,7 +38,8 @@ public class TerminalController {
             new SayCommand(),
             new GoCommand(),
             new ListCommand(),
-            new ReadCommand()
+            new ReadCommand(),
+            new ChatCommand()
         );
     }
 

@@ -2,7 +2,6 @@ package com.forensys.ui.controller;
 
 import java.io.InputStream;
 
-import com.forensys.core.chat.ChatParser;
 import com.forensys.core.chat.Contact;
 import com.forensys.core.chat.ContactList;
 import com.forensys.core.chat.Participant;
@@ -10,6 +9,7 @@ import com.forensys.core.chat.element.ChatElement;
 import com.forensys.core.chat.element.DateElement;
 import com.forensys.core.chat.element.ImageElement;
 import com.forensys.core.chat.element.MessageElement;
+import com.forensys.core.context.ApplicationContext;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -44,7 +44,7 @@ public class ChatController {
             }
 
             if (event.getCode() == KeyCode.Q) {
-                throw new UnsupportedOperationException("Unimplemented feature quit");
+                ApplicationContext.getInstance().closeContactList();
             }
         });
 
@@ -67,7 +67,7 @@ public class ChatController {
      */
     private void demo2_init_process() {
 
-        ContactList c = ChatParser.getInstance().parse("example");
+        ContactList c = ApplicationContext.getInstance().geContactList();
 
         for (Contact contact : c.getContacts()) {
             contactListView.getItems().add(contact.getTitle());

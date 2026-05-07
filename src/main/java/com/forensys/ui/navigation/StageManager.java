@@ -83,7 +83,11 @@ public class StageManager implements Observer {
         if (operation == ContextOperation.OPEN_FILE.getOperation()) {
             switchScene("reader");
         } else if (operation == ContextOperation.CLOSE_FILE.getOperation()) {
-            stage.setScene(history.pop());
+            restoreScene();
+        } else if (operation == ContextOperation.OPEN_CONTACT.getOperation()) {
+            switchScene("chat");
+        } else if (operation == ContextOperation.CLOSE_CONTACT.getOperation()) {
+            restoreScene();
         }
     }
 
