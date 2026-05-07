@@ -9,5 +9,7 @@ module com.forensys {
     opens com.forensys.core.setting to com.fasterxml.jackson.databind;
     opens com.forensys.core.filestructure to com.fasterxml.jackson.databind;
     opens com.forensys.core.filestructure.concrete to com.fasterxml.jackson.databind;
+    opens com.forensys.core.chat to com.fasterxml.jackson.databind;
+    opens com.forensys.core.chat.element to com.fasterxml.jackson.databind;
     exports com.forensys;
 }

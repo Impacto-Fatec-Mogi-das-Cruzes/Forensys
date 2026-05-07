@@ -31,7 +31,7 @@ public class App extends Application {
             ApplicationContext.getInstance().subscribe(ContextOperation.CLOSE_FILE.getOperation(), StageManager.getInstance());
             
             registerAllScenes("terminal", "chat", "reader");
-            StageManager.getInstance().switchScene("terminal");
+            StageManager.getInstance().switchScene("chat");
         } catch (Exception e) {
             System.err.println(e);
             Platform.exit();

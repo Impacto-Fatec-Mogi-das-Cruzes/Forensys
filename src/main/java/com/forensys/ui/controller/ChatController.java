@@ -1,108 +1,262 @@
 package com.forensys.ui.controller;
 
+import java.io.InputStream;
+
+import com.forensys.core.chat.ChatParser;
+import com.forensys.core.chat.Contact;
+import com.forensys.core.chat.ContactList;
+import com.forensys.core.chat.Participant;
+import com.forensys.core.chat.element.ChatElement;
+import com.forensys.core.chat.element.DateElement;
+import com.forensys.core.chat.element.ImageElement;
+import com.forensys.core.chat.element.MessageElement;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javafx.scene.layout.VBox;
 
 public class ChatController {
-    public class Message {
-        private String text;
-        private boolean isUserMessage;
-
-        public Message(String text, boolean isUserMessage) {
-            this.text = text;
-            this.isUserMessage = isUserMessage;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public boolean isUserMessage() {
-            return isUserMessage;
-        }
-    }
-
     @FXML
     private BorderPane root;
 
     @FXML
-    private ListView<HBox> messagesListView;
+    private ListView<ChatElement> messagesListView;
     @FXML
-    private ListView<String> contactListView;
+    private ListView<String> contactListView; //TODO make it ListView<Contact> and add a cell factory to it
     @FXML
     private Label selectedContactLabel;
 
-    private Map<String, List<Message>> contactMessages = new HashMap<>();
-
     @FXML
     public void initialize() {
-        contactMessages.put("John Doe", Arrays.asList(
-                new Message("Hello, how are you?", false),
-                new Message("I'm good, thanks!", true),
-                new Message("I'm doing well, thanks!", false),
-                new Message("Great to hear!", true)
-        ));
-        contactMessages.put("Jane Smith", Arrays.asList(
-                new Message("Hey there!", false),
-                new Message("What's up?", false),
-                new Message("Hey, not much!", true),
-                new Message("All good!", true)
-        ));
-        contactMessages.put("Alice Johnson", Arrays.asList(
-                new Message("Good morning!", false),
-                new Message("Good morning to you too!", true),
-                new Message("How's your day going?", false),
-                new Message("My day is going great!", true)
-        ));
-
-        contactListView.getItems().addAll(contactMessages.keySet());
-
-        contactListView.getSelectionModel().selectedItemProperty().addListener((obs, oldContact, newContact) -> {
-            if (newContact != null) {
-                selectedContactLabel.setText("Chatting with: " + newContact);
-
-                messagesListView.getItems().clear();
-
-                List<Message> messages = contactMessages.get(newContact);
-
-                for (Message message : messages) {
-                    HBox messageBox = createMessageBox(message.getText(), message.isUserMessage());
-                    messagesListView.getItems().add(messageBox);
-                }
-            }
-        });
-
         root.setOnKeyReleased(event -> {
-            if (event.getCode().toString().equals("Q")) {
+
+            if (event.getCode() == KeyCode.ESCAPE) {
+                messagesListView.getItems().clear();
+                selectedContactLabel.setText("[ CHAT ]");
+                contactListView.getSelectionModel().clearSelection();
+            }
+
+            if (event.getCode() == KeyCode.Q) {
                 throw new UnsupportedOperationException("Unimplemented feature quit");
             }
         });
+
+        demo2_init_process();
     }
 
-    private HBox createMessageBox(String message, boolean isUserMessage) {
-        HBox messageBox = new HBox();
-        Label messageLabel = new Label(message);
-        messageLabel.setWrapText(true);
+    /**
+     * Basic Scheme of this method
+     * get the contact list and add it to the contactListView
+     * defines the cell factory for messageListView, basically, its saying: "when
+     * something updates in here use this process to generate the item in the
+     * ListView"
+     * 
+     * a listener is added to contactListView, so when one contact is selected it
+     * finds the list of elements associated and uses addAll to add it, which causes
+     * an update in messageListView, then causing it to use the cell factory to put
+     * the contents of the element in the correct structure
+     * 
+     * TODO: make into a service process
+     */
+    private void demo2_init_process() {
 
-        if (isUserMessage) {
-            messageBox.setStyle("-fx-alignment: CENTER_RIGHT;");
-            messageLabel.setStyle("-fx-text-fill: #cbd5e1;");
-        } else {
-            messageBox.setStyle("-fx-alignment: CENTER_LEFT;");
-            messageLabel.setStyle("-fx-text-fill: #cbd5e1;");
+        ContactList c = ChatParser.getInstance().parse("example");
+
+        for (Contact contact : c.getContacts()) {
+            contactListView.getItems().add(contact.getTitle());
         }
 
-        messageBox.getChildren().add(messageLabel);
-        HBox.setHgrow(messageLabel, Priority.ALWAYS);
-        return messageBox;
+        messagesListView.setCellFactory(param -> new ListCell<>() {
+
+            @Override
+            protected void updateItem(ChatElement element, boolean empty) {
+
+                super.updateItem(element, empty);
+
+                if (empty || element == null) {
+                    setGraphic(null);
+                    return;
+                }
+
+                VBox elementBox = new VBox();
+
+                String selectedTitle = contactListView.getSelectionModel().getSelectedItem();
+
+                Contact selectedContact = null;
+
+                if (selectedTitle != null) {
+
+                    for (Contact contact : c.getContacts()) {
+
+                        if (selectedTitle.equals(contact.getTitle())) {
+                            selectedContact = contact;
+                            break;
+                        }
+                    }
+                }
+
+                switch (element) {
+
+                    case MessageElement message -> {
+
+                        String color = "#999999";
+                        Label owner = new Label("unknown_user ");
+
+                        if (selectedContact != null) {
+
+                            for (Participant participant : selectedContact.getParticipants()) {
+
+                                if (participant.getId() == message.getParticipant()) {
+
+                                    owner = new Label(
+                                            participant.getName() + " ");
+
+                                    color = participant.getColor();
+                                    break;
+                                }
+                            }
+                        }
+
+                        owner.setStyle(
+                                "-fx-text-fill: " + color + ";" +
+                                        "-fx-font-weight: bold;");
+
+                        Label text = new Label(message.getText());
+
+                        text.setWrapText(true);
+
+                        text.maxWidthProperty().bind(
+                                messagesListView.widthProperty().subtract(60));
+
+                        Label time = new Label(message.getTime());
+
+                        time.setStyle(
+                                "-fx-text-fill: #999999;" +
+                                        "-fx-font-size: " +
+                                        (owner.getFont().getSize() * 0.8) +
+                                        "px;");
+
+                        HBox messageBox = new HBox(owner, time);
+
+                        messageBox.setStyle(
+                                "-fx-alignment: BOTTOM_LEFT;");
+
+                        elementBox.getChildren().addAll(
+                                messageBox,
+                                text);
+                    }
+
+                    case DateElement date -> {
+
+                        Label text = new Label(date.getText());
+
+                        text.setStyle(
+                                "-fx-text-fill: #999999;");
+
+                        elementBox.setStyle(
+                                "-fx-alignment: center;");
+
+                        elementBox.getChildren().add(text);
+                    }
+
+                    case ImageElement image -> {
+
+                        String color = "#999999";
+                        Label owner = new Label("unknown_user:");
+
+                        if (selectedContact != null) {
+
+                            for (Participant participant : selectedContact.getParticipants()) {
+
+                                if (participant.getId() == image.getParticipant()) {
+
+                                    color = participant.getColor();
+
+                                    owner = new Label(
+                                            participant.getName() + ":");
+
+                                    break;
+                                }
+                            }
+                        }
+
+                        owner.setStyle(
+                                "-fx-text-fill: " + color);
+
+                        ImageView imageView = new ImageView();
+
+                        InputStream stream = getClass().getResourceAsStream(
+                                image.getPath());
+
+                        if (stream != null) {
+
+                            imageView.setImage(new Image(stream));
+
+                            imageView.setFitHeight(image.getHeight());
+                            imageView.setFitWidth(image.getWidth());
+                        }
+
+                        Label time = new Label(image.getTime());
+
+                        time.setStyle(
+                                "-fx-text-fill: #999999;" +
+                                        "-fx-font-size: " +
+                                        (owner.getFont().getSize() * 0.8) +
+                                        "px;");
+
+                        elementBox.getChildren().addAll(
+                                owner,
+                                imageView,
+                                time);
+                    }
+
+                    default -> {
+
+                        elementBox.getChildren().add(
+                                new Label("Message not loaded..."));
+                    }
+                }
+
+                setGraphic(elementBox);
+            }
+        });
+
+        contactListView.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, oldContact, newContact) -> {
+
+                    if (newContact == null) {
+                        return;
+                    }
+
+                    selectedContactLabel.setText(
+                            "[ CHAT: " + newContact + " ]");
+
+                    messagesListView.getItems().clear();
+
+                    Contact selectedContact = null;
+
+                    for (Contact contact : c.getContacts()) {
+
+                        if (newContact.equals(contact.getTitle())) {
+                            selectedContact = contact;
+                            break;
+                        }
+                    }
+
+                    if (selectedContact == null) {
+                        return;
+                    }
+
+                    messagesListView.getItems().addAll(
+                            selectedContact.getElements());
+                });
     }
 }
