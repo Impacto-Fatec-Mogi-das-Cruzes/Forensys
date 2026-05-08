@@ -65,6 +65,7 @@
                    styleClass="command-label"/>
 
             <TextField fx:id="inputField"
+                       promptText="Enter a command..."
                        HBox.hgrow="ALWAYS"
                        styleClass="command-input"
                        onAction="#commandEntered"/>
