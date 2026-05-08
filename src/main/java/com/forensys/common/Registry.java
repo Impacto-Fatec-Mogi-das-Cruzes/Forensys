@@ -14,4 +14,8 @@ public abstract class Registry<T> {
     public T get(String key) {
         return registry.get(key);
     }
+
+    public Map<String, T> getAll() {
+        return new HashMap<>(registry);
+    }
 }
