@@ -13,6 +13,7 @@ import com.forensys.core.command.concrete.list.ListCommand;
 import com.forensys.core.command.concrete.read.ReadCommand;
 import com.forensys.core.command.concrete.say.SayCommand;
 import com.forensys.service.CommandHandler;
+import com.forensys.service.RegisterAllCommands;
 import com.forensys.ui.command.CommandParser;
 import com.forensys.ui.command.ParsedCommand;
 
@@ -35,7 +36,7 @@ public class TerminalController {
 
     @FXML
     private void initialize() {
-        registerAllCommands(
+        new RegisterAllCommands(
             new DuckCommand(),
             new SayCommand(),
             new GoCommand(),
@@ -44,15 +45,7 @@ public class TerminalController {
             new ChatCommand(),
             new HelpCommand(),
             new ClearCommand()
-        );
-    }
-
-    //TODO: make it a service
-    private void registerAllCommands(TerminalCommand... commandsToRegister) {
-        CommandRegistry commandRegistry =  CommandRegistry.getInstance();
-        for (TerminalCommand terminalCommand : commandsToRegister) {
-            commandRegistry.register(terminalCommand.getCommandName(), terminalCommand);
-        }
+        ).execute();
     }
 
     @FXML
