@@ -5,6 +5,7 @@ import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandRegistry;
 import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.command.concrete.chat.ChatCommand;
+import com.forensys.core.command.concrete.clear.ClearCommand;
 import com.forensys.core.command.concrete.duck.DuckCommand;
 import com.forensys.core.command.concrete.go.GoCommand;
 import com.forensys.core.command.concrete.help.HelpCommand;
@@ -41,7 +42,8 @@ public class TerminalController {
             new ListCommand(),
             new ReadCommand(),
             new ChatCommand(),
-            new HelpCommand()
+            new HelpCommand(),
+            new ClearCommand()
         );
     }
 
@@ -62,6 +64,10 @@ public class TerminalController {
         ParsedCommand parsedCommand = commandParser.parse(rawInput);
 
         CommandOutput output = CommandHandler.getInstance().handle(parsedCommand);        
+
+        if (output.doesClearScreen()) {
+            outputArea.getChildren().clear();
+        }
         String styleClass = "";
 
         if (output.getExitCode() == CommandExitCode.SUCCESS) {

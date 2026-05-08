@@ -22,7 +22,7 @@ public class CommandOutput {
         return exitCode;
     }
 
-    public boolean isClearScreen() {
+    public boolean doesClearScreen() {
         return clearScreen;
     }
 }
