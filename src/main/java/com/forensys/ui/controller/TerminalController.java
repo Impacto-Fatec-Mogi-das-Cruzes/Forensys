@@ -2,8 +2,6 @@ package com.forensys.ui.controller;
 
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
-import com.forensys.core.command.CommandRegistry;
-import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.command.concrete.chat.ChatCommand;
 import com.forensys.core.command.concrete.clear.ClearCommand;
 import com.forensys.core.command.concrete.duck.DuckCommand;
@@ -46,6 +44,8 @@ public class TerminalController {
             new HelpCommand(),
             new ClearCommand()
         ).execute();
+
+        scrollPane.vvalueProperty().bind(outputArea.heightProperty());
     }
 
     @FXML
@@ -78,7 +78,6 @@ public class TerminalController {
             outputArea.getChildren().add(lineLabel);
         }
         inputField.clear();
-        Platform.runLater(() -> scrollPane.setVvalue(1.0));
     }
 
     @FXML
