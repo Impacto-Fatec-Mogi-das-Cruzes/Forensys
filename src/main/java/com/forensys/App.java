@@ -2,9 +2,9 @@ package com.forensys;
 
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.context.ContextOperation;
+import com.forensys.core.filestructure.FileStructureParser;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.Directory;
-import com.forensys.ui.filestructure.FileStructureParser;
 import com.forensys.ui.navigation.InterfaceParser;
 import com.forensys.ui.navigation.SceneRegistry;
 import com.forensys.ui.navigation.StageManager;

@@ -1,10 +1,9 @@
-package com.forensys.ui.filestructure;
+package com.forensys.core.filestructure;
 
 import java.io.InputStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.forensys.common.parser.ParsingStrategy;
-import com.forensys.core.filestructure.FileSystemEntry;
 
 // File Structure Parsing Strategy
 public class ParsingFileStrucure implements ParsingStrategy<FileSystemEntry> {

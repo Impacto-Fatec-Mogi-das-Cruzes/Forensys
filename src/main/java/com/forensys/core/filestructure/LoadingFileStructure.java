@@ -1,4 +1,4 @@
-package com.forensys.ui.filestructure;
+package com.forensys.core.filestructure;
 
 import java.io.InputStream;
 

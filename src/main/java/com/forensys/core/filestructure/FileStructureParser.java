@@ -1,7 +1,6 @@
-package com.forensys.ui.filestructure;
+package com.forensys.core.filestructure;
 
 import com.forensys.common.parser.Parser;
-import com.forensys.core.filestructure.FileSystemEntry;
 
 public class FileStructureParser extends Parser<FileSystemEntry> {
 
