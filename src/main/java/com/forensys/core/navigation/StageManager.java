@@ -1,4 +1,4 @@
-package com.forensys.ui.navigation;
+package com.forensys.core.navigation;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

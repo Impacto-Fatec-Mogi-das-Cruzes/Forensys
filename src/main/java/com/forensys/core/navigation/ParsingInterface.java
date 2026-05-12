@@ -1,4 +1,4 @@
-package com.forensys.ui.navigation;
+package com.forensys.core.navigation;
 
 import com.forensys.common.parser.ParsingStrategy;
 import javafx.scene.Scene;

@@ -5,9 +5,9 @@ import com.forensys.core.context.ContextOperation;
 import com.forensys.core.filestructure.FileStructureParser;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.Directory;
-import com.forensys.ui.navigation.InterfaceParser;
-import com.forensys.ui.navigation.SceneRegistry;
-import com.forensys.ui.navigation.StageManager;
+import com.forensys.core.navigation.InterfaceParser;
+import com.forensys.core.navigation.SceneRegistry;
+import com.forensys.core.navigation.StageManager;
 
 import javafx.application.Application;
 import javafx.application.Platform;
