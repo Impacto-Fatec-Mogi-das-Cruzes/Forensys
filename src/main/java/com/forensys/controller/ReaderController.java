@@ -1,4 +1,4 @@
-package com.forensys.ui.controller;
+package com.forensys.controller;
 
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.TextFile;

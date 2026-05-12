@@ -1,4 +1,4 @@
-package com.forensys.ui.controller;
+package com.forensys.controller;
 
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
