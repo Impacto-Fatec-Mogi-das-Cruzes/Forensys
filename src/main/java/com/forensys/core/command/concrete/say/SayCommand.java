@@ -1,12 +1,11 @@
 package com.forensys.core.command.concrete.say;
 
-import java.util.List;
-
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.TerminalCommand;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class SayCommand extends TerminalCommand {
 
@@ -15,11 +14,11 @@ public class SayCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
         String phrase = "";
-        for (String arg : args) {
+        for (String arg : args.positionals()) {
             phrase += arg + " ";
         }
         

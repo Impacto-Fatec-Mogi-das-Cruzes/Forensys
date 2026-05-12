@@ -1,7 +1,5 @@
 package com.forensys.core.command.concrete.list;
 
-import java.util.List;
-
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
@@ -10,6 +8,7 @@ import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 // TODO: Apply a decorator pattern to the behaviors of listing with metadata and/or hidden
 public class ListCommand extends TerminalCommand {
@@ -19,7 +18,7 @@ public class ListCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         ApplicationContext context = ApplicationContext.getInstance();
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 

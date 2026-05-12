@@ -1,6 +1,5 @@
 package com.forensys.core.command.concrete.go;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -12,6 +11,7 @@ import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class GoCommand extends TerminalCommand {
 
@@ -21,7 +21,7 @@ public class GoCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         ApplicationContext context = ApplicationContext.getInstance();
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
@@ -29,7 +29,7 @@ public class GoCommand extends TerminalCommand {
             return outputBuilder.build();
         }
 
-        String target = args.get(0);
+        String target = args.positionals().get(0);
 
         if ("back".equals(target)) {
             try {
@@ -65,15 +65,15 @@ public class GoCommand extends TerminalCommand {
         return outputBuilder.build();
     }
 
-    private boolean validateArgs(List<String> args, CommandOutputBuilder outputBuilder) {
-        if (args.isEmpty()) {
+    private boolean validateArgs(ParsedCommandArgs args, CommandOutputBuilder outputBuilder) {
+        if (args.positionals().isEmpty()) {
             outputBuilder
                     .text("No arguments passed, command requires a argument")
                     .exitCode(CommandExitCode.FAILURE);
             return false;
         }
 
-        if (args.size() > 1) {
+        if (args.positionals().size() > 1) {
             outputBuilder
                     .text("Too many arguments passed for command go")
                     .exitCode(CommandExitCode.FAILURE);

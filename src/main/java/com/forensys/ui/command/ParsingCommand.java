@@ -7,16 +7,25 @@ import java.util.List;
 import com.forensys.common.parser.ParsingStrategy;
 
 // Command Parsing Strategy
-public class ParsingCommand implements ParsingStrategy<ParsedCommand>{
+public class ParsingCommand implements ParsingStrategy<ParsedCommand> {
     @Override
     public ParsedCommand parse(String rawInput) {
-        String command;
-        List<String> args = new ArrayList<>(Arrays.asList(rawInput.split("\\s+")));
+        ParsedCommandBuilder commandBuilder = new ParsedCommandBuilder();
 
-        command = args.getFirst();
-        args.remove(command);
+        List<String> tokens = new ArrayList<>(Arrays.asList(rawInput.trim().split("\\s+")));
+        commandBuilder.command(tokens.remove(0));
 
-        return new ParsedCommand(command, args);
+        for (String token : tokens) {
+            if (!token.startsWith("-")) {
+                commandBuilder.argument(token);
+            } else if (token.contains("=")) {
+                commandBuilder.option(token);
+            } else {
+                commandBuilder.flag(token);
+            }
+        }
+
+        return commandBuilder.build();
     }
 
 }

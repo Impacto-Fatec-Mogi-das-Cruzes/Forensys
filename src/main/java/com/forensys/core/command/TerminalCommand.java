@@ -1,6 +1,6 @@
 package com.forensys.core.command;
 
-import java.util.List;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public abstract class TerminalCommand {
 
@@ -23,6 +23,6 @@ public abstract class TerminalCommand {
     }
 
     // TODO: find a clean way to deal with args
-    public abstract CommandOutput run(List<String> args);
+    public abstract CommandOutput run(ParsedCommandArgs args);
 
 }

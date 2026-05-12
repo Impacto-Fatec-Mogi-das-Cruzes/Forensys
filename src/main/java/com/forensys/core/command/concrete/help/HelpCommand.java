@@ -1,13 +1,12 @@
 package com.forensys.core.command.concrete.help;
 
-import java.util.List;
-
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.CommandRegistry;
 import com.forensys.core.command.TerminalCommand;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class HelpCommand extends TerminalCommand {
 
@@ -16,10 +15,10 @@ public class HelpCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
-        if (args.isEmpty()) {
+        if (args.positionals().isEmpty()) {
             outputBuilder.text("Help for commands");
             for (TerminalCommand command : CommandRegistry.getInstance().getAll().values()) {
                 outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getHelpMessage());
@@ -27,7 +26,7 @@ public class HelpCommand extends TerminalCommand {
             outputBuilder.newLine();
             outputBuilder.exitCode(CommandExitCode.SUCCESS);
         } else {
-            TerminalCommand command = CommandRegistry.getInstance().get(args.getFirst());
+            TerminalCommand command = CommandRegistry.getInstance().get(args.positionals().getFirst());
             outputBuilder.text("Command " + command.getCommandName() + " does:");
             outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getDescription());
             outputBuilder.newLine();

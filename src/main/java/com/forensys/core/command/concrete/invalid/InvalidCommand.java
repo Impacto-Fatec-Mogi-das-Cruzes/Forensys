@@ -1,12 +1,11 @@
 package com.forensys.core.command.concrete.invalid;
 
-import java.util.List;
-
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.TerminalCommand;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class InvalidCommand extends TerminalCommand {
 
@@ -15,7 +14,7 @@ public class InvalidCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         
         outputBuilder

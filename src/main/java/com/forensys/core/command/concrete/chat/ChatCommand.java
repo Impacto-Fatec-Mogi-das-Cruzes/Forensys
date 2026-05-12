@@ -1,7 +1,5 @@
 package com.forensys.core.command.concrete.chat;
 
-import java.util.List;
-
 import com.forensys.core.chat.ChatParser;
 import com.forensys.core.chat.ContactList;
 import com.forensys.core.command.CommandExitCode;
@@ -10,6 +8,7 @@ import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.context.ApplicationContext;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class ChatCommand extends TerminalCommand {
 
@@ -18,14 +17,14 @@ public class ChatCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         
-        if (args.isEmpty()) {
+        if (args.positionals().isEmpty()) {
             return outputBuilder.text("No arguments passed to chat command, command requires a argument").exitCode(CommandExitCode.FAILURE).build();
         }
 
-        ContactList contactList = ChatParser.getInstance().parse(args.getFirst());
+        ContactList contactList = ChatParser.getInstance().parse(args.positionals().getFirst());
 
         if (contactList == null) {
             outputBuilder.text("Contact list not found").exitCode(CommandExitCode.FAILURE);

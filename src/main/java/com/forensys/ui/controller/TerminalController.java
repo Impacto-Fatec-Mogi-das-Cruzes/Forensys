@@ -53,9 +53,9 @@ public class TerminalController {
         //TODO: Divide this process in different methods
         String rawInput = inputField.getText().trim();
         if (rawInput.isEmpty()) return;
-        CommandParser commandParser = CommandParser.getInstance();
-        ParsedCommand parsedCommand = commandParser.parse(rawInput);
+        ParsedCommand parsedCommand = CommandParser.getInstance().parse(rawInput);
 
+        
         CommandOutput output = CommandHandler.getInstance().handle(parsedCommand);        
 
         if (output.doesClearScreen()) {
@@ -77,7 +77,8 @@ public class TerminalController {
             lineLabel.setMaxWidth(Double.MAX_VALUE);
             outputArea.getChildren().add(lineLabel);
         }
-        inputField.clear();
+        inputField.clear(); 
+       
     }
 
     @FXML

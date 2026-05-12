@@ -1,6 +1,5 @@
 package com.forensys.core.command.concrete.read;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.forensys.core.command.CommandExitCode;
@@ -11,6 +10,7 @@ import com.forensys.core.command.TerminalCommand;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.FileSystemEntry;
 import com.forensys.core.filestructure.concrete.TextFile;
+import com.forensys.ui.command.ParsedCommandArgs;
 
 public class ReadCommand extends TerminalCommand {
 
@@ -19,18 +19,18 @@ public class ReadCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(List<String> args) {
+    public CommandOutput run(ParsedCommandArgs args) {
         ApplicationContext context = ApplicationContext.getInstance();
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
-        if (args.isEmpty()) {
+        if (args.positionals().isEmpty()) {
             return outputBuilder
                     .text("No arguments passed, command requires a argument")
                     .exitCode(CommandExitCode.FAILURE)
                     .build();
         }
 
-        String target = args.getFirst();
+        String target = args.positionals().getFirst();
 
         Optional<FileSystemEntry> entry = context.getCurrentDirectory()
                 .getChildren()
