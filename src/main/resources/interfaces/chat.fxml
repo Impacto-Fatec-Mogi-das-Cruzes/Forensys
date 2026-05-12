@@ -7,7 +7,7 @@
 <BorderPane stylesheets="@chat.css"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.forensys.ui.controller.ChatController"
+            fx:controller="com.forensys.controller.ChatController"
             styleClass="game-root"
             fx:id="root">
 
