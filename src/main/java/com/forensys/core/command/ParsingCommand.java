@@ -1,4 +1,4 @@
-package com.forensys.ui.command;
+package com.forensys.core.command;
 
 import java.util.ArrayList;
 import java.util.Arrays;

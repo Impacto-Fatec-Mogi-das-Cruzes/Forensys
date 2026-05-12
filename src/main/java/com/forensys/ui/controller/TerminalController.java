@@ -2,6 +2,8 @@ package com.forensys.ui.controller;
 
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
+import com.forensys.core.command.CommandParser;
+import com.forensys.core.command.ParsedCommand;
 import com.forensys.core.command.concrete.chat.ChatCommand;
 import com.forensys.core.command.concrete.clear.ClearCommand;
 import com.forensys.core.command.concrete.duck.DuckCommand;
@@ -12,8 +14,6 @@ import com.forensys.core.command.concrete.read.ReadCommand;
 import com.forensys.core.command.concrete.say.SayCommand;
 import com.forensys.service.CommandHandler;
 import com.forensys.service.RegisterAllCommands;
-import com.forensys.ui.command.CommandParser;
-import com.forensys.ui.command.ParsedCommand;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

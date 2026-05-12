@@ -1,7 +1,5 @@
 package com.forensys.core.command;
 
-import com.forensys.ui.command.ParsedCommandArgs;
-
 public abstract class TerminalCommand {
 
     private final CommandMetadata metadata;
