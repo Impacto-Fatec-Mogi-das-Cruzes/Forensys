@@ -30,9 +30,6 @@ public class TerminalController {
     @FXML
     private ScrollPane scrollPane;
 
-    // @FXML
-    // private VBox outputArea;
-
     @FXML
     private TextField inputField;
 
