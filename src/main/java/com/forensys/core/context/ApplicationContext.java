@@ -107,9 +107,11 @@ public class ApplicationContext implements Subject {
     }
 
     @Override
-    public void subscribe(Operation operation, Observer listener) {
-        List<Observer> observers = eventObservers.get(operation);
-        observers.add(listener);
+    public void subscribe(Observer listener, Operation... operations) {
+        for (Operation operation : operations) {
+            List<Observer> observers = eventObservers.get(operation);
+            observers.add(listener);
+        }
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.forensys.common.observer;
 
 public interface Subject {
     
-    void subscribe(Operation operation, Observer listener);
+    void subscribe(Observer listener, Operation... operation);
 
     void unsubscribe(Operation operation, Observer listener);
 

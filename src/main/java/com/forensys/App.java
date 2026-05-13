@@ -23,14 +23,15 @@ public class App extends Application {
     public void start(Stage stage) {
         try {
             FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
-            
             ApplicationContext.init((Directory) root);
-            StageManager.init(stage);
             
-            ApplicationContext.getInstance().subscribe(ContextOperation.OPEN_FILE.getOperation(), StageManager.getInstance());
-            ApplicationContext.getInstance().subscribe(ContextOperation.CLOSE_FILE.getOperation(), StageManager.getInstance());
-            ApplicationContext.getInstance().subscribe(ContextOperation.OPEN_CONTACT.getOperation(), StageManager.getInstance());
-            ApplicationContext.getInstance().subscribe(ContextOperation.CLOSE_CONTACT.getOperation(), StageManager.getInstance());
+            StageManager.init(stage);
+            ApplicationContext.getInstance().subscribe(StageManager.getInstance(), 
+                ContextOperation.OPEN_FILE.getOperation(), 
+                ContextOperation.CLOSE_FILE.getOperation(), 
+                ContextOperation.OPEN_CONTACT.getOperation(), 
+                ContextOperation.CLOSE_CONTACT.getOperation() 
+            );
             
             registerAllScenes("terminal", "chat", "reader");
             StageManager.getInstance().switchScene("terminal");
