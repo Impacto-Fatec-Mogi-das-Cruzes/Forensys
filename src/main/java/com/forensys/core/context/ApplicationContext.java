@@ -15,11 +15,6 @@ import com.forensys.core.chat.ContactList;
 import com.forensys.core.filestructure.concrete.Directory;
 import com.forensys.core.filestructure.concrete.TextFile;
 
-// TODO: add observer pattern to openTextFile and make scene manager subcriber to make the following flow
-/*
-Controller -> "Do something" -> Service -> "Use this" -> Core -> {may update Context} -> {notify subscribers} -> Scene Manager -> "Change scene to..."
-this flow will be useful for "read" command
-*/
 public class ApplicationContext implements Subject {
 
     private static ApplicationContext instance;
