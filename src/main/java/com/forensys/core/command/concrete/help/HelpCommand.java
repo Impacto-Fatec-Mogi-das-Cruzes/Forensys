@@ -21,15 +21,13 @@ public class HelpCommand extends TerminalCommand {
         if (args.positionals().isEmpty()) {
             outputBuilder.text("Help for commands");
             for (TerminalCommand command : CommandRegistry.getInstance().getAll().values()) {
-                outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getHelpMessage());
+                outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getHelpMessage()).newLine();
             }
-            outputBuilder.newLine();
             outputBuilder.exitCode(CommandExitCode.SUCCESS);
         } else {
             TerminalCommand command = CommandRegistry.getInstance().get(args.positionals().getFirst());
-            outputBuilder.text("Command " + command.getCommandName() + " does:");
-            outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getDescription());
-            outputBuilder.newLine();
+            outputBuilder.text("Command " + command.getCommandName() + " does:").newLine();
+            outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getDescription()).newLine();
         }
 
         return outputBuilder.build();

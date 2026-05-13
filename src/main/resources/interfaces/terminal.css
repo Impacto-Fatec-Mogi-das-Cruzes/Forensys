@@ -64,14 +64,12 @@
 
 .game-output {
     -fx-background-color: #0f131c;
-    -fx-spacing: 0;
     -fx-padding: 12;
 }
 
-/* TEXT OUTPUT */
-.game-output .label {
-    -fx-background-color: transparent;
-    -fx-text-fill: #cbd5e1;
+/* Text nodes inside TextFlow */
+.game-output .text {
+    -fx-fill: #cbd5e1;
     -fx-font-size: 13px;
 }
 
@@ -114,30 +112,64 @@
 /* =========================
    STATUS COLORS (LOG SYSTEM)
 ========================= */
-.system {
-    -fx-text-fill: #cbd5e1 !important;
+.game-output .bold {
+    -fx-font-weight: bold;
+}
+
+.game-output .italic {
+    -fx-font-style: italic;
+}
+
+.game-output .underline {
+    -fx-underline: true;
+}
+
+.game-output .strike {
+    -fx-strikethrough: true;
+}
+
+.game-output .dim {
+    -fx-opacity: 0.6;
+}
+
+.game-output .red {
+    -fx-fill: #ef4444;
+}
+
+.game-output .green {
+    -fx-fill: #22c55e;
+}
+
+.game-output .blue {
+    -fx-fill: #38bdf8;
+}
+
+.game-output .system {
+    -fx-fill: #cbd5e1 !important;
     -fx-font-family: "Consolas";
 }
 
-.success {
-    -fx-text-fill: #22c55e !important;
+.game-output .error {
+    -fx-fill: #ff5c5c !important;
     -fx-font-family: "Consolas";
 }
 
-.error {
-    -fx-text-fill: #ff5c5c !important;
+/*
+.game-output .success {
+    -fx-fill: #22c55e !important;
     -fx-font-family: "Consolas";
 }
 
-.warning {
-    -fx-text-fill: #ffd166 !important;
+
+.game-output .warning {
+    -fx-fill: #ffd166 !important;
     -fx-font-family: "Consolas";
 }
 
-.info {
-    -fx-text-fill: #4cc9f0 !important;
+.game-output .info {
+    -fx-fill: #4cc9f0 !important;
     -fx-font-family: "Consolas";
-}
+} */
 
 /* =========================
    SCROLLBAR (MINIMAL GAME UI)

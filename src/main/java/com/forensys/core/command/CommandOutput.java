@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandOutput {
-    private List<String> segments;
+    private List<OutputSegment> segments;
     private CommandExitCode exitCode;
     private boolean clearScreen;
 
-    protected CommandOutput(List<String> segments, CommandExitCode exitCode, boolean clearScreen) {
-        this.exitCode = exitCode;
+    protected CommandOutput(List<OutputSegment> segments, CommandExitCode exitCode, boolean clearScreen) {
         this.segments = segments;
+        this.exitCode = exitCode;
         this.clearScreen = clearScreen;
     }
 
-    public List<String> getSegments() {
-        return new ArrayList<String>(segments);
+    public List<OutputSegment> getSegments() {
+        return new ArrayList<OutputSegment>(segments);
     }
 
     public CommandExitCode getExitCode() {

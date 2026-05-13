@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane prefWidth="800.0" prefHeight="500.0"
             stylesheets="@terminal.css"
@@ -45,9 +46,9 @@
                         styleClass="game-scroll">
 
                 <content>
-                    <VBox fx:id="outputArea"
-                          styleClass="game-output"
-                          spacing="6"/>
+                    <TextFlow fx:id="outputArea"
+                              styleClass="game-output"
+                    />
                 </content>
 
             </ScrollPane>

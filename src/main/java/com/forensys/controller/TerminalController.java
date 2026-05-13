@@ -3,6 +3,7 @@ package com.forensys.controller;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.CommandParser;
+import com.forensys.core.command.OutputSegment;
 import com.forensys.core.command.ParsedCommand;
 import com.forensys.core.command.concrete.chat.ChatCommand;
 import com.forensys.core.command.concrete.clear.ClearCommand;
@@ -17,17 +18,20 @@ import com.forensys.service.RegisterAllCommands;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 public class TerminalController {
     @FXML
-    private ScrollPane scrollPane;
+    private TextFlow outputArea;
 
     @FXML
-    private VBox outputArea;
+    private ScrollPane scrollPane;
+
+    // @FXML
+    // private VBox outputArea;
 
     @FXML
     private TextField inputField;
@@ -69,14 +73,14 @@ public class TerminalController {
             styleClass = "error";
         }
 
-        Label lineLabel = null;
-        
-        for (String line : output.getSegments()) {
-            lineLabel = new Label(line);
-            lineLabel.getStyleClass().add(styleClass);
-            lineLabel.setMaxWidth(Double.MAX_VALUE);
-            outputArea.getChildren().add(lineLabel);
+        Text textSegment = null;
+
+        for (OutputSegment segment : output.getSegments()) {
+            textSegment = new Text(segment.getText());
+            textSegment.getStyleClass().add(styleClass);
+            outputArea.getChildren().add(textSegment);
         }
+        outputArea.getChildren().add(new Text("\n"));
         inputField.clear(); 
        
     }

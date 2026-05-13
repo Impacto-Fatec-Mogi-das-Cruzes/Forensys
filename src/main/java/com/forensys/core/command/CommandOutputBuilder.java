@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandOutputBuilder {
-    private List<String> segments = new ArrayList<>();
+    private List<OutputSegment> segments = new ArrayList<>();
     private CommandExitCode exitCode = CommandExitCode.SUCCESS;
     private boolean clearScreen = false;
 
     public CommandOutputBuilder text(String text) {
-        segments.add(text);
+        segments.add(new OutputSegment(text));
         return this;
     }
 
     public CommandOutputBuilder newLine() {
-        segments.add("\n");
+        segments.add(new OutputSegment("\n"));
         return this;
     }
 

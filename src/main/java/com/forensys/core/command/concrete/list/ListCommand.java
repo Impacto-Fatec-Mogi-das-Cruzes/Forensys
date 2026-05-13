@@ -22,13 +22,14 @@ public class ListCommand extends TerminalCommand {
         ApplicationContext context = ApplicationContext.getInstance();
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
-        outputBuilder.text("In the current directory you have:");
+        outputBuilder.text("In the current directory you have:").newLine();
         for (FileSystemEntry entry : context.getCurrentDirectory().getChildren()) {
             if (entry instanceof Directory) {
                 outputBuilder.text("\t" + entry.getMetadata().name() + "/");
             } else {
                 outputBuilder.text("\t" + entry.getMetadata().name());
             }
+            outputBuilder.newLine();
         }
 
         return outputBuilder.exitCode(CommandExitCode.SUCCESS).build();
