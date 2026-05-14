@@ -89,7 +89,6 @@ public class ChatController {
                 if (empty || element == null) {
                     setGraphic(null);
                 } else {
-                    System.out.println(titleLabel.getText());
                     titleLabel.setText(element.getTitle());
                     setGraphic(elementBox);
                 }
