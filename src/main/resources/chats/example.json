@@ -1,13 +1,13 @@
 {
+    "currentParticipant": {
+        "name": "Tamato",
+        "color": "#cbd5e1",
+        "id": 0
+    },
     "contacts": [
         {
             "title": "Conversa com Chiozano",
             "participants": [
-                {
-                    "name": "Tamato",
-                    "color": "#cbd5e1",
-                    "id": 0
-                },
                 {
                     "name": "Chiozano",
                     "color": "#2b83ef",
@@ -66,11 +66,6 @@
         {
             "title": "Conversa com Joeo",
             "participants": [
-                {
-                    "name": "Tamato",
-                    "color": "#cbd5e1",
-                    "id": 0
-                },
                 {
                     "name": "Joeo",
                     "color": "#ffd166",
@@ -190,11 +185,6 @@
         {
             "title": "mN4xQ8vB1cL7zK3pW9sR2tY6hU0jI5oA8dF1gH7jK9lP2sZ5xC6vB0nM3qW4e",
             "participants": [
-                {
-                    "name": "xQ7mZpL",
-                    "color": "#cbd5e1",
-                    "id": 0
-                },
                 {
                     "name": "vT9kR2n",
                     "color": "#ffd166",

@@ -117,8 +117,11 @@ public class ChatController {
 
                         String color = "#999999";
                         Label owner = new Label("unknown_user ");
-
-                        if (selectedContact != null) {
+                        
+                        if (message.getParticipant() == 0) {
+                            owner.setText(contactList.getOwner().getName() + " ");
+                            color = contactList.getOwner().getColor();
+                        } else if (selectedContact != null) {
 
                             for (Participant participant : selectedContact.getParticipants()) {
 
@@ -180,7 +183,10 @@ public class ChatController {
                         String color = "#999999";
                         Label owner = new Label("unknown_user:");
 
-                        if (selectedContact != null) {
+                        if (image.getParticipant() == 0) {
+                            owner.setText(contactList.getOwner().getName() + " ");
+                            color = contactList.getOwner().getColor();
+                        } else if (selectedContact != null) {
 
                             for (Participant participant : selectedContact.getParticipants()) {
 
