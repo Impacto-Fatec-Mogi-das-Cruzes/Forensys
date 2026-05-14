@@ -38,8 +38,6 @@ public class StageManager implements Observer {
     private StageManager(Stage stage) {
         this.stage = stage;
         applySettings();
-        stage.show();
-
     }
 
     public Stage getStage() {
@@ -76,6 +74,7 @@ public class StageManager implements Observer {
         this.stage.setResizable(window.resizable());
         this.stage.setHeight(window.height());
         this.stage.setWidth(window.width());
+        this.stage.show();
     }
 
     @Override
