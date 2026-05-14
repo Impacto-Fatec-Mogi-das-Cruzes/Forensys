@@ -71,7 +71,7 @@ public class ChatController {
     private void demo2_init_process() {
 
         ContactList contactList = ApplicationContext.getInstance().geContactList();
-        contactName.setText("[ CONVERSAS DE " + contactList.getOwner().getName() + "]");
+        contactName.setText("[ CONVERSAS: " + contactList.getOwner().getName() + "]");
 
         contactListView.setCellFactory(param -> new ListCell<>() {
 

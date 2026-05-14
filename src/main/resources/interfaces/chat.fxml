@@ -42,7 +42,7 @@
                         </padding>
 
                         <children>
-                            <Label text="[ CONVERSAS DE  ]"
+                            <Label text="[ CONVERSAS: ]"
                                    fx:id="contactName"
                                    styleClass="panel-title"/>
 
