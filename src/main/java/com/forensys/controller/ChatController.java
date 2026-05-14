@@ -29,7 +29,7 @@ public class ChatController {
     @FXML
     private ListView<ChatElement> messagesListView;
     @FXML
-    private ListView<String> contactListView; //TODO make it ListView<Contact> and add a cell factory to it
+    private ListView<Contact> contactListView; //TODO make it ListView<Contact> and add a cell factory to it
     @FXML
     private Label selectedContactLabel;
 
@@ -67,11 +67,33 @@ public class ChatController {
      */
     private void demo2_init_process() {
 
-        ContactList c = ApplicationContext.getInstance().geContactList();
+        ContactList contactList = ApplicationContext.getInstance().geContactList();
 
-        for (Contact contact : c.getContacts()) {
-            contactListView.getItems().add(contact.getTitle());
-        }
+        contactListView.setCellFactory(param -> new ListCell<>() {
+
+            private final HBox elementBox = new HBox();
+            private final Label titleLabel = new Label();
+
+            {
+                elementBox.getChildren().add(titleLabel);
+            }
+
+            @Override
+            protected void updateItem(Contact element, boolean empty) {
+                super.updateItem(element, empty);
+
+                if (empty || element == null) {
+                    setGraphic(null);
+                } else {
+                    System.out.println(titleLabel.getText());
+                    titleLabel.setText(element.getTitle());
+                    setGraphic(elementBox);
+                }
+                super.updateItem(element, empty);
+            }
+        });
+
+        contactListView.getItems().addAll(contactList.getContacts());
 
         messagesListView.setCellFactory(param -> new ListCell<>() {
 
@@ -87,20 +109,7 @@ public class ChatController {
 
                 VBox elementBox = new VBox();
 
-                String selectedTitle = contactListView.getSelectionModel().getSelectedItem();
-
-                Contact selectedContact = null;
-
-                if (selectedTitle != null) {
-
-                    for (Contact contact : c.getContacts()) {
-
-                        if (selectedTitle.equals(contact.getTitle())) {
-                            selectedContact = contact;
-                            break;
-                        }
-                    }
-                }
+                Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
                 switch (element) {
 
@@ -237,19 +246,11 @@ public class ChatController {
                     }
 
                     selectedContactLabel.setText(
-                            "[ CHAT: " + newContact + " ]");
+                            "[ CHAT: " + newContact.getTitle() + " ]");
 
                     messagesListView.getItems().clear();
 
-                    Contact selectedContact = null;
-
-                    for (Contact contact : c.getContacts()) {
-
-                        if (newContact.equals(contact.getTitle())) {
-                            selectedContact = contact;
-                            break;
-                        }
-                    }
+                    Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
                     if (selectedContact == null) {
                         return;
