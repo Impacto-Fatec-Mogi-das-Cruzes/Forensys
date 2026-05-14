@@ -24,6 +24,9 @@ import javafx.scene.layout.VBox;
 
 public class ChatController {
     @FXML
+    private Label contactName;
+
+    @FXML
     private BorderPane root;
 
     @FXML
@@ -68,6 +71,7 @@ public class ChatController {
     private void demo2_init_process() {
 
         ContactList contactList = ApplicationContext.getInstance().geContactList();
+        contactName.setText("[ CONVERSAS DE " + contactList.getOwner().getName() + "]");
 
         contactListView.setCellFactory(param -> new ListCell<>() {
 

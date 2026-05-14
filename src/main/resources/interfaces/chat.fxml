@@ -42,7 +42,8 @@
                         </padding>
 
                         <children>
-                            <Label text="[ CONTATOS ]"
+                            <Label text="[ CONVERSAS DE  ]"
+                                   fx:id="contactName"
                                    styleClass="panel-title"/>
 
                             <ListView fx:id="contactListView"
