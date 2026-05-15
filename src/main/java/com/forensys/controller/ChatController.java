@@ -32,7 +32,7 @@ public class ChatController {
     @FXML
     private ListView<ChatElement> messagesListView;
     @FXML
-    private ListView<Contact> contactListView; //TODO make it ListView<Contact> and add a cell factory to it
+    private ListView<Contact> contactListView;
     @FXML
     private Label selectedContactLabel;
 
