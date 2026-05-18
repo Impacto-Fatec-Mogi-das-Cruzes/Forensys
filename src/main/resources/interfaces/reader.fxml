@@ -11,7 +11,7 @@
 <StackPane stylesheets="@reader.css"
            xmlns="http://javafx.com/javafx/21"
            xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.forensys.controller.ReaderController">
+           fx:controller="com.forensys.ui.controller.ReaderController">
 
     <!-- FRAME EXTERNO -->
     <BorderPane fx:id="root" styleClass="frame">

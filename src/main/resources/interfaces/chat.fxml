@@ -7,7 +7,7 @@
 <BorderPane stylesheets="@chat.css"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.forensys.controller.ChatController"
+            fx:controller="com.forensys.ui.controller.ChatController"
             styleClass="game-root"
             fx:id="root">
 
@@ -42,9 +42,11 @@
                         </padding>
 
                         <children>
-                            <Label text="[ CONVERSAS: ]"
-                                   fx:id="contactName"
-                                   styleClass="panel-title"/>
+                            <HBox styleClass="panel-title">
+                                <Label text="[ CONVERSAS: "/>
+                                <Label fx:id="contactListOwner" />
+                                <Label text=" ]"/>
+                            </HBox>
 
                             <ListView fx:id="contactListView"
                                       VBox.vgrow="ALWAYS"
@@ -59,9 +61,11 @@
                         </padding>
 
                         <children>
-                            <Label fx:id="selectedContactLabel"
-                                   text="[ CHAT ]"
-                                   styleClass="panel-title"/>
+                            <HBox styleClass="panel-title">
+                                <Label text="[ CHAT: "/>
+                                <Label fx:id="selectedContactLabel"/>
+                                <Label text=" ]"/>
+                            </HBox>
 
                             <ListView fx:id="messagesListView"
                                       VBox.vgrow="ALWAYS"

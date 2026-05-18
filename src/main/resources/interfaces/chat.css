@@ -56,11 +56,10 @@
     -fx-border-width: 1px;
 }
 
-.panel-title {
+.panel-title .label {
     -fx-text-fill: #ffd166;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
-    /* -fx-font-family: "Consolas"; */
 }
 
 /* =========================
