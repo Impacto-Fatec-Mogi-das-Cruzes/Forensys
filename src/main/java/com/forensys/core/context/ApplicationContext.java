@@ -6,8 +6,8 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
+import com.forensys.common.exception.InvalidDirectoryMovement;
 import com.forensys.common.observer.Observer;
 import com.forensys.common.observer.Operation;
 import com.forensys.common.observer.Subject;
@@ -56,7 +56,7 @@ public class ApplicationContext implements Subject {
 
     public void restoreDirectory() {
         if (directoryPath.size() <= 1) {
-            throw new NoSuchElementException("Cannot remove element");
+            throw new InvalidDirectoryMovement("No parent directory to go back to");
         }
         directoryPath.pop();
     }

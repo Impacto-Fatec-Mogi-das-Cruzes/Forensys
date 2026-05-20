@@ -1,85 +1,50 @@
 package com.forensys.core.command.concrete.go;
 
-import java.util.NoSuchElementException;
-import java.util.Optional;
-
+import com.forensys.common.command.ExecutionStrategy;
+import com.forensys.common.exception.InvalidArgumentCountException;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
-import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.ParsedCommandArgs;
 import com.forensys.core.command.TerminalCommand;
-import com.forensys.core.context.ApplicationContext;
-import com.forensys.core.filestructure.FileSystemEntry;
-import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.command.concrete.go.strategy.GoBackStrategy;
+import com.forensys.core.command.concrete.go.strategy.GoToStrategy;
 
 public class GoCommand extends TerminalCommand {
 
+    private ExecutionStrategy strategy;
+
     public GoCommand() {
-        super(new CommandMetadata("go", "Changes the current directory",
+        super(
+            new CommandMetadata(
+                "go",
+                "Changes the current directory",
                 "hint: you can use back, if you want to go back"));
     }
 
     @Override
     public CommandOutput run(ParsedCommandArgs args) {
-        ApplicationContext context = ApplicationContext.getInstance();
-        CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
-        if (!validateArgs(args, outputBuilder)) {
-            return outputBuilder.build();
-        }
-
-        String target = args.positionals().get(0);
-
-        if ("back".equals(target)) {
-            try {
-                context.restoreDirectory();
-                outputBuilder
-                        .text("Back to directory " + context.getCurrentDirectory().getMetadata().name())
-                        .exitCode(CommandExitCode.SUCCESS);
-            } catch (NoSuchElementException e) {
-                outputBuilder
-                        .text("No parent directory to go back")
-                        .exitCode(CommandExitCode.FAILURE);
+        try {
+            if (args.flags().isEmpty() && args.options().isEmpty() && args.positionals().isEmpty()) {
+                throw new InvalidArgumentCountException("No flag, option or positional argument passed");
             }
-            return outputBuilder.build();
+        } catch (InvalidArgumentCountException e) {
+            return CommandOutput.builder()
+                    .text(e.getMessage())
+                    .exitCode(CommandExitCode.FAILURE)
+                    .build();
+        } catch (Exception e) {
+            System.err.println(e);
         }
 
-        Optional<FileSystemEntry> entry = context.getCurrentDirectory()
-                .getChildren()
-                .stream()
-                .filter(obj -> obj.getMetadata().name().equals(target))
-                .findFirst();
-
-        if (entry.isEmpty() || !(entry.get() instanceof Directory directory)) {
-            outputBuilder
-                    .text("Directory not found, please choose a valid directory")
-                    .exitCode(CommandExitCode.FAILURE);
+        if (args.flags().contains("b")) {
+            strategy = new GoBackStrategy();
+        } else if (!args.positionals().isEmpty()) {
+            strategy = new GoToStrategy();
         } else {
-            context.setCurrentDirectory(directory);
-            outputBuilder
-                    .text("Current location whas changed to  " + target)
-                    .exitCode(CommandExitCode.SUCCESS);
+
         }
-
-        return outputBuilder.build();
-    }
-
-    private boolean validateArgs(ParsedCommandArgs args, CommandOutputBuilder outputBuilder) {
-        if (args.positionals().isEmpty()) {
-            outputBuilder
-                    .text("No arguments passed, command requires a argument")
-                    .exitCode(CommandExitCode.FAILURE);
-            return false;
-        }
-
-        if (args.positionals().size() > 1) {
-            outputBuilder
-                    .text("Too many arguments passed for command go")
-                    .exitCode(CommandExitCode.FAILURE);
-            return false;
-        }
-
-        return true;
+        return strategy.execute(args);
     }
 }
