@@ -1,13 +1,15 @@
 package com.forensys.core.command;
 
+import com.forensys.common.HexColor;
+
 public final class OutputSegment {
     private final String text;
     private final SegmentStyle[] styles;
-    private final String color; // TODO, build a color structure/class
+    private final HexColor color; // TODO, build a color structure/class
 
     public OutputSegment(String text, String color, SegmentStyle... styles) {
         this.text = text;
-        this.color = color;
+        this.color = HexColor.of(color);
         this.styles = styles;
     }
 
@@ -26,7 +28,7 @@ public final class OutputSegment {
     }
 
     public String getColor() {
-        return color;
+        return color.value();
     }
 
 }
