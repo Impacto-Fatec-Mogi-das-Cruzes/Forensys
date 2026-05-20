@@ -127,3 +127,7 @@
 .scroll-bar .track {
     -fx-background-color: #0f131c;
 }
+
+.corner {
+    -fx-background-color: #0f131c;
+}
