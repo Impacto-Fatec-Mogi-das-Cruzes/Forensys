@@ -8,7 +8,7 @@ public class CommandOutput {
     private CommandExitCode exitCode;
     private boolean clearScreen;
 
-    protected CommandOutput(List<OutputSegment> segments, CommandExitCode exitCode, boolean clearScreen) {
+    public CommandOutput(List<OutputSegment> segments, CommandExitCode exitCode, boolean clearScreen) {
         this.segments = segments;
         this.exitCode = exitCode;
         this.clearScreen = clearScreen;
@@ -24,5 +24,9 @@ public class CommandOutput {
 
     public boolean doesClearScreen() {
         return clearScreen;
+    }
+
+    public static CommandOutputBuilder builder() {
+        return new CommandOutputBuilder();
     }
 }

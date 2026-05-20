@@ -13,6 +13,11 @@ public class CommandOutputBuilder {
         return this;
     }
 
+    public CommandOutputBuilder styledText(String text, String color, SegmentStyle... styles) {
+        segments.add(new OutputSegment(text, color, styles));
+        return this;
+    }
+
     public CommandOutputBuilder newLine() {
         segments.add(new OutputSegment("\n"));
         return this;
