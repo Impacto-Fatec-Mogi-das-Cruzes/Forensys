@@ -13,6 +13,21 @@
   },
   "children": [
     {
+      "type": "image",
+      "metadata": {
+        "name": "image",
+        "password": null,
+        "blocked": false,
+        "hidden": false,
+        "description": null,
+        "size": null,
+        "created": "1999-01-20T08:00:00",
+        "updated": "1999-11-30T17:00:00",
+        "readOnly": true
+      },
+      "path": "devolve.jpg"
+    },
+    {
       "type": "text",
       "metadata": {
         "name": "file",

@@ -30,10 +30,12 @@ public class App extends Application {
                 ContextOperation.OPEN_FILE.getOperation(), 
                 ContextOperation.CLOSE_FILE.getOperation(), 
                 ContextOperation.OPEN_CONTACT.getOperation(), 
-                ContextOperation.CLOSE_CONTACT.getOperation() 
+                ContextOperation.CLOSE_CONTACT.getOperation(),
+                ContextOperation.OPEN_IMAGE.getOperation(),
+                ContextOperation.CLOSE_IMAGE.getOperation() 
             );
             
-            registerAllScenes("terminal", "chat", "reader");
+            registerAllScenes("terminal", "chat", "reader", "viewer");
             StageManager.getInstance().switchScene("terminal");
         } catch (Exception e) {
             System.err.println(e);

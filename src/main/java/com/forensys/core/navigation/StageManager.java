@@ -87,6 +87,10 @@ public class StageManager implements Observer {
             switchScene("chat");
         } else if (operation == ContextOperation.CLOSE_CONTACT.getOperation()) {
             restoreScene();
+        } else if (operation == ContextOperation.OPEN_IMAGE.getOperation()) {
+            switchScene("viewer");
+        } else if (operation == ContextOperation.CLOSE_IMAGE.getOperation()) {
+            restoreScene();
         }
     }
 

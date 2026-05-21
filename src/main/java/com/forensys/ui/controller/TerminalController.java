@@ -13,6 +13,7 @@ import com.forensys.core.command.concrete.help.HelpCommand;
 import com.forensys.core.command.concrete.list.ListCommand;
 import com.forensys.core.command.concrete.read.ReadCommand;
 import com.forensys.core.command.concrete.say.SayCommand;
+import com.forensys.core.command.concrete.view.ViewCommand;
 import com.forensys.service.CommandHandler;
 import com.forensys.service.RegisterAllCommands;
 
@@ -43,7 +44,8 @@ public class TerminalController {
             new ReadCommand(),
             new ChatCommand(),
             new HelpCommand(),
-            new ClearCommand()
+            new ClearCommand(),
+            new ViewCommand()
         ).execute();
 
         scrollPane.vvalueProperty().bind(outputArea.heightProperty());

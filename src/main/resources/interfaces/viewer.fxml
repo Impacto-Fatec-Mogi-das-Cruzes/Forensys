@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.Image?>
+
+<StackPane stylesheets="@viewer.css"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.forensys.ui.controller.ViewController">
+
+    <BorderPane fx:id="root" styleClass="frame">
+
+        <top>
+            <HBox styleClass="top-bar">
+                <children>
+                    <Label text="FILE:// File.txt"
+                           fx:id="tittle"
+                           styleClass="hud-title"
+                           HBox.hgrow="ALWAYS"/>
+                </children>
+            </HBox>
+        </top>
+
+        <center>
+            <VBox styleClass="game-output" fx:id="center" VBox.vgrow="ALWAYS" spacing="0" alignment="CENTER">
+                <padding>
+                    <Insets top="12" right="12" bottom="12" left="12"/>
+                </padding>
+                <children>
+                    <ImageView fx:id="content"
+                            preserveRatio="true"
+                            smooth="true"
+                            VBox.vgrow="ALWAYS"/>
+                </children>
+            </VBox>
+        </center>
+
+
+        <bottom>
+            <HBox styleClass="command-bar">
+                <children>
+                    <Label text="> press Q to quit"
+                           styleClass="command-text"/>
+                </children>
+                <padding>
+                    <Insets top="6" right="10" bottom="10" left="10"/>
+                </padding>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+</StackPane>

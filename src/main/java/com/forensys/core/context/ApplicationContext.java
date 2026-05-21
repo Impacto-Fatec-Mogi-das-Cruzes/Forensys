@@ -13,6 +13,7 @@ import com.forensys.common.observer.Operation;
 import com.forensys.common.observer.Subject;
 import com.forensys.core.chat.ContactList;
 import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
 
 public class ApplicationContext implements Subject {
@@ -23,7 +24,8 @@ public class ApplicationContext implements Subject {
     private Deque<Directory> directoryPath = new ArrayDeque<>();
     private TextFile textFile;
     private ContactList contactList;
-    
+    private ImageFile imageFile;
+
     private ApplicationContext(Directory startDirectory) {
         directoryPath.push(startDirectory);
 
@@ -99,6 +101,26 @@ public class ApplicationContext implements Subject {
         }
         this.contactList = null;
         notify(ContextOperation.CLOSE_CONTACT.getOperation());
+    }
+
+    public ImageFile getImageFile() {
+        return imageFile;
+    }
+
+    public void openImage(ImageFile imageFile) {
+        if (imageFile == null) {
+            throw new IllegalStateException("Contact list cannot be null when opening a contact list");
+        }
+        this.imageFile = imageFile;
+        notify(ContextOperation.OPEN_IMAGE.getOperation());
+    }
+
+    public void closeImage() {
+        if (this.imageFile == null) {
+            throw new IllegalStateException("Image file is null, cannot be closed");
+        }
+        this.imageFile = null;
+        notify(ContextOperation.CLOSE_IMAGE.getOperation());
     }
 
     @Override

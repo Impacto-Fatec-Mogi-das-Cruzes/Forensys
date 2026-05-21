@@ -1,0 +1,150 @@
+/* =========================
+   ROOT / BASE
+========================= */
+
+.root {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-background-color: #0f131c;
+}
+
+/* =========================
+   FRAME (janela principal)
+========================= */
+
+.frame {
+    -fx-background-color: #0f131c;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 2px;
+    -fx-padding: 4px;
+}
+
+/* =========================
+   TOP BAR (HUD)
+========================= */
+
+.top-bar {
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 6px 10px;
+    -fx-alignment: center-left;
+}
+
+.hud-title {
+    -fx-text-fill: #4cc9f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+/* =========================
+   GAME OUTPUT (centro)
+========================= */
+
+.game-output {
+    -fx-background-color: #0f131c;
+}
+
+/* =========================
+   IMAGE VIEW (centro)
+========================= */
+
+.game-output ImageView {
+    -fx-background-color: #0f131c;
+}
+
+
+/* TEXT AREA estilo terminal */
+.terminal-area {
+    -fx-control-inner-background: #0f131c;
+    -fx-text-fill: #cbd5e1;
+    -fx-highlight-fill: #1b263b;
+    -fx-highlight-text-fill: #4cc9f0;
+
+    -fx-background-insets: 0;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+}
+
+/* remove fundo padrão interno */
+.terminal-area .content {
+    -fx-background-color: #0f131c;
+}
+
+/* caret (cursor) */
+.text-area .caret {
+    -fx-background-color: #4cc9f0;
+}
+
+/* foco estilo game */
+.text-area:focused {
+    -fx-border-color: #4cc9f0;
+}
+
+/* =========================
+   SCROLLBAR (padronizado)
+========================= */
+
+.terminal-area .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.terminal-area .scroll-bar .track {
+    -fx-background-color: #0f131c;
+}
+
+.terminal-area .scroll-bar .thumb {
+    -fx-background-color: #2a2f3a;
+    -fx-background-radius: 0;
+}
+
+/* =========================
+   COMMAND BAR (bottom)
+========================= */
+
+.command-bar {
+    -fx-background-color: #141a26;
+    -fx-border-color: #2a2f3a;
+    -fx-border-width: 2px 0 0 0;
+}
+
+.command-text {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+
+.success {
+    -fx-text-fill: #22c55e;
+}
+
+.error {
+    -fx-text-fill: #ff5c5c;
+}
+
+.warning {
+    -fx-text-fill: #ffd166;
+}
+
+/* =========================
+   DETALHES PIXEL CLEAN
+========================= */
+
+/* remove qualquer sombra automática */
+.frame {
+    -fx-effect: null;
+}
+
+/* seleção mais consistente */
+.text-area {
+    -fx-highlight-fill: #1b263b;
+}
+
+/* opcional: leve feedback hover global (bem sutil) */
+.label:hover {
+    -fx-opacity: 0.9;
+}
