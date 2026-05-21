@@ -21,6 +21,6 @@ public abstract class TerminalCommand {
     }
 
     // TODO: find a clean way to deal with args
-    public abstract CommandOutput run(ParsedCommandArgs args);
+    public abstract CommandOutput execute(ParsedCommandArgs args);
 
 }

@@ -14,7 +14,7 @@ public class InvalidCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {
+    public CommandOutput execute(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         
         outputBuilder

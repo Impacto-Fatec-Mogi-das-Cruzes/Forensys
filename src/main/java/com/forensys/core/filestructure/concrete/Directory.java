@@ -14,4 +14,16 @@ public class Directory extends FileSystemEntry {
     public List<FileSystemEntry> getChildren() {
         return new ArrayList<>(children);
     }
+
+    public List<Directory> getDirectories() {
+        List<Directory> directories = new ArrayList<>();
+
+        for (FileSystemEntry child : children) {
+            if (child instanceof Directory directory) {
+                directories.add(directory);
+            }
+        }
+
+        return directories;   
+    }
 }

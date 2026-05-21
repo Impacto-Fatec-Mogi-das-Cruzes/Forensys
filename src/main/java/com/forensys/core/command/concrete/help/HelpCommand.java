@@ -15,7 +15,7 @@ public class HelpCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {
+    public CommandOutput execute(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
         if (args.positionals().isEmpty()) {

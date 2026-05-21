@@ -20,12 +20,14 @@ public class CommandHandler {
     }
 
     public CommandOutput handle(ParsedCommand parsedCommand) {
+        System.out.println(parsedCommand.toString());
+
         CommandRegistry commandRegistry = CommandRegistry.getInstance();
         TerminalCommand terminalCommand = commandRegistry.get(parsedCommand.command());
         if (terminalCommand == null) {
             terminalCommand = new InvalidCommand();
         }
-        return terminalCommand.run(
+        return terminalCommand.execute(
             parsedCommand.arguments()
         );
     }

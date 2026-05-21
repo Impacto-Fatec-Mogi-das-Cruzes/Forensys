@@ -19,7 +19,7 @@ public class ReadCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {
+    public CommandOutput execute(ParsedCommandArgs args) {
         ApplicationContext context = ApplicationContext.getInstance();
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 

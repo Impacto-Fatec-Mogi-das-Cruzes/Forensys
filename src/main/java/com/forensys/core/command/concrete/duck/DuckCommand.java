@@ -14,7 +14,7 @@ public class DuckCommand extends TerminalCommand{
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {        
+    public CommandOutput execute(ParsedCommandArgs args) {        
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         
         for (String arg : args.positionals()) {

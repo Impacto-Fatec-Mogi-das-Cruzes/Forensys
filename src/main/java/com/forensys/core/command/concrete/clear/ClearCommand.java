@@ -14,7 +14,7 @@ public class ClearCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {
+    public CommandOutput execute(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         if (!args.positionals().isEmpty()) {
             return outputBuilder.text("Command clear does not accept arguments").exitCode(CommandExitCode.FAILURE).build();

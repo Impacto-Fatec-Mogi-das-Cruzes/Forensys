@@ -14,7 +14,7 @@ public class SayCommand extends TerminalCommand {
     }
 
     @Override
-    public CommandOutput run(ParsedCommandArgs args) {
+    public CommandOutput execute(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
 
         String phrase = "";
