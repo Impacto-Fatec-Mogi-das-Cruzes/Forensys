@@ -33,7 +33,6 @@ public class ViewController {
     private void initialize() {
 
         ImageFile file = ApplicationContext.getInstance().getImageFile();
-        content.toBack();
 
         if (file != null) {
             Image image = new Image(
