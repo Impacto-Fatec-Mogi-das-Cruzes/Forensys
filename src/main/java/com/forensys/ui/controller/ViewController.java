@@ -31,29 +31,19 @@ public class ViewController {
 
     @FXML
     private void initialize() {
-
         ImageFile file = ApplicationContext.getInstance().getImageFile();
-
-        if (file != null) {
-            Image image = new Image(
-                getClass().getResourceAsStream("/assets/filestructure/" + file.getPath())
-            );
-
-            content.setImage(image);
-            tittle.setText(file.getMetadata().name());
-        } else {
-            content.setImage(null);
-            tittle.setText("No image loaded");
-        }
-
-        content.setPreserveRatio(true);
+        setContents(file);
 
         Platform.runLater(() -> {
             root.requestFocus();
         });
 
-        center.setFocusTraversable(true);
-
+        root.setOnKeyReleased(event -> {
+            if (event.getCode() == KeyCode.Q) {
+                ApplicationContext.getInstance().closeImage();
+            }
+        });
+        
         root.setOnScroll(event -> {
             if (content.getImage() == null) return;
 
@@ -72,44 +62,40 @@ public class ViewController {
             event.consume();
         });
 
-        root.setOnKeyReleased(event -> {
-            if (event.getCode() == KeyCode.Q) {
-                ApplicationContext.getInstance().closeImage();
-            }
-        });
-
         root.setOnKeyPressed(event -> {
             if (content.getImage() == null) return;
 
-            if (event.getCode() == KeyCode.PLUS || event.getCode() == KeyCode.EQUALS) {
-                zoom(ZOOM_FACTOR);
-            }
-
-            if (event.getCode() == KeyCode.MINUS) {
-                zoom(1 / ZOOM_FACTOR);
-            }
-
-            if (event.getCode() == KeyCode.DIGIT0) {
-                resetZoom();
-                resetPosition();
-            }
-
-            if (event.getCode() == KeyCode.UP) {
-                move(0, 25);
-            }
-
-            if (event.getCode() == KeyCode.DOWN) {
-                move(0, -25);
-            }
-
-            if (event.getCode() == KeyCode.RIGHT) {
-                move(-25, 0);
-            }
-
-            if (event.getCode() == KeyCode.LEFT) {
-                move(25, 0);
+            switch (event.getCode()) {
+                case PLUS, EQUALS -> zoom(ZOOM_FACTOR);
+                case MINUS -> zoom(1 / ZOOM_FACTOR);
+                case UP -> move(0, 25);
+                case DOWN -> move(0, -25);
+                case RIGHT -> move(-25, 0);
+                case LEFT -> move(25, 0);
+                case DIGIT0 -> reset();
+                default -> {break;}
             }
         });
+    }
+
+    private void setContents(ImageFile file) {
+        if (file == null) {
+            content.setImage(null);
+            tittle.setText("No image loaded");
+            return;
+        }
+
+        Image image = new Image(getClass().getResourceAsStream("/assets/filestructure/" + file.getPath()));
+        content.setImage(image);
+        tittle.setText(file.getMetadata().name());
+        
+        content.setPreserveRatio(true);
+        center.setFocusTraversable(true);
+    }
+
+    private void reset() {
+        resetZoom();
+        resetPosition();
     }
 
     private void zoom(double factor) {
