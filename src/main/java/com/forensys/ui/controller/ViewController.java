@@ -120,6 +120,8 @@ public class ViewController {
 
         content.setScaleX(scale);
         content.setScaleY(scale);
+
+        clampPosition();
     }
 
     private void resetZoom() {
@@ -131,6 +133,30 @@ public class ViewController {
     private void move(double x, double y) {
         content.setTranslateY(content.getTranslateY() + y);
         content.setTranslateX(content.getTranslateX() + x);
+
+        clampPosition();
+    }
+
+    private void clampPosition() {
+        double imageWidth = content.getBoundsInLocal().getWidth() * scale;
+        double imageHeight = content.getBoundsInLocal().getHeight() * scale;
+
+        double viewWidth = center.getWidth();
+        double viewHeight = center.getHeight();
+
+        double maxOffsetX = Math.max(0, (imageWidth - viewWidth) / 2);
+        double maxOffsetY = Math.max(0, (imageHeight - viewHeight) / 2);
+
+        double currentX = content.getTranslateX();
+        double currentY = content.getTranslateY();
+
+        content.setTranslateX(
+            Math.max(-maxOffsetX, Math.min(maxOffsetX, currentX))
+        );
+
+        content.setTranslateY(
+            Math.max(-maxOffsetY, Math.min(maxOffsetY, currentY))
+        );
     }
 
     private void resetPosition() {
