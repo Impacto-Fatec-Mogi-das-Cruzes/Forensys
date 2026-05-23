@@ -29,6 +29,9 @@ public class ViewController {
     private double scale = 1.0;
     private static final double ZOOM_FACTOR = 1.1;
 
+    private double lastMouseX;
+    private double lastMouseY;
+
     @FXML
     private void initialize() {
         ImageFile file = ApplicationContext.getInstance().getImageFile();
@@ -74,6 +77,26 @@ public class ViewController {
                 case LEFT -> move(25, 0);
                 case DIGIT0 -> reset();
                 default -> {break;}
+            }
+        });
+
+        root.setOnMousePressed(event -> {
+            if (event.isPrimaryButtonDown()) {
+                lastMouseX = event.getSceneX();
+                lastMouseY = event.getSceneY();
+            }
+        });
+
+        root.setOnMouseDragged(event -> {
+            if (event.isPrimaryButtonDown()) {
+
+                double dx = event.getSceneX() - lastMouseX;
+                double dy = event.getSceneY() - lastMouseY;
+
+                move(dx, dy);
+
+                lastMouseX = event.getSceneX();
+                lastMouseY = event.getSceneY();
             }
         });
     }
