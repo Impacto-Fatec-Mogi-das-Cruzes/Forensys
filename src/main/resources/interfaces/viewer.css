@@ -45,14 +45,6 @@
     -fx-background-color: #0f131c;
 }
 
-/* =========================
-   IMAGE VIEW (centro)
-========================= */
-
-.game-output ImageView {
-    -fx-background-color: #0f131c;
-}
-
 /* TEXT AREA estilo terminal */
 .terminal-area {
     -fx-control-inner-background: #0f131c;
