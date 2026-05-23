@@ -10,6 +10,8 @@
 <?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
 
 <StackPane stylesheets="@viewer.css"
            xmlns="http://javafx.com/javafx/21"
@@ -17,7 +19,22 @@
            fx:controller="com.forensys.ui.controller.ViewController">
 
     <BorderPane fx:id="root" styleClass="frame">
-
+        <center>
+            <StackPane styleClass="game-output" fx:id="center" alignment="CENTER">
+                <padding>
+                    <Insets top="12" right="12" bottom="12" left="12"/>
+                </padding>
+                <children>
+                    <ImageView fx:id="content"
+                            preserveRatio="true"
+                            fitWidth="800"
+                            fitHeight="500"
+                            smooth="true"
+                            pickOnBounds="true"/>
+                </children>
+            </StackPane>
+        </center>
+        
         <top>
             <HBox styleClass="top-bar">
                 <children>
@@ -28,21 +45,6 @@
                 </children>
             </HBox>
         </top>
-
-        <center>
-            <VBox styleClass="game-output" fx:id="center" VBox.vgrow="ALWAYS" spacing="0" alignment="CENTER">
-                <padding>
-                    <Insets top="12" right="12" bottom="12" left="12"/>
-                </padding>
-                <children>
-                    <ImageView fx:id="content"
-                            preserveRatio="true"
-                            smooth="true"
-                            VBox.vgrow="ALWAYS"/>
-                </children>
-            </VBox>
-        </center>
-
 
         <bottom>
             <HBox styleClass="command-bar">
