@@ -21,14 +21,9 @@
     <BorderPane fx:id="root" styleClass="frame">
         <center>
             <StackPane styleClass="game-output" fx:id="center" alignment="CENTER">
-                <padding>
-                    <Insets top="12" right="12" bottom="12" left="12"/>
-                </padding>
                 <children>
                     <ImageView fx:id="content"
                             preserveRatio="true"
-                            fitWidth="800"
-                            fitHeight="500"
                             smooth="true"
                             pickOnBounds="true"/>
                 </children>

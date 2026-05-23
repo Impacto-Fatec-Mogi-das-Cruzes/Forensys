@@ -96,19 +96,19 @@ public class ViewController {
             }
 
             if (event.getCode() == KeyCode.UP) {
-                move(0, 50);
+                move(0, 25);
             }
 
             if (event.getCode() == KeyCode.DOWN) {
-                move(0, -50);
+                move(0, -25);
             }
 
             if (event.getCode() == KeyCode.RIGHT) {
-                move(-50, 0);
+                move(-25, 0);
             }
 
             if (event.getCode() == KeyCode.LEFT) {
-                move(50, 0);
+                move(25, 0);
             }
         });
     }
@@ -129,9 +129,8 @@ public class ViewController {
     }
 
     private void move(double x, double y) {
-        double speed = 0.5;
-        content.setTranslateY(content.getTranslateY() + y * speed);
-        content.setTranslateX(content.getTranslateX() + x * speed);
+        content.setTranslateY(content.getTranslateY() + y);
+        content.setTranslateX(content.getTranslateX() + x);
     }
 
     private void resetPosition() {
