@@ -5,6 +5,7 @@ import com.forensys.core.filestructure.concrete.ImageFile;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -97,7 +98,13 @@ public class ViewController {
 
                 lastMouseX = event.getSceneX();
                 lastMouseY = event.getSceneY();
+
+                root.setCursor(Cursor.CLOSED_HAND);
             }
+        });
+
+        root.setOnMouseReleased(event -> {
+            root.setCursor(Cursor.DEFAULT);
         });
     }
 
