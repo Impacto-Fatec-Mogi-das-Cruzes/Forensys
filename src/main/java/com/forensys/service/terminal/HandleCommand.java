@@ -8,14 +8,9 @@ import com.forensys.core.command.concrete.invalid.InvalidCommand;
 
 public class HandleCommand {
     public static CommandOutput execute(ParsedCommand parsedCommand) {
-        System.out.println(parsedCommand.toString());
-
         CommandRegistry commandRegistry = CommandRegistry.getInstance();
         TerminalCommand terminalCommand = commandRegistry.get(parsedCommand.command());
-        if (terminalCommand == null) {
-            terminalCommand = new InvalidCommand();
-        }
-        return terminalCommand.execute(
+        return (terminalCommand != null ? terminalCommand : new InvalidCommand()).execute(
             parsedCommand.arguments()
         );
     }
