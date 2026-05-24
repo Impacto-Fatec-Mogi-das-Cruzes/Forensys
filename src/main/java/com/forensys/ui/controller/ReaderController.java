@@ -21,18 +21,23 @@ public class ReaderController {
     @FXML
     private void initialize() {
         TextFile file = ApplicationContext.getInstance().getTextFile();
-        if (file != null) {
-            content.setText(file.getContent());
-            tittle.setText(file.getMetadata().name() + ".txt");
-        } else {
-            content.setText("Nothing to see here...");
-            tittle.setText("NullPointException");
-        }
+        setContent(file);
 
         root.setOnKeyReleased(event -> {
             if (event.getCode().toString().equals("Q")) {
                 ApplicationContext.getInstance().closeFile();
             }
         });
+    }
+
+    private void setContent(TextFile file) {
+        if (file == null) {
+            content.setText("Nothing to see here...");
+            tittle.setText("NullPointException");
+            return;
+        }
+        content.setText(file.getContent());
+        tittle.setText(file.getMetadata().name() + ".txt");
+
     }
 }
