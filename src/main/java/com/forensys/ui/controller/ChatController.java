@@ -1,14 +1,16 @@
 package com.forensys.ui.controller;
 
-import com.forensys.common.HexColor;
 import com.forensys.core.chat.Contact;
 import com.forensys.core.chat.ContactList;
-import com.forensys.core.chat.Participant;
 import com.forensys.core.chat.element.ChatElement;
 import com.forensys.core.chat.element.DateElement;
 import com.forensys.core.chat.element.ImageElement;
 import com.forensys.core.chat.element.MessageElement;
-import com.forensys.core.context.ApplicationContext;
+import com.forensys.service.chat.CloseContactList;
+import com.forensys.service.chat.GetContactList;
+import com.forensys.service.chat.GetContactListOwnerName;
+import com.forensys.service.chat.GetParticipantColor;
+import com.forensys.service.chat.GetParticipantName;
 import com.forensys.ui.components.ContactComponent;
 import com.forensys.ui.components.DateComponent;
 import com.forensys.ui.components.ImageComponent;
@@ -23,6 +25,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 
 public class ChatController {
+    private ContactList contactList;
 
     @FXML
     private Label contactListOwner;
@@ -39,7 +42,6 @@ public class ChatController {
     @FXML
     private ListView<Contact> contactListView;
 
-    //TODO: make it into a service
     @FXML
     public void initialize() {
         root.setOnKeyReleased(event -> {
@@ -50,31 +52,30 @@ public class ChatController {
                     contactListView.getSelectionModel().clearSelection();
                 }
 
-                case KeyCode.Q -> {
-                    ApplicationContext.getInstance().closeContactList();
-                }
-
+                case KeyCode.Q -> {CloseContactList.execute();}
+                
                 default -> {
                     break;
                 }
             }
         });
 
-        ContactList contactList = ApplicationContext.getInstance().geContactList();
-        contactListOwner.setText(contactList.getOwner().getName());
+        contactList = GetContactList.execute();
 
-        contactListView.setCellFactory(param -> contactCellFactoty());
+        contactListOwner.setText(GetContactListOwnerName.execute(contactList));
+
+        contactListView.setCellFactory(param -> contactCellFactory());
 
         contactListView.getItems().addAll(contactList.getContacts());
 
-        messagesListView.setCellFactory(param -> messageCellFactory(contactList));
+        messagesListView.setCellFactory(param -> messageCellFactory());
 
         contactListView.getSelectionModel()
                 .selectedItemProperty()
                 .addListener(createContactSelectionListener());
     }
 
-    private ListCell<Contact> contactCellFactoty() {
+    private ListCell<Contact> contactCellFactory() {
         return new ListCell<>() {
 
             private final ContactComponent contactComponent = new ContactComponent();
@@ -85,15 +86,18 @@ public class ChatController {
 
                 if (empty || element == null) {
                     setGraphic(null);
-                } else {
-                    contactComponent.setContent(element.getTitle());
-                    setGraphic(contactComponent);
+                    return;
                 }
+
+                contactComponent.setContent(
+                        element.getTitle());
+
+                setGraphic(contactComponent);
             }
         };
     }
 
-    private ListCell<ChatElement> messageCellFactory(ContactList contactList) {
+    private ListCell<ChatElement> messageCellFactory() {
         return new ListCell<>() {
 
             private final MessageComponent messageComponent = new MessageComponent();
@@ -122,52 +126,59 @@ public class ChatController {
             }
 
             private MessageComponent updateMessage(MessageElement message) {
+
                 Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
-                String ownerName = "unknown_user";
-                String color = HexColor.of("#999999").value();
+                String ownerName = GetParticipantName.execute(
+                        contactList,
+                        selectedContact,
+                        message.getParticipant());
 
-                if (message.getParticipant() == 0) {
-                    ownerName = contactList.getOwner().getName();
-                    color = contactList.getOwner().getColor();
-                } else if (selectedContact != null) {
-                    for (Participant participant : selectedContact.getParticipants()) {
-                        if (participant.getId() == message.getParticipant()) {
-                            ownerName = participant.getName();
-                            color = participant.getColor();
-                            break;
-                        }
-                    }
-                }
-                messageComponent.setContent(ownerName, color, message.getText(), message.getTime());
+                String color = GetParticipantColor.execute(
+                        contactList,
+                        selectedContact,
+                        message.getParticipant());
+
+                messageComponent.setContent(
+                        ownerName,
+                        color,
+                        message.getText(),
+                        message.getTime());
+
                 return messageComponent;
             }
 
             private DateComponent updateDate(DateElement date) {
-                dateComponent.setContent(date.getText());
+
+                dateComponent.setContent(
+                        date.getText());
+
                 return dateComponent;
             }
 
             private ImageComponent updateImage(ImageElement image) {
-                Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
-                String ownerName = "unknown_user:";
-                String color = HexColor.of("#999999").value();
+                Contact selectedContact = contactListView.getSelectionModel()
+                        .getSelectedItem();
 
-                if (image.getParticipant() == 0) {
-                    ownerName = contactList.getOwner().getName();
-                    color = contactList.getOwner().getColor();
-                } else if (selectedContact != null) {
-                    for (Participant participant : selectedContact.getParticipants()) {
-                        if (participant.getId() == image.getParticipant()) {
-                            ownerName = participant.getName();
-                            color = participant.getColor();
-                            break;
-                        }
-                    }
-                }
+                String ownerName = GetParticipantName.execute(
+                        contactList,
+                        selectedContact,
+                        image.getParticipant());
 
-                imageComponent.setContent(ownerName, color, image.getTime(), image.getPath(), image.getHeight(), image.getWidth());
+                String color = GetParticipantColor.execute(
+                        contactList,
+                        selectedContact,
+                        image.getParticipant());
+
+                imageComponent.setContent(
+                        ownerName,
+                        color,
+                        image.getTime(),
+                        image.getPath(),
+                        image.getHeight(),
+                        image.getWidth());
+
                 return imageComponent;
             }
         };
@@ -180,11 +191,13 @@ public class ChatController {
                 return;
             }
 
-            selectedContactLabel.setText(newContact.getTitle());
+            selectedContactLabel.setText(
+                    newContact.getTitle());
 
             messagesListView.getItems().clear();
 
-            Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
+            Contact selectedContact = contactListView.getSelectionModel()
+                    .getSelectedItem();
 
             if (selectedContact == null) {
                 return;
