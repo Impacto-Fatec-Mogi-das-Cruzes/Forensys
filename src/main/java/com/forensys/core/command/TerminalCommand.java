@@ -20,7 +20,6 @@ public abstract class TerminalCommand {
         return this.metadata.description();
     }
 
-    // TODO: find a clean way to deal with args
     public abstract CommandOutput execute(ParsedCommandArgs args);
 
 }
