@@ -1,7 +1,8 @@
 package com.forensys.ui.controller;
 
-import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.TextFile;
+import com.forensys.service.reader.CloseTextFile;
+import com.forensys.service.reader.GetTextFile;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -20,12 +21,12 @@ public class ReaderController {
 
     @FXML
     private void initialize() {
-        TextFile file = ApplicationContext.getInstance().getTextFile();
+        TextFile file = GetTextFile.execute();
         setContent(file);
 
         root.setOnKeyReleased(event -> {
             if (event.getCode().toString().equals("Q")) {
-                ApplicationContext.getInstance().closeFile();
+                CloseTextFile.execute();
             }
         });
     }
