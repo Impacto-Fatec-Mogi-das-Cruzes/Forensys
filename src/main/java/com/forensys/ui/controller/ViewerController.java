@@ -1,7 +1,7 @@
 package com.forensys.ui.controller;
 
-import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.ImageFile;
+import com.forensys.service.viewer.CloseImageFile;
 import com.forensys.service.viewer.GetImageFile;
 import com.forensys.service.viewer.LoadImage;
 
@@ -46,7 +46,7 @@ public class ViewerController {
 
         root.setOnKeyReleased(event -> {
             if (event.getCode() == KeyCode.Q) {
-                ApplicationContext.getInstance().closeImage();
+                CloseImageFile.execute();
             }
         });
         
