@@ -5,7 +5,7 @@ import com.forensys.common.HexColor;
 public final class OutputSegment {
     private final String text;
     private final SegmentStyle[] styles;
-    private final HexColor color; // TODO, build a color structure/class
+    private final HexColor color;
 
     public OutputSegment(String text, String color, SegmentStyle... styles) {
         this.text = text;
