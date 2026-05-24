@@ -2,6 +2,8 @@ package com.forensys.ui.controller;
 
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.ImageFile;
+import com.forensys.service.viewer.GetImageFile;
+import com.forensys.service.viewer.LoadImage;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -35,7 +37,7 @@ public class ViewerController {
 
     @FXML
     private void initialize() {
-        ImageFile file = ApplicationContext.getInstance().getImageFile();
+        ImageFile file = GetImageFile.execute();
         setContents(file);
 
         Platform.runLater(() -> {
@@ -115,7 +117,7 @@ public class ViewerController {
             return;
         }
 
-        Image image = new Image(getClass().getResourceAsStream("/assets/filestructure/" + file.getPath()));
+        Image image = LoadImage.execute(file.getPath());
         content.setImage(image);
         tittle.setText(file.getMetadata().name());
         
