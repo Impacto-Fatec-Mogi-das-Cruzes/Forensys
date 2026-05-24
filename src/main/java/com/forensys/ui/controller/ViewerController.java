@@ -13,7 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 
-public class ViewController {
+public class ViewerController {
 
     @FXML
     private StackPane center;

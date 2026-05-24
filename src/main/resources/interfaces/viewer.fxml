@@ -16,7 +16,7 @@
 <StackPane stylesheets="@viewer.css"
            xmlns="http://javafx.com/javafx/21"
            xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.forensys.ui.controller.ViewController">
+           fx:controller="com.forensys.ui.controller.ViewerController">
 
     <BorderPane fx:id="root" styleClass="frame">
         <center>
