@@ -38,7 +38,7 @@ public class ViewerController {
     @FXML
     private void initialize() {
         ImageFile file = GetImageFile.execute();
-        setContents(file);
+        setContent(file);
 
         Platform.runLater(() -> {
             root.requestFocus();
@@ -110,7 +110,7 @@ public class ViewerController {
         });
     }
 
-    private void setContents(ImageFile file) {
+    private void setContent(ImageFile file) {
         if (file == null) {
             content.setImage(null);
             tittle.setText("No image loaded");
