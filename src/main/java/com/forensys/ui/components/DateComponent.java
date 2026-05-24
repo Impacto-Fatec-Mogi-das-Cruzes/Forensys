@@ -8,18 +8,12 @@ public class DateComponent extends VBox {
 
     public DateComponent() {
         this.getChildren().add(dateLabel);
+        
+        this.getStyleClass().add("date-component");
+        dateLabel.getStyleClass().add("date-label");
     }
 
     public void setContent(String date) {
-        
         dateLabel.setText(date);
-
-        dateLabel.setStyle(
-            "-fx-text-fill: #999999;"
-        );
-
-        this.setStyle(
-                "-fx-alignment: center;"
-        );
     }
 }

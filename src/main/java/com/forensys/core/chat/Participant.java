@@ -1,8 +1,10 @@
 package com.forensys.core.chat;
 
+import com.forensys.common.HexColor;
+
 public class Participant {
     private String name;
-    private String color;
+    private HexColor color;
     private int id;
 
     public String getName() {
@@ -10,7 +12,7 @@ public class Participant {
     }
 
     public String getColor() {
-        return color;
+        return color.value();
     }
     
     public int getId() {

@@ -1,5 +1,6 @@
 package com.forensys.ui.controller;
 
+import com.forensys.common.HexColor;
 import com.forensys.core.chat.Contact;
 import com.forensys.core.chat.ContactList;
 import com.forensys.core.chat.Participant;
@@ -124,7 +125,7 @@ public class ChatController {
                 Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
                 String ownerName = "unknown_user";
-                String color = "#999999";
+                String color = HexColor.of("#999999").value();
 
                 if (message.getParticipant() == 0) {
                     ownerName = contactList.getOwner().getName();
@@ -151,7 +152,7 @@ public class ChatController {
                 Contact selectedContact = contactListView.getSelectionModel().getSelectedItem();
 
                 String ownerName = "unknown_user:";
-                String color = "#999999";
+                String color = HexColor.of("#999999").value();
 
                 if (image.getParticipant() == 0) {
                     ownerName = contactList.getOwner().getName();

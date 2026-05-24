@@ -4,6 +4,9 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public final class HexColor {
 
     private static final Pattern HEX_PATTERN =
@@ -12,14 +15,16 @@ public final class HexColor {
     private final String value;
 
     private HexColor(String value) {
+        validate(value);
         this.value = normalize(value);
     }
 
+    @JsonCreator
     public static HexColor of(String value) {
-        validate(value);
         return new HexColor(value);
     }
-
+    
+    @JsonValue
     public String value() {
         return value;
     }

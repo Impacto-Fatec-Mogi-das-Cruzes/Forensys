@@ -79,7 +79,6 @@
 .list-cell {
     -fx-background-color: transparent;
     -fx-text-fill: #cbd5e1;
-    -fx-padding: 6px;
     /* -fx-font-family: "Consolas"; */
 }
 
@@ -130,4 +129,64 @@
 
 .corner {
     -fx-background-color: #0f131c;
+}
+
+/* =========================
+   DATE COMPONENT
+========================= */
+
+.date-component {
+    -fx-alignment: center;
+}
+
+.date-label {
+    -fx-text-fill: #999999;
+    -fx-font-family: "Consolas";
+}
+
+/* =========================
+   IMAGE COMPONENT
+========================= */
+
+.image-component {
+    -fx-spacing: 4px;
+}
+
+.image-owner {
+    -fx-font-weight: bold;
+}
+
+.image-view {
+    /* optional */
+}
+
+.image-time {
+    -fx-text-fill: #999999;
+    -fx-font-size: 10px;
+}
+
+/* =========================
+   MESSAGE COMPONENT
+========================= */
+
+.message-component {
+    -fx-spacing: 2px;
+}
+
+.message-header {
+    -fx-alignment: bottom-left;
+    -fx-spacing: 5px;
+}
+
+.message-owner {
+    -fx-font-weight: bold;
+}
+
+.message-text {
+    -fx-text-fill: #cbd5e1;
+}
+
+.message-time {
+    -fx-text-fill: #999999;
+    -fx-font-size: 10px;
 }

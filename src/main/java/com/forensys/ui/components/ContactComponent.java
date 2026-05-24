@@ -12,6 +12,6 @@ public class ContactComponent extends HBox {
 
     public void setContent(String tittle) {
         titleLabel.setText(tittle);
-        titleLabel.setStyle("-fx-text-fill: #cbd5e1;");
+        titleLabel.getStyleClass().add("list-cell");
     }
 }
