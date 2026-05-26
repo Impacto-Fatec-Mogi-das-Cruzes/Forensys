@@ -54,10 +54,11 @@ public class GoCommand extends TerminalCommand {
             ApplicationContext.getInstance().setExecutionContext(state);
         }
 
+        CommandOutput output = null;
         while (state.getCurrentIndex() < state.getTargets().length) {
             String target = state.getTargets()[state.getCurrentIndex()];
             GoStrategy strategy = resolver.resolve(target);
-            CommandOutput output = strategy.execute();
+            output = strategy.execute();
 
             if (output.getExitCode() == CommandExitCode.PAUSE) {
                 return output;
@@ -76,6 +77,6 @@ public class GoCommand extends TerminalCommand {
         applicationContext.clearPendingExecution();
         //TODO: find a better return instead of returning null, maybe add the current output to execution context. Just make a way so the last execution does not overwrites the output in from the previous ones, 
         //NOTE: also cannot just declare output out of the scope of the loop, because it initializes in null and that overwrites the previous output from pending execution
-        return null;
+        return output;
     }
 }
