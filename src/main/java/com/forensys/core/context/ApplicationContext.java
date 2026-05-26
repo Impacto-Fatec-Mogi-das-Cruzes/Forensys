@@ -6,12 +6,14 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 import com.forensys.common.exception.InvalidDirectoryMovement;
 import com.forensys.common.observer.Observer;
 import com.forensys.common.observer.Operation;
 import com.forensys.common.observer.Subject;
 import com.forensys.core.chat.ContactList;
+import com.forensys.core.command.CommandOutput;
 import com.forensys.core.filestructure.concrete.Directory;
 import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
@@ -25,6 +27,10 @@ public class ApplicationContext implements Subject {
     private TextFile textFile;
     private ContactList contactList;
     private ImageFile imageFile;
+
+    private PendingExecution pendingExecution;
+    private ExecutionContext executionContext;
+    private PendingOperation pendingOperation;
 
     private ApplicationContext(Directory startDirectory) {
         directoryPath.push(startDirectory);
@@ -121,6 +127,42 @@ public class ApplicationContext implements Subject {
         }
         this.imageFile = null;
         notify(ContextOperation.CLOSE_IMAGE.getOperation());
+    }
+
+    public void setPendingExecution(Supplier<CommandOutput> pendingExecution) {
+        this.pendingExecution = new PendingExecution(pendingExecution);
+    }
+
+    public PendingExecution getPendingExecution() {
+        return this.pendingExecution;
+    }
+
+    public void clearPendingExecution() {
+        this.pendingExecution = null;
+    }
+
+    public ExecutionContext getExecutionContext() {
+        return executionContext;
+    }
+
+    public void setExecutionContext(ExecutionContext executionContext) {
+        this.executionContext = executionContext;
+    }
+
+    public void clearExecutionContext() {
+        this.executionContext = null;
+    }
+
+    public PendingOperation getPendingOperation() {
+        return pendingOperation;
+    }
+    
+    public void setPendingOperation(PendingOperation pendingOperation) {
+        this.pendingOperation = pendingOperation;
+    }
+
+    public void clearPendingOperation() {
+        this.pendingOperation = null;
     }
 
     @Override

@@ -19,12 +19,14 @@ public class HandleOutput {
         if (output.doesClearScreen()) {
             container.getChildren().clear();
         }
-        String styleClass = "";
+        String styleClass = "default";
 
         if (output.getExitCode() == CommandExitCode.SUCCESS) {
-            styleClass = "system";
+            styleClass = "default";
         } else if (output.getExitCode() == CommandExitCode.FAILURE) {
-            styleClass = "error";
+            styleClass = "red";
+        } else if (output.getExitCode() == CommandExitCode.PAUSE) {
+            styleClass = "blue";
         }
 
         Text textSegment = null;

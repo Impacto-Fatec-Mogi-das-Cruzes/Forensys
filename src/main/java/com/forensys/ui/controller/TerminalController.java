@@ -1,9 +1,14 @@
 package com.forensys.ui.controller;
 
+import java.util.Optional;
+
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommand;
+import com.forensys.service.terminal.ContinueExecution;
+import com.forensys.service.terminal.GetPendingOperation;
 import com.forensys.service.terminal.HandleCommand;
 import com.forensys.service.terminal.HandleOutput;
+import com.forensys.service.terminal.HandlePendingOperation;
 import com.forensys.service.terminal.ParseCommand;
 import com.forensys.service.terminal.RegisterAllCommands;
 
@@ -35,8 +40,15 @@ public class TerminalController {
         String rawInput = inputField.getText().trim();
         if (rawInput.isEmpty()) return;
 
-        ParsedCommand parsedCommand = ParseCommand.execute(rawInput);
-        CommandOutput output = HandleCommand.execute(parsedCommand);
+        CommandOutput output = null;
+
+        if (GetPendingOperation.execute() != null) {
+            output = HandlePendingOperation.execute(rawInput);
+            output = Optional.ofNullable(ContinueExecution.execute()).orElse(output);
+        } else {
+            ParsedCommand parsedCommand = ParseCommand.execute(rawInput);
+            output = HandleCommand.execute(parsedCommand);
+        }
 
         HandleOutput.init(outputArea);
         HandleOutput.execute(output);

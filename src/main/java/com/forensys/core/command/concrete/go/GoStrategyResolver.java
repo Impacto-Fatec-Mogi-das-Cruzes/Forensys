@@ -1,25 +1,21 @@
 package com.forensys.core.command.concrete.go;
 
-import com.forensys.common.command.ExecutionStrategy;
-import com.forensys.common.command.StrategyResolver;
-import com.forensys.core.command.ParsedCommandArgs;
-import com.forensys.core.command.concrete.go.strategy.GoToStrategy;
+import com.forensys.core.command.concrete.go.strategy.GoParentStrategy;
+import com.forensys.core.command.concrete.go.strategy.GoRootStrategy;
+import com.forensys.core.command.concrete.go.strategy.GoStrategy;
+import com.forensys.core.command.concrete.go.strategy.GoDirectory.GoDirectoryStrategy;
 
-public class GoStrategyResolver implements StrategyResolver {
+public class GoStrategyResolver {
+    public GoStrategy resolve(String target) {
 
-    @Override
-    public ExecutionStrategy resolve(ParsedCommandArgs args) {
+        if (target.equals("$root")) {
+            return new GoRootStrategy();
+        }
 
-        // String target = args.positionals().getFirst();
+        if (target.equals("$parent")) {
+            return new GoParentStrategy();
+        }
 
-        // if (target.equals("$root")) {
-        //     return new GoRootStrategy();
-        // }
-
-        // if (target.equals("$parent")) {
-        //     return new GoBackStrategy();   
-        // }
-        
-        return new GoToStrategy();
+        return new GoDirectoryStrategy(target);
     }
 }

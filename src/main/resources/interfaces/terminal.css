@@ -144,32 +144,9 @@
     -fx-fill: #38bdf8;
 }
 
-.game-output .system {
-    -fx-fill: #cbd5e1 !important;
-    -fx-font-family: "Consolas";
+.game-output .default {
+    -fx-fill: #cbd5e1;
 }
-
-.game-output .error {
-    -fx-fill: #ff5c5c !important;
-    -fx-font-family: "Consolas";
-}
-
-/*
-.game-output .success {
-    -fx-fill: #22c55e !important;
-    -fx-font-family: "Consolas";
-}
-
-
-.game-output .warning {
-    -fx-fill: #ffd166 !important;
-    -fx-font-family: "Consolas";
-}
-
-.game-output .info {
-    -fx-fill: #4cc9f0 !important;
-    -fx-font-family: "Consolas";
-} */
 
 /* =========================
    SCROLLBAR (MINIMAL GAME UI)

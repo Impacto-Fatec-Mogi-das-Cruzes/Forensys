@@ -46,8 +46,8 @@
       "type": "directory",
       "metadata": {
         "name": "SYS",
-        "password": null,
-        "blocked": false,
+        "password": "123",
+        "blocked": true,
         "hidden": false,
         "description": null,
         "size": null,
@@ -60,8 +60,8 @@
           "type": "directory",
           "metadata": {
             "name": "bin",
-            "password": null,
-            "blocked": false,
+            "password": "456",
+            "blocked": true,
             "hidden": false,
             "description": null,
             "size": null,
