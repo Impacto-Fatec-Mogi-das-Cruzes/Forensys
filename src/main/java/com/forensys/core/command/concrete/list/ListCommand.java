@@ -65,7 +65,7 @@ public class ListCommand extends TerminalCommand {
                 }
             }));
             return CommandOutput.builder()
-                .styledText("There are" + entries.size() + "items in this directory.", "#38bdf8").newLine()
+                .styledText("There are " + entries.size() + " items in this directory.", "#38bdf8").newLine()
                 .styledText("Do you really want to print all? [y/n]", "#38bdf8")
                 .exitCode(CommandExitCode.PAUSE)
                 .build();
