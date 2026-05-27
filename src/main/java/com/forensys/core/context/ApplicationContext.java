@@ -129,6 +129,12 @@ public class ApplicationContext implements Subject {
         notify(ContextOperation.CLOSE_IMAGE.getOperation());
     }
 
+    public void clearAllExecution() {
+        this.pendingExecution = null;
+        this.executionContext = null;
+        this.pendingOperation = null;
+    }
+
     public void setPendingExecution(Supplier<CommandOutput> pendingExecution) {
         this.pendingExecution = new PendingExecution(pendingExecution);
     }

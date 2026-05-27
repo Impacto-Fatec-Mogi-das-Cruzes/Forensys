@@ -11,6 +11,7 @@ import com.forensys.core.filestructure.concrete.UnknownFile;
     use = JsonTypeInfo.Id.NAME, 
     include = JsonTypeInfo.As.PROPERTY, 
     property = "type",
+    visible = true,
     defaultImpl = UnknownFile.class
 )
 @JsonSubTypes({
@@ -20,10 +21,15 @@ import com.forensys.core.filestructure.concrete.UnknownFile;
 })
 public abstract class FileSystemEntry {
 
+    private String type;
+
     private FileMetadata metadata;
 
     public FileMetadata getMetadata() {
         return metadata;
     }
 
+    public String getType() {
+        return type;
+    }
 }

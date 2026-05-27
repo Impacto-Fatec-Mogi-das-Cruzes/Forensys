@@ -18,7 +18,7 @@
         "name": "image",
         "password": null,
         "blocked": false,
-        "hidden": false,
+        "hidden": true,
         "description": null,
         "size": null,
         "created": "1999-01-20T08:00:00",
