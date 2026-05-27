@@ -3,7 +3,7 @@ package com.forensys.core.command.concrete.go;
 import com.forensys.core.context.ExecutionContext;
 
 public class GoExecutionContext implements ExecutionContext {
-    private String[] targets;
+    private final String[] targets;
     private int currentIndex;
     // private CommandOutput output;
 
