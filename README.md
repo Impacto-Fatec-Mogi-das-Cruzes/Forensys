@@ -41,7 +41,7 @@ Projeto desenvolvido por:
     <td>
       <center>
         <a href="https://github.com/">
-          <img src="https://storage.needpix.com/rsynced_images/blank-profile-picture-973460_1280.png" width="60px;" alt="Guilherme"/>
+          <img src="" width="60px;" alt="Guilherme"/>
           <br />
           <sub><b>Guilherme</b></sub>
         </a>
@@ -80,7 +80,7 @@ Projeto desenvolvido por:
     <td>
       <center>
         <a href="https://github.com/">
-          <img src="https://storage.needpix.com/rsynced_images/blank-profile-picture-973460_1280.png" width="60px;" alt="Rafaela"/>
+          <img src="" width="60px;" alt="Rafaela"/>
           <br />
           <sub><b>Rafaela</b></sub>
         </a>
