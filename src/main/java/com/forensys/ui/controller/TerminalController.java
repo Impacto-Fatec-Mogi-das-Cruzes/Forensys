@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommand;
 import com.forensys.service.terminal.ContinueExecution;
+import com.forensys.service.terminal.GetPendingExecution;
 import com.forensys.service.terminal.GetPendingOperation;
 import com.forensys.service.terminal.HandleCommand;
 import com.forensys.service.terminal.HandleOutput;
@@ -44,7 +45,9 @@ public class TerminalController {
 
         if (GetPendingOperation.execute() != null) {
             output = HandlePendingOperation.execute(rawInput);
-            output = Optional.ofNullable(ContinueExecution.execute()).orElse(output);
+            if (GetPendingExecution.execute() != null) {
+                output = Optional.ofNullable(ContinueExecution.execute()).orElse(output);
+            }
         } else {
             ParsedCommand parsedCommand = ParseCommand.execute(rawInput);
             output = HandleCommand.execute(parsedCommand);

@@ -11,6 +11,9 @@ public class RequestPassword {
     public static void execute(Directory next) {
         ApplicationContext.getInstance().setPendingOperation(new PendingOperation((password) -> {
             if (!(next.getMetadata().password().equals(password))) {
+                ApplicationContext.getInstance().clearPendingExecution();
+                ApplicationContext.getInstance().clearExecutionContext();
+                ApplicationContext.getInstance().clearPendingOperation();
                 return CommandOutput.builder()
                         .text("Wrong password for " + next.getMetadata().name())
                         .exitCode(CommandExitCode.FAILURE)
