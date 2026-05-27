@@ -38,6 +38,7 @@ public class GoCommand extends TerminalCommand {
         this.resolver = new GoStrategyResolver();
     }
 
+    // TODO: some cleanup, too messy
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {
         ApplicationContext applicationContext = ApplicationContext.getInstance();
