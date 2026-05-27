@@ -26,7 +26,6 @@ Projeto desenvolvido por:
 [![Prisma](https://img.shields.io/badge/Org-Prisma_Corp-white?logo=github)](https://github.com/Prisma-Corp)
 
 ### Equipe do Projeto
-<center>
 
 <table>
   <tr>
@@ -90,8 +89,6 @@ Projeto desenvolvido por:
   </tr>
 
 </table>
-
-</center>
 
 ## Licença
 
