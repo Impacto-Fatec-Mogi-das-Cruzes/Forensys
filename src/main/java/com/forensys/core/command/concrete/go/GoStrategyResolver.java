@@ -5,6 +5,7 @@ import com.forensys.core.command.concrete.go.strategy.GoRootStrategy;
 import com.forensys.core.command.concrete.go.strategy.GoStrategy;
 import com.forensys.core.command.concrete.go.strategy.GoDirectory.GoDirectoryStrategy;
 
+// TODO: resolver -> factory
 public class GoStrategyResolver {
     public GoStrategy resolve(String target) {
 
