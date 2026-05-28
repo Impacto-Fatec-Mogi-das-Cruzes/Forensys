@@ -6,24 +6,24 @@ import com.forensys.core.filestructure.FileSystemEntry;
 
 public class LongEntryRenderStrategy implements EntryRenderStrategy {
 
-    private static final String FORMAT =
-        "%-8s %-8s %-12s %-22s %-22s %-10s %-20s";
+    private static final String FORMAT = "%-8s %-8s %-12s %-22s %-22s %-10s %-20s";
 
     @Override
     public void renderHeader(CommandOutputBuilder builder) {
+        String header = FORMAT.formatted(
+            "HIDDEN",
+            "BLOCKED",
+            "SIZE",
+            "CREATED",
+            "UPDATED",
+            "TYPE",
+            "NAME"
+        );
+
         builder
-            .styledText(
-                FORMAT.formatted(
-                    "hidden",
-                    "blocked",
-                    "size",
-                    "created",
-                    "updated",
-                    "type",
-                    "name"
-                ),
-                "#ffffff"
-            )
+            .styledText(header, "#ffffff")
+            .newLine()
+            .styledText("-".repeat(header.length()), "#ffffff")
             .newLine();
     }
 

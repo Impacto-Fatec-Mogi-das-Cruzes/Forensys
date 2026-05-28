@@ -82,7 +82,7 @@ public class ListCommand extends TerminalCommand {
         List<FileSystemEntry> entries = state.getEntries();
 
         CommandOutputBuilder outputBuilder = CommandOutput.builder()
-                .styledText("in the current directory you have:", "#ffffff")
+                .styledText("In the " + applicationContext.getCurrentDirectory().getMetadata().name() + " directory you have:", "#ffffff")
                 .newLine();
 
         renderStrategy.renderHeader(outputBuilder);

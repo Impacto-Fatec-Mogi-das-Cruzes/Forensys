@@ -7,8 +7,12 @@ public class SimpleEntryRenderStrategy implements EntryRenderStrategy {
 
     @Override
     public void renderHeader(CommandOutputBuilder builder) {
+        String header = "%-20s %-10s".formatted("TYPE", "NAME");
+
         builder
-            .styledText("%-20s %-10s".formatted("type", "name"), "#ffffff")
+            .styledText(header, "#ffffff")
+            .newLine()
+            .styledText("-".repeat(header.length()), "#ffffff")
             .newLine();
     }
 
