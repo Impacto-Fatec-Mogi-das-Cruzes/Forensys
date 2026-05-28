@@ -40,8 +40,8 @@ Projeto desenvolvido por:
     </td>
     <td>
       <center>
-        <a href="https://github.com/">
-          <img src="" width="60px;" alt="Guilherme"/>
+        <a href="https://github.com/guilhermecarapinheiro-web">
+          <img src="https://github.com/guilhermecarapinheiro-web.png" width="60px;" alt="Guilherme"/>
           <br />
           <sub><b>Guilherme</b></sub>
         </a>
