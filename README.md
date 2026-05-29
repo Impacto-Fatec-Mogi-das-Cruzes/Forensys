@@ -79,8 +79,8 @@ Projeto desenvolvido por:
     </td>
     <td>
       <center>
-        <a href="https://github.com/">
-          <img src="" width="60px;" alt="Rafaela"/>
+        <a href="https://github.com/RafaNunesDesign">
+          <img src="https://github.com/RafaNunesDesign.png" width="60px;" alt="Rafaela"/>
           <br />
           <sub><b>Rafaela</b></sub>
         </a>
