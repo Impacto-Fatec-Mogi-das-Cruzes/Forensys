@@ -1,19 +1,36 @@
 package com.forensys.core.command.concrete.chat;
 
-import com.forensys.core.chat.ChatParser;
-import com.forensys.core.chat.ContactList;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommandArgs;
 import com.forensys.core.command.SegmentStyle;
 import com.forensys.core.command.TerminalCommand;
-import com.forensys.core.context.ApplicationContext;
 
 public class ChatCommand extends TerminalCommand {
 
     public ChatCommand() {
-        super(new CommandMetadata("chat", "opens chat messager", "command that opens the caht message"));
+        super(new CommandMetadata(
+        "chat",
+        "Manage and navigate chat contacts and conversations",
+        """
+        Usage:
+        chat list {pattern}
+        chat open {contactlist}
+        
+        Examples:
+        chat list john
+        chat list *
+        chat open contacts
+        chat open favorites
+        
+        Notes:
+        - Use pattern matching to search contacts by name
+        - Use * to display all available contacts
+        - Contact lists must be created before opening
+        - Supports wildcard patterns for flexible searching
+        """));
+
     }
 
     @Override
@@ -25,20 +42,16 @@ public class ChatCommand extends TerminalCommand {
                 .build();
         }
 
-        ContactList contactList = ChatParser.getInstance().parse(args.positionals().getFirst());
+        ChatSubCommand command = ChatSubCommandFactory.createSubCommand(args);
 
-        if (contactList == null) {
+        if (command == null) {
             return CommandOutput.builder()
-                .styledText("Contact list not found", "#ef4444", SegmentStyle.BOLD)
+                .styledText("Unkown argument", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
         
-        ApplicationContext.getInstance().openContactList(contactList);
-        return CommandOutput.builder()
-            .styledText("Opening contact list...", "#38bdf8", SegmentStyle.BOLD)
-            .exitCode(CommandExitCode.SUCCESS)
-            .build();
+        return command.execute(args);
     }
 
 }
