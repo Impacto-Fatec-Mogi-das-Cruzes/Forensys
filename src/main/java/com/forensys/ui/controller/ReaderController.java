@@ -21,6 +21,7 @@ public class ReaderController {
 
     @FXML
     private void initialize() {
+        // TODO: change content from raw text to a path to a resource
         TextFile file = GetTextFile.execute();
         setContent(file);
 

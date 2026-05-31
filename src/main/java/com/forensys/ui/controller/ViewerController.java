@@ -37,6 +37,7 @@ public class ViewerController {
 
     @FXML
     private void initialize() {
+        // TODO: add handling for if the image is not found in the resource
         ImageFile file = GetImageFile.execute();
         setContent(file);
 
