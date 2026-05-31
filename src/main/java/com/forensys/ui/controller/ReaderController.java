@@ -24,6 +24,11 @@ public class ReaderController {
         TextFile file = GetTextFile.execute();
         setContent(file);
 
+        content.setWrapText(true);
+
+        content.maxWidthProperty().bind(root.widthProperty().subtract(0));
+
+
         root.setOnKeyReleased(event -> {
             if (event.getCode().toString().equals("Q")) {
                 CloseTextFile.execute();

@@ -5,11 +5,13 @@ import java.util.Optional;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommand;
 import com.forensys.service.terminal.ContinueExecution;
+import com.forensys.service.terminal.DefineIntialOutput;
 import com.forensys.service.terminal.GetPendingExecution;
 import com.forensys.service.terminal.GetPendingOperation;
 import com.forensys.service.terminal.HandleCommand;
 import com.forensys.service.terminal.HandleOutput;
 import com.forensys.service.terminal.HandlePendingOperation;
+import com.forensys.service.terminal.OpenInitialTextFile;
 import com.forensys.service.terminal.ParseCommand;
 import com.forensys.service.terminal.RegisterAllCommands;
 
@@ -32,8 +34,13 @@ public class TerminalController {
     @FXML
     private void initialize() {
         RegisterAllCommands.execute();
-
+        
         scrollPane.vvalueProperty().bind(outputArea.heightProperty());
+        
+        Platform.runLater(() -> {
+            OpenInitialTextFile.execute();
+            DefineIntialOutput.execute(outputArea);
+        });
     }
 
     @FXML
