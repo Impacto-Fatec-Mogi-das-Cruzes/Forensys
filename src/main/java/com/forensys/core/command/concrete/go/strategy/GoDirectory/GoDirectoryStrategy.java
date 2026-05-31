@@ -22,24 +22,19 @@ public class GoDirectoryStrategy implements GoStrategy {
 
         if (next == null) {
             return CommandOutput.builder()
-                    .text("Directory not found: " + target)
-                    .exitCode(CommandExitCode.FAILURE)
-                    .build();
+                .styledText("Directory not found: " + target, "#ef4444")
+                .exitCode(CommandExitCode.FAILURE)
+                .build();
         }
 
         if (next.getMetadata().blocked()) {
             RequestPassword.execute(next);
             return CommandOutput.builder()
-                .text("Directory " + next.getMetadata().name() + " is blocked, plase type the password to continue...")
+                .styledText("Directory " + next.getMetadata().name() + " is blocked, plase type the password to continue...", "#38bdf8")
                 .exitCode(CommandExitCode.PAUSE)
                 .build();
         }
 
-        EnterDirectory.execute(next);
-
-        return CommandOutput.builder()
-                .text("Entered directory: " + next.getMetadata().name())
-                .exitCode(CommandExitCode.SUCCESS)
-                .build();
+        return EnterDirectory.execute(next);
     }
 }

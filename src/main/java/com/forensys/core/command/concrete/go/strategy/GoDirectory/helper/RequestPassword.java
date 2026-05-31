@@ -15,7 +15,7 @@ public class RequestPassword {
                 ApplicationContext.getInstance().clearExecutionContext();
                 ApplicationContext.getInstance().clearPendingOperation();
                 return CommandOutput.builder()
-                        .text("Wrong password for " + next.getMetadata().name())
+                        .styledText("Wrong password for " + next.getMetadata().name(), "#ef4444")
                         .exitCode(CommandExitCode.FAILURE)
                         .build();
             }

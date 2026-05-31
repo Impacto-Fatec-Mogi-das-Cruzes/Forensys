@@ -9,7 +9,7 @@ public class EnterDirectory {
     public static CommandOutput execute(Directory next) {
         ApplicationContext.getInstance().setCurrentDirectory(next);
         return CommandOutput.builder()
-            .text("Moved to Directory: " + next.getMetadata().name())
+            .styledText("Moved to Directory: " + next.getMetadata().name(), "#cbd5e1")
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }

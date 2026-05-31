@@ -57,7 +57,7 @@ public class DuckCommand extends TerminalCommand{
             );
 
             return outputBuilder
-                    .text(message)
+                    .styledText(message, "#ef4444")
                     .exitCode(CommandExitCode.FAILURE)
                     .build();
         }

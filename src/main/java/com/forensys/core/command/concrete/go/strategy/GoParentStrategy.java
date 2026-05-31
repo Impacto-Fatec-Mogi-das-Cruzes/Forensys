@@ -13,18 +13,18 @@ public class GoParentStrategy implements GoStrategy {
 			ApplicationContext.getInstance().restoreDirectory();
 		} catch (InvalidDirectoryMovement e) {
 			return CommandOutput.builder()
-					.text(e.getMessage())
+					.styledText(e.getMessage(), "#ef4444")
 					.exitCode(CommandExitCode.FAILURE)
 					.build();
 		} catch (Exception e) {
 			return CommandOutput.builder()
-					.text("UnknownError")
+					.styledText("Failed to go back to parent directory", "#ef4444")
 					.exitCode(CommandExitCode.FAILURE)
 					.build();
 		}
 
 		return CommandOutput.builder()
-				.text("Moved to parent directory")
+				.styledText("Moved to parent directory", "#cbd5e1")
 				.exitCode(CommandExitCode.SUCCESS)
 				.build();
 	}

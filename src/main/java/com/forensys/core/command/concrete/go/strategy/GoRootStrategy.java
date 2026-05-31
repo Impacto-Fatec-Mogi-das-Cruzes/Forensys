@@ -17,12 +17,12 @@ public class GoRootStrategy implements GoStrategy {
             }
         } catch (InvalidDirectoryMovement e) {
             return CommandOutput.builder()
-                    .text("Returned to root directory")
+                    .styledText("Returned to root directory", "#cbd5e1")
                     .exitCode(CommandExitCode.SUCCESS)
                     .build();
         } catch (Exception e) {
             return CommandOutput.builder()
-                    .text("UnknownError")
+                    .styledText("Failed to go back to root directory", "#ef4444")
                     .exitCode(CommandExitCode.FAILURE)
                     .build();
         }

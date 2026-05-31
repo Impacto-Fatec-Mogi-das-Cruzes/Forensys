@@ -15,7 +15,7 @@ public class InvalidCommand extends TerminalCommand {
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {
         return CommandOutput.builder()
-            .text("Invalid Command, plase input a valid command")
+            .styledText("Invalid Command, plase input a valid command", "#ef4444")
             .exitCode(CommandExitCode.FAILURE)
             .build();
     }
