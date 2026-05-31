@@ -45,8 +45,9 @@ public class ListSubCommand implements ChatSubCommand {
         if (filteredFiles.isEmpty()) {
             outputBuilder.styledText("\tNo contacts found matching pattern: " + pattern, "#ef4444").newLine();
         } else {
-            for (String file : filteredFiles) {
-                outputBuilder.text("\t" + file.substring(0, file.lastIndexOf("."))).newLine();
+            for (int i = 0; i < filteredFiles.size(); i++) {
+                String file = filteredFiles.get(i);
+                outputBuilder.text("\t" + i + ". " + file.substring(0, file.lastIndexOf("."))).newLine();
             }
         }
 
