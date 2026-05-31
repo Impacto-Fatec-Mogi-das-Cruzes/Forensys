@@ -4,11 +4,11 @@ import com.forensys.core.filestructure.FileSystemEntry;
 
 public class ImageFile extends FileSystemEntry {
 
-    private String path;
+    private String content;
 
     public ImageFile() {}
 
-    public String getPath() {
-        return path;
+    public String getContent() {
+        return content;
     }
 }

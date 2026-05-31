@@ -117,7 +117,7 @@ public class ViewerController {
             return;
         }
 
-        Image image = LoadImage.execute(file.getPath());
+        Image image = LoadImage.execute(file.getContent());
         content.setImage(image);
         tittle.setText(file.getMetadata().name());
         
