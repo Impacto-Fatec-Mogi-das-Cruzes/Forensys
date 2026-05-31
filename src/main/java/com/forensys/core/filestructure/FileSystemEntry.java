@@ -7,6 +7,29 @@ import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
 import com.forensys.core.filestructure.concrete.UnknownFile;
 
+/*
+TODO: implement all file types
+
+Behaves like TextFile
+.txt
+.md
+.log
+.chat
+.csv
+.conf
+.java
+.tmp
+.dat
+
+Behaves like Directory
+directory
+.zip
+
+Behaves like ImageFile
+.png
+.jpg
+.jpeg
+*/
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME, 
     include = JsonTypeInfo.As.PROPERTY, 
