@@ -6,7 +6,6 @@ public class TextFile extends FileSystemEntry {
 
     private String content;
     
-    
     public TextFile() {}
     
     public String getContent() {
