@@ -10,7 +10,22 @@ import com.forensys.core.command.TerminalCommand;
 public class ClearCommand extends TerminalCommand {
 
     public ClearCommand() {
-        super(new CommandMetadata("clear", "clear the screen of the current output", "clears the screen"));
+        super(new CommandMetadata(
+        "clear",
+        "Clear the screen of the current output",
+        """
+        Usage:
+        clear
+
+        Examples:
+        clear
+
+        Notes:
+        - Removes all currently displayed output from the screen
+        - Does not delete chat history, contacts, or saved data
+        - Useful for cleaning up the terminal before running new commands
+        - Takes no arguments
+        """));
     }
 
     @Override
