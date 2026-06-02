@@ -35,7 +35,7 @@ public class ChatCommand extends TerminalCommand {
     public CommandOutput execute(ParsedCommandArgs args) {
         if (args.positionals().isEmpty()) {
             return CommandOutput.builder()
-                .styledText("No arguments passed to chat command, command requires a argument", "#ef4444", SegmentStyle.BOLD)
+                .styledText("No arguments passed to chat command, command requires at least one argument", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }

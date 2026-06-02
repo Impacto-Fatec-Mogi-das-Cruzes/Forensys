@@ -13,7 +13,7 @@ public class OpenSubCommand implements ChatSubCommand {
 
         if (args.positionals().size() > 1) {
             return CommandOutput.builder()
-                .styledText("Too many arguments passed for chat command open", "#ef4444", SegmentStyle.BOLD)
+                .styledText("Too many arguments passed for 'chat open' command", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }

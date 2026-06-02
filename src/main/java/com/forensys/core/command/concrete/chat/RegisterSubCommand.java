@@ -16,7 +16,7 @@ public class RegisterSubCommand implements ChatSubCommand {
         
         if (args.positionals().size() < 2) {
             return CommandOutput.builder()
-                .styledText("Too few arguments passed for chat command register, one argument is required", "#ef4444", SegmentStyle.BOLD)
+                .styledText("Too few arguments passed for 'chat register'. Only one argument is required", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -33,7 +33,7 @@ public class RegisterSubCommand implements ChatSubCommand {
 
         if (entry == null) {
             return CommandOutput.builder()
-                .styledText("Contact no found", "#ef4444", SegmentStyle.BOLD)
+                .styledText("Contact not found", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -50,7 +50,7 @@ public class RegisterSubCommand implements ChatSubCommand {
         applicationContext.getContactList().addContact(contact);
 
         return CommandOutput.builder()
-            .styledText("Sucessufuly registred new contact to contact list...", "#38bdf8", SegmentStyle.BOLD)
+            .styledText("Successfully registered new contact to contact list", "#38bdf8", SegmentStyle.BOLD)
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }
