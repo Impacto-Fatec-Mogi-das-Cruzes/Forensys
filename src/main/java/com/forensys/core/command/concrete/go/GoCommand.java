@@ -37,6 +37,12 @@ public class GoCommand extends TerminalCommand {
 
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {
+        if (args.positionals().size() < 1) {
+            return CommandOutput.builder()
+                .styledText("Too many arguments passed for 'go' command", "#ef4444")
+                .exitCode(CommandExitCode.FAILURE)
+                .build();
+        }
         ApplicationContext applicationContext = ApplicationContext.getInstance();
         if (applicationContext.getPendingExecution() == null) {
             applicationContext.setPendingExecution(() -> {
