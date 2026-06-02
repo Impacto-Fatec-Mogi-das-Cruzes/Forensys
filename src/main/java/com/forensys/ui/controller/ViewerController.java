@@ -37,13 +37,17 @@ public class ViewerController {
 
     @FXML
     private void initialize() {
-        // TODO: add handling for if the image is not found in the resource
+        content.fitWidthProperty().bind(center.widthProperty());
+        content.fitHeightProperty().bind(center.heightProperty());
+        content.setManaged(false);
+
         ImageFile file = GetImageFile.execute();
         setContent(file);
 
-        Platform.runLater(() -> {
-            root.requestFocus();
-        });
+        Platform.runLater(() -> root.requestFocus());
+
+        center.widthProperty().addListener((obs, oldVal, newVal) -> centerImage());
+        center.heightProperty().addListener((obs, oldVal, newVal) -> centerImage());
 
         root.setOnKeyReleased(event -> {
             if (event.getCode() == KeyCode.Q) {
@@ -113,22 +117,39 @@ public class ViewerController {
 
     private void setContent(ImageFile file) {
         if (file == null) {
-            content.setImage(null);
+            content.setImage(LoadImage.execute("erro_imagem.png"));
             tittle.setText("No image loaded");
             return;
         }
 
-        Image image = LoadImage.execute(file.getContent());
+        String imagePath = file.getContent();
+
+        Image image = LoadImage.execute(
+            imagePath == null || imagePath.isBlank()
+                ? "erro_imagem.png"
+                : imagePath
+        );
+
         content.setImage(image);
-        tittle.setText(file.getMetadata().name());
-        
-        content.setPreserveRatio(true);
+
+        centerImage();
+
+        String imageName = file.getMetadata().name();
+        tittle.setText(
+            imageName == null || imageName.isBlank()
+                ? "No image loaded"
+                : imageName
+        );
+
         center.setFocusTraversable(true);
     }
 
     private void reset() {
-        resetZoom();
-        resetPosition();
+        scale = 1.0;
+        content.setScaleX(1.0);
+        content.setScaleY(1.0);
+        content.setTranslateX(0);
+        content.setTranslateY(0);
     }
 
     private void zoom(double factor) {
@@ -142,12 +163,6 @@ public class ViewerController {
         clampPosition();
     }
 
-    private void resetZoom() {
-        scale = 1.0;
-        content.setScaleX(scale);
-        content.setScaleY(scale);
-    }
-
     private void move(double x, double y) {
         content.setTranslateY(content.getTranslateY() + y);
         content.setTranslateX(content.getTranslateX() + x);
@@ -156,8 +171,8 @@ public class ViewerController {
     }
 
     private void clampPosition() {
-        double imageWidth = content.getBoundsInLocal().getWidth() * scale;
-        double imageHeight = content.getBoundsInLocal().getHeight() * scale;
+        double imageWidth = content.getBoundsInParent().getWidth();
+        double imageHeight = content.getBoundsInParent().getHeight();
 
         double viewWidth = center.getWidth();
         double viewHeight = center.getHeight();
@@ -165,20 +180,30 @@ public class ViewerController {
         double maxOffsetX = Math.max(0, (imageWidth - viewWidth) / 2);
         double maxOffsetY = Math.max(0, (imageHeight - viewHeight) / 2);
 
-        double currentX = content.getTranslateX();
-        double currentY = content.getTranslateY();
+        if (maxOffsetX == 0) {
+            content.setTranslateX(0);
+        } else {
+            content.setTranslateX(
+                Math.max(-maxOffsetX,
+                        Math.min(maxOffsetX, content.getTranslateX()))
+            );
+        }
 
-        content.setTranslateX(
-            Math.max(-maxOffsetX, Math.min(maxOffsetX, currentX))
-        );
-
-        content.setTranslateY(
-            Math.max(-maxOffsetY, Math.min(maxOffsetY, currentY))
-        );
+        if (maxOffsetY == 0) {
+            content.setTranslateY(0);
+        } else {
+            content.setTranslateY(
+                Math.max(-maxOffsetY,
+                        Math.min(maxOffsetY, content.getTranslateY()))
+            );
+        }
     }
 
-    private void resetPosition() {
-        content.setTranslateX(0);
-        content.setTranslateY(0);
+    private void centerImage() {
+        double w = content.getBoundsInLocal().getWidth();
+        double h = content.getBoundsInLocal().getHeight();
+
+        content.setLayoutX((center.getWidth() - w) / 2);
+        content.setLayoutY((center.getHeight() - h) / 2);
     }
 }
