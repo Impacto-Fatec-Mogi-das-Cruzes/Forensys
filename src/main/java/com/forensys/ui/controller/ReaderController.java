@@ -44,7 +44,7 @@ public class ReaderController {
             return;
         }
         content.setText(file.getContent());
-        tittle.setText(file.getMetadata().name() + ".txt");
+        tittle.setText(file.getMetadata().name());
 
     }
 }

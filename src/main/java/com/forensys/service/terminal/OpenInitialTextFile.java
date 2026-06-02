@@ -8,7 +8,7 @@ public class OpenInitialTextFile {
     public static void execute() {
         TextFile initialTextFile = new TextFile();
         initialTextFile.setType("text");
-        initialTextFile.setMetadata(new FileMetadata("message", null, false, false, "a", 0, "never", "ever", true));
+        initialTextFile.setMetadata(new FileMetadata("report.txt", null, false, false, "a", 0, "never", "ever", true));
         initialTextFile.setContent("""
 POLÍCIA CIVIL
 
