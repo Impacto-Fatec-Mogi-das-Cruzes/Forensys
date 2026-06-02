@@ -2,7 +2,7 @@ package com.forensys.core.filestructure;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.filestructure.concrete.Folder;
 import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
 import com.forensys.core.filestructure.concrete.UnknownFile;
@@ -10,37 +10,53 @@ import com.forensys.core.filestructure.concrete.UnknownFile;
 /*
 TODO: implement all file types
 
-Behaves like TextFile
-.txt
-.md
-.log
-.chat
-.csv
-.conf
-.java
-.tmp
-.dat
+Behaves like idk
+.chat -> chat
+.url -> url
+.pdf -> pdf
+.xlsx -> spreadsheet
+.doc -> document
 
-Behaves like Directory
+Behaves like TextFile
+.txt -> plaintext
+.md -> markdown 
+.log -> log
+.csv -> csv
+.conf -> config
+.java -> java
+.tmp -> temporary
+.dat -> data
+
+Behaves like Folder
 directory
-.zip
+.zip -> archive
 
 Behaves like ImageFile
-.png
-.jpg
-.jpeg
+.png -> image
+.jpg -> image
+.gif -> image
 */
 @JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME, 
-    include = JsonTypeInfo.As.PROPERTY, 
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY,
     property = "type",
     visible = true,
     defaultImpl = UnknownFile.class
 )
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Directory.class, name = "directory"),
-        @JsonSubTypes.Type(value = TextFile.class, name = "text"),
-        @JsonSubTypes.Type(value = ImageFile.class, name = "image")
+    @JsonSubTypes.Type(value = Folder.class, name = "directory"),
+    @JsonSubTypes.Type(value = Folder.class, name = "archive"),
+
+    @JsonSubTypes.Type(value = TextFile.class, name = "plaintext"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "markdown"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "log"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "csv"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "config"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "java"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "temporary"),
+    @JsonSubTypes.Type(value = TextFile.class, name = "data"),
+
+    @JsonSubTypes.Type(value = ImageFile.class, name = "image")
 })
 public abstract class FileSystemEntry {
 

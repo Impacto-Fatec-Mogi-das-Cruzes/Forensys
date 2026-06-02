@@ -27,7 +27,7 @@
       },
       "children": [
         {
-          "type": "text",
+          "type": "plaintext",
           "metadata": {
             "name": "Investigacao.txt",
             "password": null,
@@ -42,7 +42,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "url",
           "metadata": {
             "name": "atalhos.url",
             "password": null,
@@ -57,7 +57,7 @@
           "content": ""
         },
         {
-          "type": "text",
+          "type": "plaintext",
           "metadata": {
             "name": "lembrete.txt",
             "password": null,
@@ -88,7 +88,7 @@
       },
       "children": [
         {
-          "type": "file",
+          "type": "pdf",
           "metadata": {
             "name": "curriculo.pdf",
             "password": null,
@@ -103,7 +103,7 @@
           "content": ""
         },
         {
-          "type": "text",
+          "type": "plaintext",
           "metadata": {
             "name": "notas_pessoais.txt",
             "password": null,
@@ -118,7 +118,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "spreadsheet",
           "metadata": {
             "name": "despesas.xlsx",
             "password": null,
@@ -133,7 +133,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "csv",
           "metadata": {
             "name": "backup_contatos.csv",
             "password": null,
@@ -164,7 +164,7 @@
       },
       "children": [
         {
-          "type": "file",
+          "type": "archive",
           "metadata": {
             "name": "installer.zip",
             "password": null,
@@ -176,10 +176,10 @@
             "updated": "1998-11-30T17:00:00",
             "readOnly": true
           },
-          "content": ""
+          "children": []
         },
         {
-          "type": "file",
+          "type": "pdf",
           "metadata": {
             "name": "alfa_report.pdf",
             "password": null,
@@ -378,7 +378,7 @@
       },
       "children": [
         {
-          "type": "file",
+          "type": "chat",
           "metadata": {
             "name": "senhora_tamato.chat",
             "password": null,
@@ -393,7 +393,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "chat",
           "metadata": {
             "name": "humpty_dumpty.chat",
             "password": null,
@@ -408,7 +408,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "chat",
           "metadata": {
             "name": "rocha_r.chat",
             "password": null,
@@ -423,7 +423,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "chat",
           "metadata": {
             "name": "nicolau_nookut.chat",
             "password": null,
@@ -438,7 +438,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "chat",
           "metadata": {
             "name": "joseph_nelore.chat",
             "password": null,
@@ -483,7 +483,7 @@
           },
           "children": [
             {
-              "type": "file",
+              "type": "markdown",
               "metadata": {
                 "name": "README.md",
                 "password": null,
@@ -512,7 +512,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "EmotionCollector.java",
                     "password": null,
@@ -527,7 +527,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "MoodAnalyzer.java",
                     "password": null,
@@ -542,7 +542,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "TelemetryManager.java",
                     "password": null,
@@ -573,7 +573,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "audio_capture.log",
                     "password": null,
@@ -588,7 +588,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "telemetry.log",
                     "password": null,
@@ -619,7 +619,7 @@
               },
               "children": [
                 {
-                  "type": "text",
+                  "type": "plaintext",
                   "metadata": {
                     "name": "notes.txt",
                     "password": null,
@@ -634,7 +634,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "csv",
                   "metadata": {
                     "name": "users.csv",
                     "password": null,
@@ -649,7 +649,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "data",
                   "metadata": {
                     "name": "temp.dat",
                     "password": null,
@@ -682,7 +682,7 @@
           },
           "children": [
             {
-              "type": "file",
+              "type": "markdown",
               "metadata": {
                 "name": "README.md",
                 "password": null,
@@ -711,7 +711,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "AudienceClassifier.java",
                     "password": null,
@@ -726,7 +726,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "CampaignEngine.java",
                     "password": null,
@@ -741,7 +741,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "TargetSelector.java",
                     "password": null,
@@ -772,7 +772,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "campaign_test.log",
                     "password": null,
@@ -787,7 +787,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "metrics.log",
                     "password": null,
@@ -818,7 +818,7 @@
               },
               "children": [
                 {
-                  "type": "text",
+                  "type": "plaintext",
                   "metadata": {
                     "name": "meeting.txt",
                     "password": null,
@@ -833,7 +833,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "csv",
                   "metadata": {
                     "name": "targets.csv",
                     "password": null,
@@ -848,7 +848,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "temporary",
                   "metadata": {
                     "name": "archive.tmp",
                     "password": null,
@@ -881,7 +881,7 @@
           },
           "children": [
             {
-              "type": "file",
+              "type": "markdown",
               "metadata": {
                 "name": "README.md",
                 "password": null,
@@ -910,7 +910,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "VoiceMonitor.java",
                     "password": null,
@@ -925,7 +925,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "ListenerService.java",
                     "password": null,
@@ -940,7 +940,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "java",
                   "metadata": {
                     "name": "CommandProcessor.java",
                     "password": null,
@@ -971,7 +971,7 @@
               },
               "children": [
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "remote_access.log",
                     "password": null,
@@ -986,7 +986,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "log",
                   "metadata": {
                     "name": "voice_activity.log",
                     "password": null,
@@ -1017,7 +1017,7 @@
               },
               "children": [
                 {
-                  "type": "text",
+                  "type": "plaintext",
                   "metadata": {
                     "name": "backup_message.txt",
                     "password": null,
@@ -1032,7 +1032,7 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "csv",
                   "metadata": {
                     "name": "devices.csv",
                     "password": null,
@@ -1047,9 +1047,9 @@
                   "content": ""
                 },
                 {
-                  "type": "file",
+                  "type": "plaintext",
                   "metadata": {
-                    "name": "hidden.note",
+                    "name": "hidden.txt",
                     "password": null,
                     "blocked": false,
                     "hidden": false,
@@ -1082,7 +1082,7 @@
       },
       "children": [
         {
-          "type": "file",
+          "type": "temporary",
           "metadata": {
             "name": "deleted_chat.tmp",
             "password": null,
@@ -1097,7 +1097,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "document",
           "metadata": {
             "name": "old_report.doc",
             "password": null,
@@ -1112,7 +1112,7 @@
           "content": ""
         },
         {
-          "type": "text",
+          "type": "plaintext",
           "metadata": {
             "name": "recovered_fragment.txt",
             "password": null,
@@ -1143,7 +1143,7 @@
       },
       "children": [
         {
-          "type": "file",
+          "type": "config",
           "metadata": {
             "name": "users.conf",
             "password": null,
@@ -1158,7 +1158,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "log",
           "metadata": {
             "name": "access.log",
             "password": null,
@@ -1173,7 +1173,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "log",
           "metadata": {
             "name": "network.log",
             "password": null,
@@ -1188,7 +1188,7 @@
           "content": ""
         },
         {
-          "type": "file",
+          "type": "log",
           "metadata": {
             "name": "recovery.log",
             "password": null,

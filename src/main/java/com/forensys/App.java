@@ -4,7 +4,7 @@ import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.context.ContextOperation;
 import com.forensys.core.filestructure.FileStructureParser;
 import com.forensys.core.filestructure.FileSystemEntry;
-import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.filestructure.concrete.Folder;
 import com.forensys.core.navigation.InterfaceParser;
 import com.forensys.core.navigation.SceneRegistry;
 import com.forensys.core.navigation.StageManager;
@@ -23,7 +23,7 @@ public class App extends Application {
     public void start(Stage stage) {
         try {
             FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
-            ApplicationContext.init((Directory) root);
+            ApplicationContext.init((Folder) root);
             
             StageManager.init(stage);
             ApplicationContext.getInstance().subscribe(StageManager.getInstance(), 

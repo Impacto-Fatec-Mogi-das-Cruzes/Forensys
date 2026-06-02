@@ -14,7 +14,7 @@ import com.forensys.common.observer.Operation;
 import com.forensys.common.observer.Subject;
 import com.forensys.core.chat.ContactList;
 import com.forensys.core.command.CommandOutput;
-import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.filestructure.concrete.Folder;
 import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
 
@@ -23,8 +23,8 @@ public class ApplicationContext implements Subject {
     private static ApplicationContext instance;
     private final Map<Operation, List<Observer>> eventObservers = new HashMap<>();
 
-    private Directory root;
-    private Deque<Directory> directoryPath = new ArrayDeque<>();
+    private Folder root;
+    private Deque<Folder> directoryPath = new ArrayDeque<>();
     private TextFile textFile;
     private ContactList contactList;
     private ImageFile imageFile;
@@ -33,7 +33,7 @@ public class ApplicationContext implements Subject {
     private ExecutionContext executionContext;
     private PendingOperation pendingOperation;
 
-    private ApplicationContext(Directory startDirectory) {
+    private ApplicationContext(Folder startDirectory) {
         directoryPath.push(startDirectory);
         root = startDirectory;
 
@@ -42,7 +42,7 @@ public class ApplicationContext implements Subject {
         }
     }
 
-    public static void init(Directory startDirectory) {
+    public static void init(Folder startDirectory) {
         if (instance != null) {
             throw new IllegalStateException("ApplicationContext has already being initialized");
         }
@@ -56,11 +56,11 @@ public class ApplicationContext implements Subject {
         return instance;
     }
 
-    public Directory getCurrentDirectory() {
+    public Folder getCurrentDirectory() {
         return directoryPath.peek();
     }
 
-    public void setCurrentDirectory(Directory newDirectory) {
+    public void setCurrentDirectory(Folder newDirectory) {
         directoryPath.push(newDirectory);
     }
 

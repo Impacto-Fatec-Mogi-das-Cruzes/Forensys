@@ -5,21 +5,21 @@ import java.util.List;
 
 import com.forensys.core.filestructure.FileSystemEntry;
 
-public class Directory extends FileSystemEntry {
+public class Folder extends FileSystemEntry {
     
     private List<FileSystemEntry> children;
 
-    public Directory() {}
+    public Folder() {}
 
     public List<FileSystemEntry> getChildren() {
         return new ArrayList<>(children);
     }
 
-    public List<Directory> getDirectories() {
-        List<Directory> directories = new ArrayList<>();
+    public List<Folder> getDirectories() {
+        List<Folder> directories = new ArrayList<>();
 
         for (FileSystemEntry child : children) {
-            if (child instanceof Directory directory) {
+            if (child instanceof Folder directory) {
                 directories.add(directory);
             }
         }

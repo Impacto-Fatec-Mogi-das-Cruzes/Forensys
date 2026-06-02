@@ -5,7 +5,7 @@ import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.concrete.go.GoExecutionContext;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.context.PendingOperation;
-import com.forensys.core.filestructure.concrete.Directory;
+import com.forensys.core.filestructure.concrete.Folder;
 
 public class GoDirectoryStrategy implements GoStrategy {
 
@@ -19,9 +19,9 @@ public class GoDirectoryStrategy implements GoStrategy {
 
     @Override
     public CommandOutput execute() {
-        Directory next = null;
+        Folder next = null;
 
-        for (Directory child : context.getCurrentDirectory().getDirectories()) {
+        for (Folder child : context.getCurrentDirectory().getDirectories()) {
             if (child.getMetadata().name().equals(target)) {
                 next = child;
                 break;
@@ -47,7 +47,7 @@ public class GoDirectoryStrategy implements GoStrategy {
         return enterDirectory(next);
     }
 
-    public void requestPassword(Directory next) {
+    public void requestPassword(Folder next) {
         context.setPendingOperation(new PendingOperation((password) -> {
             if (!(next.getMetadata().password().equals(password))) {
                 context.clearAllExecution();
@@ -62,7 +62,7 @@ public class GoDirectoryStrategy implements GoStrategy {
         }));
     }
 
-    public CommandOutput enterDirectory(Directory next) {
+    public CommandOutput enterDirectory(Folder next) {
         context.setCurrentDirectory(next);
         ((GoExecutionContext) context.getExecutionContext()).incrementIndex();
         return CommandOutput.builder()
