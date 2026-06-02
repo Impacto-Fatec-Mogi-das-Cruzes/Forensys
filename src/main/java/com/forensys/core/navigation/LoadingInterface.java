@@ -12,7 +12,7 @@ public class LoadingInterface implements LoadingStrategy<Parent> {
         Parent root = null;
 
         try {
-            root = new FXMLLoader(getClass().getResource("/interfaces/" + sourceData + ".fxml")).load();
+            root = new FXMLLoader(getClass().getResource("/interfaces/" + sourceData)).load();
         } catch (Exception e) {
             System.err.println(e);
         }

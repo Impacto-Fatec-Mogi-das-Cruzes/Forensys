@@ -11,7 +11,7 @@ public class LoadingFileStructure implements LoadingStrategy<InputStream> {
         InputStream is = null;
 
         try {
-            is = getClass().getResourceAsStream("/filestructure/" + sourceData + ".json");
+            is = getClass().getResourceAsStream("/filestructure/" + sourceData);
         } catch (Exception e) {
             System.err.println(e);
         }

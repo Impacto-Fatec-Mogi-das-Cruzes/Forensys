@@ -11,7 +11,7 @@ public class LoadingSettings implements LoadingStrategy<InputStream> {
         InputStream is = null;
 
         try {
-            is = getClass().getResourceAsStream("/config/" + sourceData + ".json");
+            is = getClass().getResourceAsStream("/config/" + sourceData);
         } catch (Exception e) {
             System.err.println(e);
         }

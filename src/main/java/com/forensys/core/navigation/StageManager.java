@@ -67,7 +67,7 @@ public class StageManager implements Observer {
     }
 
     private void applySettings() {
-        Window window = SettingsParser.getInstance().parse("config").getWindow();
+        Window window = SettingsParser.getInstance().parse("config.json").getWindow();
         this.stage.setTitle(window.title());
         this.stage.getIcons().add(new Image(getClass().getResourceAsStream("/assets/" + window.icon())));
         this.stage.initStyle(window.style());

@@ -24,7 +24,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
+            FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure.json");
             ContactList initialContactList = ChatParser.getInstance().parse("initial.json");
             ApplicationContext.init((Folder) root, initialContactList);
             
@@ -52,7 +52,7 @@ public class App extends Application {
             sceneRegistry.register(
                     resource,
                     () -> {
-                        return InterfaceParser.getInstance().parse(resource);
+                        return InterfaceParser.getInstance().parse(resource + ".fxml");
                     });
         }
     }
