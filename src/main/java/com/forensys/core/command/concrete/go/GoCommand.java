@@ -39,7 +39,7 @@ public class GoCommand extends TerminalCommand {
     public CommandOutput execute(ParsedCommandArgs args) {
         if (args.positionals().size() < 1) {
             return CommandOutput.builder()
-                .styledText("Too many arguments passed for 'go' command", "#ef4444")
+                .styledText("Too few arguments passed for 'go' command", "#ef4444")
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
