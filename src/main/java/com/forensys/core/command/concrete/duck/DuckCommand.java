@@ -3,10 +3,10 @@ package com.forensys.core.command.concrete.duck;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.forensys.common.HexColor;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
-import com.forensys.core.command.CommandOutputBuilder;
 import com.forensys.core.command.ParsedCommandArgs;
 import com.forensys.core.command.TerminalCommand;
 
@@ -36,8 +36,6 @@ public class DuckCommand extends TerminalCommand{
 
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {        
-        CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
-
         List<String> ARGUMENT_ERRORS = List.of(
                 "The duck does not accept arguments. It is just a duck.",
                 "The duck is confused by the extra arguments.",
@@ -56,26 +54,48 @@ public class DuckCommand extends TerminalCommand{
                     ThreadLocalRandom.current().nextInt(ARGUMENT_ERRORS.size())
             );
 
-            return outputBuilder
+            return CommandOutput.builder()
                     .styledText(message, "#ef4444")
                     .exitCode(CommandExitCode.FAILURE)
                     .build();
         }
+
+        if (ThreadLocalRandom.current().nextInt(100000) == 0) {
+            int roll = ThreadLocalRandom.current().nextInt(10);
+
+            HexColor color = switch (roll) {
+                case 0, 1, 2, 3, 4, 5 -> HexColor.of("#3b82f6"); // blue
+                case 6, 7, 8 -> HexColor.of("#22c55e");          // green
+                default -> HexColor.of("#ec4899");               // pink
+            };
+
+            return CommandOutput.builder()
+                .styledText("  i______i", color.value()).newLine()
+                .styledText("  I______I ", color.value()).newLine()
+                .styledText("  I      I", color.value()).newLine()
+                .styledText("  I______I", color.value()).newLine()
+                .styledText(" /      /I", color.value()).newLine()
+                .styledText("(______( I", color.value()).newLine()
+                .styledText("I \"    I \"", color.value()).newLine()
+                .styledText("I      I", color.value()).newLine()
+                .styledText("...", color.value()).newLine()
+                .exitCode(CommandExitCode.SUCCESS)
+                .build();
+        }
         
-        outputBuilder
-            .text("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠿⠿⠷⣶⣄⠀⠀⠀⠀⠀").newLine()
-            .text("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⢀⣀⡀⠙⣷⡀⠀⠀⠀").newLine()
-            .text("⠀⠀⠀⡀⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠘⠿⠃⠀⢸⣿⣿⣿⣿   Quack").newLine()
-            .text("⠀⣠⡿⠛⢷⣦⡀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⠟").newLine()
-            .text("⢰⡿⠁⠀⠀⠙⢿⣦⣤⣤⣼⣿⣄⠀⠀⠀⠀⠀⢴⡟⠛⠋⠁⠀").newLine()
-            .text("⣿⠇⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠈⣿⡀⠀⠀⠀").newLine()
-            .text("⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠀⠀⠀").newLine()
-            .text("⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀").newLine()
-            .text("⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀").newLine()
-            .text("⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀").newLine()
-            .text("⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀").newLine()
-            .exitCode(CommandExitCode.SUCCESS);
-        
-        return outputBuilder.build();
+        return CommandOutput.builder()
+            .styledText("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠿⠿⠷⣶⣄⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⢀⣀⡀⠙⣷⡀⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⠀⠀⠀⡀⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠘⠿⠃⠀⢸⣿⣿⣿⣿   Quack", "#cbd5e1").newLine()
+            .styledText("⠀⣠⡿⠛⢷⣦⡀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⠟", "#cbd5e1").newLine()
+            .styledText("⢰⡿⠁⠀⠀⠙⢿⣦⣤⣤⣼⣿⣄⠀⠀⠀⠀⠀⢴⡟⠛⠋⠁⠀", "#cbd5e1").newLine()
+            .styledText("⣿⠇⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠈⣿⡀⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .styledText("⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .exitCode(CommandExitCode.SUCCESS)
+            .build();
     }
 }
