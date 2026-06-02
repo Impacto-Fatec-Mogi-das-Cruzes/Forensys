@@ -78,7 +78,6 @@ public class DuckCommand extends TerminalCommand{
                 .styledText("(______( I", color.value()).newLine()
                 .styledText("I \"    I \"", color.value()).newLine()
                 .styledText("I      I", color.value()).newLine()
-                .styledText("...", color.value()).newLine()
                 .exitCode(CommandExitCode.SUCCESS)
                 .build();
         }
