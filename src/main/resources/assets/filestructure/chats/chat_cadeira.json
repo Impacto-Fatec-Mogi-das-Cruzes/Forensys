@@ -1,0 +1,184 @@
+{
+  "title": "Comissão da Cadeira",
+  "participants": [
+    {
+      "name": "Investigador",
+      "color": "#d94f70",
+      "id": 1
+    }
+  ],
+  "elements": [
+    {
+      "type": "date",
+      "text": "18/03/1998"
+    },
+    {
+      "type": "message",
+      "text": "encontramos a cadeira novamente",
+      "time": "07:11",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "qual delas?",
+      "time": "07:12",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "a cadeira",
+      "time": "07:12",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "a azul?",
+      "time": "07:13",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "segundo o depoimento nº 3 ela é verde",
+      "time": "07:13",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "e segundo o depoimento nº 6 ela é uma oportunidade",
+      "time": "07:14",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "oportunidades normalmente nao ficam ao lado do bebedouro",
+      "time": "07:14",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "depende da oportunidade",
+      "time": "07:15",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "justo",
+      "time": "07:15",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "ela ainda tem quatro pernas?",
+      "time": "07:16",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "nao conseguimos estabelecer um consenso sobre isso",
+      "time": "07:16",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "tentaram contar?",
+      "time": "07:17",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "sim mas cada pessoa terminou com um numero diferente",
+      "time": "07:17",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "inclusive negativo dois",
+      "time": "07:18",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "isso é preocupante",
+      "time": "07:18",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "o mais preocupante é o pato",
+      "time": "07:19",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "qual pato?",
+      "time": "07:19",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "exatamente",
+      "time": "07:20",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "entendi",
+      "time": "07:20",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "eu nao",
+      "time": "07:20",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "a fotografia ajudou?",
+      "time": "07:21",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "sim agora sabemos que aproximadamente 70% dela estava presente",
+      "time": "07:21",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "e os outros 30%?",
+      "time": "07:22",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "foram promovidos para gerência",
+      "time": "07:22",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "isso explica a reuniao de ontem",
+      "time": "07:23",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "nao era uma reuniao",
+      "time": "07:23",
+      "participant": 1
+    },
+    {
+      "type": "message",
+      "text": "era o que entao?",
+      "time": "07:24",
+      "participant": 0
+    },
+    {
+      "type": "message",
+      "text": "quinta feira",
+      "time": "07:24",
+      "participant": 1
+    }
+  ]
+}

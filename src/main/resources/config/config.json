@@ -5,7 +5,7 @@
         "style": "TRANSPARENT",
         "resizable": false,
         "fullscreen": true,
-        "width": 1024,
-        "height": 700
+        "width": 700,
+        "height": 900
     }
 }

@@ -117,7 +117,7 @@ public class ViewerController {
 
     private void setContent(ImageFile file) {
         if (file == null) {
-            content.setImage(LoadImage.execute("erro_imagem.png"));
+            content.setImage(LoadImage.execute("images/erro_imagem.png"));
             tittle.setText("No image loaded");
             return;
         }
@@ -126,7 +126,7 @@ public class ViewerController {
 
         Image image = LoadImage.execute(
             imagePath == null || imagePath.isBlank()
-                ? "erro_imagem.png"
+                ? "images/erro_imagem.png"
                 : imagePath
         );
 

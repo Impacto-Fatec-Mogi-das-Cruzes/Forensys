@@ -9,7 +9,7 @@ public class OpenInitialTextFile {
         TextFile initialTextFile = new TextFile();
         initialTextFile.setType("text");
         initialTextFile.setMetadata(new FileMetadata("report.txt", null, false, false, "a", 0, "never", "ever", true));
-        initialTextFile.setContent("InitialTextFile.txt");
+        initialTextFile.setContent("texts/InitialTextFile.txt");
         ApplicationContext.getInstance().openFile(initialTextFile);
     }
 }

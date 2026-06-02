@@ -69,7 +69,7 @@
             "updated": "1998-11-30T17:00:00",
             "readOnly": true
           },
-          "content": ""
+          "content": "texts/lembrete.txt"
         }
       ]
     },
@@ -196,7 +196,7 @@
         {
           "type": "image",
           "metadata": {
-            "name": "image.png",
+            "name": "Gato.gif",
             "password": null,
             "blocked": false,
             "hidden": false,
@@ -206,7 +206,7 @@
             "updated": "1998-11-30T17:00:00",
             "readOnly": true
           },
-          "content": ""
+          "content": "images/cat.gif"
         }
       ]
     },
@@ -327,7 +327,7 @@
                 "updated": "1998-11-30T17:00:00",
                 "readOnly": true
               },
-              "content": ""
+              "content": "images/Ferias_01.jpg"
             },
             {
               "type": "image",
@@ -342,7 +342,7 @@
                 "updated": "1998-11-30T17:00:00",
                 "readOnly": true
               },
-              "content": ""
+              "content": "images/Ferias_02.jpg"
             },
             {
               "type": "image",
@@ -367,8 +367,8 @@
       "type": "directory",
       "metadata": {
         "name": "AlfaTalk",
-        "password": null,
-        "blocked": false,
+        "password": "S3nha",
+        "blocked": true,
         "hidden": false,
         "description": null,
         "size": null,
@@ -390,7 +390,37 @@
             "updated": "1998-11-30T17:00:00",
             "readOnly": true
           },
-          "content": "chat_mae.json"
+          "content": "chats/chat_senhora_tamato.json"
+        },
+        {
+          "type": "chat",
+          "metadata": {
+            "name": "Caso_Cadeira_Azul.chat",
+            "password": null,
+            "blocked": false,
+            "hidden": false,
+            "description": null,
+            "size": null,
+            "created": "1998-01-20T08:00:00",
+            "updated": "1998-11-30T17:00:00",
+            "readOnly": true
+          },
+          "content": "chats/chat_cadeira.json"
+        },
+        {
+          "type": "chat",
+          "metadata": {
+            "name": "Henrico.chat",
+            "password": null,
+            "blocked": false,
+            "hidden": false,
+            "description": null,
+            "size": null,
+            "created": "1998-01-20T08:00:00",
+            "updated": "1998-11-30T17:00:00",
+            "readOnly": true
+          },
+          "content": "chats/chat_henrico.json"
         },
         {
           "type": "chat",
@@ -585,7 +615,7 @@
                     "updated": "1998-11-30T17:00:00",
                     "readOnly": true
                   },
-                  "content": ""
+                  "content": "logs/audio_capture.txt"
                 },
                 {
                   "type": "log",
