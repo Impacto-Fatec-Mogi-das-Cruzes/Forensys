@@ -47,7 +47,7 @@ public class ListSubCommand implements ChatSubCommand {
         } else {
             for (int i = 0; i < filteredFiles.size(); i++) {
                 String file = filteredFiles.get(i);
-                outputBuilder.text("\t" + i + ". " + file.substring(0, file.lastIndexOf("."))).newLine();
+                outputBuilder.text("\t" + i + 1 + ". " + file.substring(0, file.lastIndexOf("."))).newLine();
             }
         }
 
