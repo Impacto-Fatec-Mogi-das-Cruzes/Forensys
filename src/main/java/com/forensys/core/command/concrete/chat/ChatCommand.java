@@ -11,26 +11,24 @@ public class ChatCommand extends TerminalCommand {
 
     public ChatCommand() {
         super(new CommandMetadata(
-        "chat",
-        "Manage and navigate chat contacts and conversations",
-        """
-        Usage:
-        chat list {pattern}
-        chat open {contactlist}
-        
-        Examples:
-        chat list john
-        chat list *
-        chat open contacts
-        chat open favorites
-        
-        Notes:
-        - Use pattern matching to search contacts by name
-        - Use * to display all available contacts
-        - Contact lists must be created before opening
-        - Supports wildcard patterns for flexible searching
-        """));
+            "chat",
+            "Manage chat contacts and conversations",
+            """
+            Usage:
+            chat open
+            chat register <chat-file>
 
+            Examples:
+            chat open
+            chat register mother.chat
+            chat register chiozano.chat
+
+            Notes:
+            - chat open opens the current contact list
+            - chat register imports a contact from a ChatFile in the current directory
+            - The specified chat file must exist and contain valid contact data
+            - Registered contacts become available in the contact list
+            """));
     }
 
     @Override
