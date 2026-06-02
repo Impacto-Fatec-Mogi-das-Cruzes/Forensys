@@ -42,6 +42,7 @@ public class TerminalController {
         RegisterAllCommands.execute();
 
         scrollPane.vvalueProperty().bind(outputArea.heightProperty());
+        inputField.setDisable(true);
 
         Platform.runLater(() -> {
             printBootSequence();
@@ -85,7 +86,7 @@ public class TerminalController {
             new BootSequenceEntry("    Decompressing report file.......... [OK]", 150),
             new BootSequenceEntry("    Loading evidence into memory............. [OK]", 150),
             new BootSequenceEntry("    Opening report.txt...", 100),
-            new BootSequenceEntry("", 2000)
+            new BootSequenceEntry("", 1000)
         );
 
         SequentialTransition sequentialTransition = new SequentialTransition();
@@ -108,6 +109,7 @@ public class TerminalController {
             OpenInitialTextFile.execute();
             outputArea.getChildren().clear();
             DefineIntialOutput.execute(outputArea);
+            inputField.setDisable(false);
         });
         sequentialTransition.play();
     }
