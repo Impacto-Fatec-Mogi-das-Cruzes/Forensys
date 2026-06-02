@@ -1,6 +1,7 @@
 package com.forensys.service.terminal;
 
-import com.forensys.core.command.CommandExitCode;
+import java.util.Optional;
+
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.OutputSegment;
 
@@ -19,21 +20,12 @@ public class HandleOutput {
         if (output.doesClearScreen()) {
             container.getChildren().clear();
         }
-        String styleClass = "default";
-
-        if (output.getExitCode() == CommandExitCode.SUCCESS) {
-            styleClass = "default";
-        } else if (output.getExitCode() == CommandExitCode.FAILURE) {
-            styleClass = "red";
-        } else if (output.getExitCode() == CommandExitCode.PAUSE) {
-            styleClass = "blue";
-        }
 
         Text textSegment = null;
 
         for (OutputSegment segment : output.getSegments()) {
             textSegment = new Text(segment.getText());
-            textSegment.getStyleClass().add(styleClass);
+            textSegment.setStyle("-fx-fill: " + Optional.of(segment.getColor()).orElse("#cbd5e1") + ";");
             container.getChildren().add(textSegment);
         }
         container.getChildren().add(new Text("\n"));

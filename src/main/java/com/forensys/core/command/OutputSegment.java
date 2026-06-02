@@ -13,12 +13,6 @@ public final class OutputSegment {
         this.styles = styles;
     }
 
-    public OutputSegment(String text) {
-        this.text = text;
-        this.color = null;
-        this.styles = null;
-    }
-
     public String getText() {
         return text;
     }

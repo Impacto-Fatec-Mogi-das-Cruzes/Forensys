@@ -9,7 +9,7 @@ public class CommandOutputBuilder {
     private boolean clearScreen = false;
 
     public CommandOutputBuilder text(String text) {
-        segments.add(new OutputSegment(text));
+        segments.add(new OutputSegment(text, "#cbd5e1"));
         return this;
     }
 
@@ -19,7 +19,7 @@ public class CommandOutputBuilder {
     }
 
     public CommandOutputBuilder newLine() {
-        segments.add(new OutputSegment("\n"));
+        segments.add(new OutputSegment("\n", "#cbd5e1"));
         return this;
     }
 
