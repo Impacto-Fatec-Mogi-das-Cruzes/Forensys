@@ -23,6 +23,7 @@ public class ApplicationContext implements Subject {
     private static ApplicationContext instance;
     private final Map<Operation, List<Observer>> eventObservers = new HashMap<>();
 
+    private Directory root;
     private Deque<Directory> directoryPath = new ArrayDeque<>();
     private TextFile textFile;
     private ContactList contactList;
@@ -34,6 +35,7 @@ public class ApplicationContext implements Subject {
 
     private ApplicationContext(Directory startDirectory) {
         directoryPath.push(startDirectory);
+        root = startDirectory;
 
         for (ContextOperation operation : ContextOperation.values()) {
             eventObservers.put(operation.getOperation(), new ArrayList<>());
@@ -67,6 +69,11 @@ public class ApplicationContext implements Subject {
             throw new InvalidDirectoryMovement("No parent directory to go back to");
         }
         directoryPath.pop();
+    }
+
+    public void returnRootDirectory() {
+        directoryPath.clear();
+        directoryPath.push(root);
     }
 
     public TextFile getTextFile() {

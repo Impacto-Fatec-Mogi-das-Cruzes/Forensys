@@ -1,5 +1,7 @@
 package com.forensys.core.command.concrete.go;
 
+import java.util.List;
+
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
@@ -9,9 +11,6 @@ import com.forensys.core.command.concrete.go.strategy.GoStrategy;
 import com.forensys.core.context.ApplicationContext;
 
 public class GoCommand extends TerminalCommand {
-
-    private final GoStrategyResolver resolver;
-
     public GoCommand() {
         super(
                 new CommandMetadata(
@@ -34,11 +33,8 @@ public class GoCommand extends TerminalCommand {
                         - Relative and absolute paths are supported
                         - Use $parent to return to the previous directory
                         """));
-
-        this.resolver = new GoStrategyResolver();
     }
 
-    // TODO: some cleanup, too messy
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {
         ApplicationContext applicationContext = ApplicationContext.getInstance();
@@ -50,34 +46,25 @@ public class GoCommand extends TerminalCommand {
         
         GoExecutionContext state = (GoExecutionContext) ApplicationContext.getInstance().getExecutionContext();
         if (state == null) {
-            String[] targets = args.positionals().getFirst().split("/");
-            state = new GoExecutionContext(targets, 0);
-            ApplicationContext.getInstance().setExecutionContext(state);
+            state = new GoExecutionContext(
+                List.of(args.positionals().getFirst().split("/")), 
+                0);
+            applicationContext.setExecutionContext(state);
         }
 
         CommandOutput output = null;
-        while (state.getCurrentIndex() < state.getTargets().length) {
-            String target = state.getTargets()[state.getCurrentIndex()];
-            GoStrategy strategy = resolver.resolve(target);
+
+        while (state.hasTargetsLeft()) {
+            String target = state.getCurrentTarget();
+            GoStrategy strategy = GoStrategyFactory.creatStrategy(target);
             output = strategy.execute();
-
-            if (output.getExitCode() == CommandExitCode.PAUSE) {
-                return output;
-            }
             
-            if (output.getExitCode() == CommandExitCode.FAILURE) {
+            if (output.getExitCode() == CommandExitCode.PAUSE || output.getExitCode() == CommandExitCode.FAILURE) {
                 return output;
-            }
-
-            if (output.getExitCode() == CommandExitCode.SUCCESS) {
-                state.setIndex(state.getCurrentIndex() + 1);
             }
         }
 
-        applicationContext.clearExecutionContext();
-        applicationContext.clearPendingExecution();
-        //TODO: find a better return instead of returning null, maybe add the current output to execution context. Just make a way so the last execution does not overwrites the output in from the previous ones, 
-        //NOTE: also cannot just declare output out of the scope of the loop, because it initializes in null and that overwrites the previous output from pending execution
+        applicationContext.clearAllExecution();
         return output;
     }
 }

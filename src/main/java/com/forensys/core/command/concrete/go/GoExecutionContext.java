@@ -1,34 +1,36 @@
 package com.forensys.core.command.concrete.go;
 
+import java.util.List;
+
 import com.forensys.core.context.ExecutionContext;
 
 public class GoExecutionContext implements ExecutionContext {
-    private final String[] targets;
+    private final List<String> targets;
     private int currentIndex;
-    // private CommandOutput output;
 
-    public GoExecutionContext(String[] targets, int currentIndex) {
+    public GoExecutionContext(List<String> targets, int currentIndex) {
         this.targets = targets;
         this.currentIndex = currentIndex;
     }
 
-    public String[] getTargets() {
-        return targets;
+    public List<String> getTargets() {
+        return List.copyOf(targets);
     }
 
-    public int getCurrentIndex() {
-        return currentIndex;
+    public boolean hasTargetsLeft() {
+        return currentIndex < targets.size();
     }
 
-    public void setIndex(int i) {
-        this.currentIndex = i;
+    public void incrementIndex() {
+        if (hasTargetsLeft()) {
+            currentIndex++;
+        }
     }
 
-    // public CommandOutput getOutput() {
-    //     return output;
-    // }
-
-    // public void setOutput(CommandOutput output) {
-    //     this.output = output;
-    // }
+    public String getCurrentTarget() {
+        if (!hasTargetsLeft()) {
+            throw new IllegalStateException("No targets remaining");
+        }
+        return targets.get(currentIndex);
+    }
 }
