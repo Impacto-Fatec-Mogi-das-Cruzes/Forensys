@@ -1,5 +1,7 @@
 package com.forensys;
 
+import com.forensys.core.chat.ChatParser;
+import com.forensys.core.chat.ContactList;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.context.ContextOperation;
 import com.forensys.core.filestructure.FileStructureParser;
@@ -23,7 +25,8 @@ public class App extends Application {
     public void start(Stage stage) {
         try {
             FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
-            ApplicationContext.init((Folder) root);
+            ContactList initialContactList = ChatParser.getInstance().parse("initial");
+            ApplicationContext.init((Folder) root, initialContactList);
             
             StageManager.init(stage);
             ApplicationContext.getInstance().subscribe(StageManager.getInstance(), 

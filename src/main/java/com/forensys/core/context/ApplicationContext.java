@@ -33,20 +33,22 @@ public class ApplicationContext implements Subject {
     private ExecutionContext executionContext;
     private PendingOperation pendingOperation;
 
-    private ApplicationContext(Folder startDirectory) {
+    private ApplicationContext(Folder startDirectory, ContactList initialContactList) {
         directoryPath.push(startDirectory);
         root = startDirectory;
+
+        contactList = initialContactList;
 
         for (ContextOperation operation : ContextOperation.values()) {
             eventObservers.put(operation.getOperation(), new ArrayList<>());
         }
     }
 
-    public static void init(Folder startDirectory) {
+    public static void init(Folder startDirectory, ContactList initialContactList) {
         if (instance != null) {
             throw new IllegalStateException("ApplicationContext has already being initialized");
         }
-        instance = new ApplicationContext(startDirectory);
+        instance = new ApplicationContext(startDirectory, initialContactList);
     }
 
     public static ApplicationContext getInstance() {
@@ -100,19 +102,19 @@ public class ApplicationContext implements Subject {
         return this.contactList;
     }
 
-    public void openContactList(ContactList contactList) {
+    public void openContactList() {
         if (contactList == null) {
             throw new IllegalStateException("Contact list cannot be null when opening a contact list");
         }
-        this.contactList = contactList;
+        // this.contactList = contactList;
         notify(ContextOperation.OPEN_CONTACT.getOperation());
     }
 
     public void closeContactList() {
-        if (this.contactList == null) {
-            throw new IllegalStateException("Contact list is null, cannot be closed");
-        }
-        this.contactList = null;
+        // if (this.contactList == null) {
+        //     throw new IllegalStateException("Contact list is null, cannot be closed");
+        // }
+        // this.contactList = null;
         notify(ContextOperation.CLOSE_CONTACT.getOperation());
     }
 

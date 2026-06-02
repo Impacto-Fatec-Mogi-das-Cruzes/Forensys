@@ -1,7 +1,5 @@
 package com.forensys.core.command.concrete.chat;
 
-import com.forensys.core.chat.ChatParser;
-import com.forensys.core.chat.ContactList;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommandArgs;
@@ -12,16 +10,15 @@ public class OpenSubCommand implements ChatSubCommand {
 
     @Override
     public CommandOutput execute(ParsedCommandArgs args) {
-        ContactList contactList = ChatParser.getInstance().parse(args.positionals().get(1));
 
-        if (contactList == null) {
+        if (args.positionals().size() > 1) {
             return CommandOutput.builder()
-                .styledText("Contact list not found", "#ef4444", SegmentStyle.BOLD)
+                .styledText("Too many arguments passed for chat command open", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
-                .build();
+                .build();            
         }
-        
-        ApplicationContext.getInstance().openContactList(contactList);
+        // ContactList contactList = ChatParser.getInstance().parse("initial");
+        ApplicationContext.getInstance().openContactList();
         return CommandOutput.builder()
             .styledText("Opening contact list...", "#38bdf8", SegmentStyle.BOLD)
             .exitCode(CommandExitCode.SUCCESS)
