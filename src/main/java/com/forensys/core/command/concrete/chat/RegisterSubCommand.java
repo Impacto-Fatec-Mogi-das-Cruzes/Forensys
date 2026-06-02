@@ -38,7 +38,6 @@ public class RegisterSubCommand implements ChatSubCommand {
                 .build();
         }
 
-        System.out.println(entry.getContent());
         Contact contact = ContactParser.getInstance().parse(entry.getContent());
 
         if (contact == null) {
