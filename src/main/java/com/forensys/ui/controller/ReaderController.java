@@ -3,6 +3,7 @@ package com.forensys.ui.controller;
 import com.forensys.core.filestructure.concrete.TextFile;
 import com.forensys.service.reader.CloseTextFile;
 import com.forensys.service.reader.GetTextFile;
+import com.forensys.service.reader.LoadFile;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -21,30 +22,24 @@ public class ReaderController {
 
     @FXML
     private void initialize() {
-        // TODO: change content from raw text to a path to a resource
         TextFile file = GetTextFile.execute();
-        setContent(file);
+        String fileContent = LoadFile.execute(file.getContent());
+        
+        if (fileContent != null) {
+            content.setText(fileContent);
+            tittle.setText(file.getMetadata().name());
+        } else {
+            content.setText("Nothing to see here...");
+            tittle.setText("NullPointerOperation");
+        }
 
         content.setWrapText(true);
-
         content.maxWidthProperty().bind(root.widthProperty().subtract(0));
-
 
         root.setOnKeyReleased(event -> {
             if (event.getCode().toString().equals("Q")) {
                 CloseTextFile.execute();
             }
         });
-    }
-
-    private void setContent(TextFile file) {
-        if (file == null) {
-            content.setText("Nothing to see here...");
-            tittle.setText("NullPointException");
-            return;
-        }
-        content.setText(file.getContent());
-        tittle.setText(file.getMetadata().name());
-
     }
 }
