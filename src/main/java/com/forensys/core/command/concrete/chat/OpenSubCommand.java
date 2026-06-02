@@ -15,9 +15,9 @@ public class OpenSubCommand implements ChatSubCommand {
             return CommandOutput.builder()
                 .styledText("Too many arguments passed for chat command open", "#ef4444", SegmentStyle.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
-                .build();            
+                .build();
         }
-        // ContactList contactList = ChatParser.getInstance().parse("initial");
+        
         ApplicationContext.getInstance().openContactList();
         return CommandOutput.builder()
             .styledText("Opening contact list...", "#38bdf8", SegmentStyle.BOLD)

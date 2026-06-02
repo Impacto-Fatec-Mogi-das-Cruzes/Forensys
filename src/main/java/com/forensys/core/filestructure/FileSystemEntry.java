@@ -2,6 +2,7 @@ package com.forensys.core.filestructure;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.forensys.core.filestructure.concrete.ChatFile;
 import com.forensys.core.filestructure.concrete.Folder;
 import com.forensys.core.filestructure.concrete.ImageFile;
 import com.forensys.core.filestructure.concrete.TextFile;
@@ -56,7 +57,9 @@ Behaves like ImageFile
     @JsonSubTypes.Type(value = TextFile.class, name = "temporary"),
     @JsonSubTypes.Type(value = TextFile.class, name = "data"),
 
-    @JsonSubTypes.Type(value = ImageFile.class, name = "image")
+    @JsonSubTypes.Type(value = ImageFile.class, name = "image"),
+    
+    @JsonSubTypes.Type(value = ChatFile.class, name = "chat")
 })
 public abstract class FileSystemEntry {
 

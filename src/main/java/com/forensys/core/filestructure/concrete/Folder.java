@@ -15,15 +15,10 @@ public class Folder extends FileSystemEntry {
         return new ArrayList<>(children);
     }
 
-    public List<Folder> getDirectories() {
-        List<Folder> directories = new ArrayList<>();
-
-        for (FileSystemEntry child : children) {
-            if (child instanceof Folder directory) {
-                directories.add(directory);
-            }
-        }
-
-        return directories;   
+    public <T extends FileSystemEntry> List<T> getChildrenOfType(Class<T> type) {
+        return children.stream()
+            .filter(type::isInstance)
+            .map(type::cast)
+            .toList();
     }
 }

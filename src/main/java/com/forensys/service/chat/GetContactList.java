@@ -7,6 +7,6 @@ public class GetContactList {
 
     public static ContactList execute() {
         return ApplicationContext.getInstance()
-                .geContactList();
+                .getContactList();
     }
 }

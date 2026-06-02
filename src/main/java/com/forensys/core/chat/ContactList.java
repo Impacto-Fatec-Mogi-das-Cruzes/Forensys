@@ -7,7 +7,11 @@ public class ContactList {
     private List<Contact> contacts;
 
     public List<Contact> getContacts() {
-        return contacts;
+        return List.copyOf(contacts);
+    }
+    
+    public void addContact(Contact contact) {
+        contacts.add(contact);
     }
 
     public Participant getOwner() {

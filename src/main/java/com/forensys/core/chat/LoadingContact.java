@@ -4,14 +4,14 @@ import java.io.InputStream;
 
 import com.forensys.common.loader.LoadingStrategy;
 
-public class LoadingChat implements LoadingStrategy<InputStream> {
+public class LoadingContact implements LoadingStrategy<InputStream> {
 
     @Override
     public InputStream load(String sourceData) {
         InputStream is = null;
 
         try {
-            is = getClass().getResourceAsStream("/chats/" + sourceData);
+            is = getClass().getResourceAsStream("/assets/filestructure/" + sourceData);
         } catch (Exception e) {
             System.err.println(e);
         }

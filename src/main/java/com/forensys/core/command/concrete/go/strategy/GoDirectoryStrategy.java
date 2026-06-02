@@ -21,7 +21,7 @@ public class GoDirectoryStrategy implements GoStrategy {
     public CommandOutput execute() {
         Folder next = null;
 
-        for (Folder child : context.getCurrentDirectory().getDirectories()) {
+        for (Folder child : context.getCurrentDirectory().getChildrenOfType(Folder.class)) {
             if (child.getMetadata().name().equals(target)) {
                 next = child;
                 break;

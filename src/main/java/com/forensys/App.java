@@ -25,7 +25,7 @@ public class App extends Application {
     public void start(Stage stage) {
         try {
             FileSystemEntry root = FileStructureParser.getInstance().parse("filestructure");
-            ContactList initialContactList = ChatParser.getInstance().parse("initial");
+            ContactList initialContactList = ChatParser.getInstance().parse("initial.json");
             ApplicationContext.init((Folder) root, initialContactList);
             
             StageManager.init(stage);

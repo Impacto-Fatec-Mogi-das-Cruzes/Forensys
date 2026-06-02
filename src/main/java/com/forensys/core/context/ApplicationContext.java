@@ -98,7 +98,7 @@ public class ApplicationContext implements Subject {
         notify(ContextOperation.CLOSE_FILE.getOperation());
     }
 
-    public ContactList geContactList() {
+    public ContactList getContactList() {
         return this.contactList;
     }
 
@@ -106,15 +106,10 @@ public class ApplicationContext implements Subject {
         if (contactList == null) {
             throw new IllegalStateException("Contact list cannot be null when opening a contact list");
         }
-        // this.contactList = contactList;
         notify(ContextOperation.OPEN_CONTACT.getOperation());
     }
 
     public void closeContactList() {
-        // if (this.contactList == null) {
-        //     throw new IllegalStateException("Contact list is null, cannot be closed");
-        // }
-        // this.contactList = null;
         notify(ContextOperation.CLOSE_CONTACT.getOperation());
     }
 
