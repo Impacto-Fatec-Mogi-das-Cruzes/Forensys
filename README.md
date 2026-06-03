@@ -13,12 +13,34 @@ Forensys é um jogo investigativo feito em **Java☕** para a disciplina de Prog
 
 </center>
 
-## Índices
 ## Sobre o Projeto
+Forensys é um jogo investigativo que simula um terminal no qual o jogador deve explorar um computador, examinando arquivos e conversas em chats para reunir pistas sobre o que aconteceu com o falecido dono da máquina, cuja causa oficial da morte foi registrada como suicídio por overdose. O jogo busca colocar o usuário na posição de investigador, em um cenário onde as pistas estão espalhadas e a história se constrói de forma não linear.
+
+O projeto se baseia em outros jogos de natureza similar. Ele foi idealizado para atender os requisitos das apresentações da matéria de Programação Orientada a Objetos da Fatec Mogi das Cruzes, onde deveria der demonstrado o domínio na aplicação dos conceitos de orientação a objetos, como encapsulamento, herança e polimorfismo, e uso de design patterns, como o singleton, decorator, factory e observer no projeto.
+
+O projeto se baseia em outros jogos de natureza semelhante. Ele foi idealizado para atender aos requisitos das apresentações da disciplina de Programação Orientada a Objetos da Fatec Mogi das Cruzes, nas quais deveria ser demonstrado o domínio da aplicação de conceitos de orientação a objetos, como encapsulamento, herança e polimorfismo, além da utilização de padrões de projeto (design patterns), como Singleton, Decorator, Factory e Observer.
+
 ## Requisitos
+Para a execução do projeto será necessário:
+- Java 21
+- Apache Maven
+
 ## Instalação
-## Estrutura
-## Demo
+1. Baixe o zip ou clone o projeto usando o comando:
+```bash
+git clone https://github.com/Impacto-Fatec-Mogi-das-Cruzes/Forensys.git
+```
+
+2. Navegue até a pasta do projeto:
+```bash
+cd Forensys
+```
+
+3. Inicie o projeto:
+```
+mvn javafx:run
+```
+
 ## Autores
 Projeto desenvolvido por:
 
