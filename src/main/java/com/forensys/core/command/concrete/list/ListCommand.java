@@ -52,21 +52,21 @@ public class ListCommand extends TerminalCommand {
                 } else if (answer.equals("n")) {
                     applicationContext.clearAllExecution();
                     return CommandOutput.builder()
-                            .styledText("User canceled operation", "#cbd5e1")
+                            .text("User canceled operation", "#cbd5e1")
                             .exitCode(CommandExitCode.CANCELED)
                             .build();
                 } else {
                     applicationContext.clearAllExecution();
                     return CommandOutput.builder()
-                            .styledText("Invalid answer", "#ef4444")
+                            .text("Invalid answer", "#ef4444")
                             .exitCode(CommandExitCode.FAILURE)
                             .build();
 
                 }
             }));
             return CommandOutput.builder()
-                .styledText("There are " + entries.size() + " items in this directory.", "#38bdf8").newLine()
-                .styledText("Do you really want to print all? [y/n]", "#38bdf8")
+                .text("There are " + entries.size() + " items in this directory.", "#38bdf8").newLine()
+                .text("Do you really want to print all? [y/n]", "#38bdf8")
                 .exitCode(CommandExitCode.PAUSE)
                 .build();
         }
@@ -82,7 +82,7 @@ public class ListCommand extends TerminalCommand {
         List<FileSystemEntry> entries = state.getEntries();
 
         CommandOutputBuilder outputBuilder = CommandOutput.builder()
-                .styledText("In the " + applicationContext.getCurrentDirectory().getMetadata().name() + " directory you have:", "#ffffff")
+                .text("In the " + applicationContext.getCurrentDirectory().getMetadata().name() + " directory you have:", "#ffffff")
                 .newLine();
 
         renderStrategy.renderHeader(outputBuilder);

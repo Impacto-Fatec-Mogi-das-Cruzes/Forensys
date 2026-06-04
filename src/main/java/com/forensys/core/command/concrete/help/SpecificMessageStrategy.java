@@ -18,7 +18,7 @@ public class SpecificMessageStrategy implements MessageStrategy {
     public CommandOutput build() {
         CommandOutputBuilder outputBuilder = CommandOutput.builder();
         
-        outputBuilder.styledText("Command " + command.getCommandName() + " does:", "#cbd5e1").newLine();
+        outputBuilder.text("Command " + command.getCommandName() + " does:", "#cbd5e1").newLine();
         
         String[] lines = command.getDescription().split("\n");
         

@@ -55,7 +55,7 @@ public class DuckCommand extends TerminalCommand{
             );
 
             return CommandOutput.builder()
-                    .styledText(message, "#ef4444")
+                    .text(message, "#ef4444")
                     .exitCode(CommandExitCode.FAILURE)
                     .build();
         }
@@ -70,30 +70,30 @@ public class DuckCommand extends TerminalCommand{
             };
 
             return CommandOutput.builder()
-                .styledText("  i______i", color.value()).newLine()
-                .styledText("  I______I ", color.value()).newLine()
-                .styledText("  I      I", color.value()).newLine()
-                .styledText("  I______I", color.value()).newLine()
-                .styledText(" /      /I", color.value()).newLine()
-                .styledText("(______( I", color.value()).newLine()
-                .styledText("I \"    I \"", color.value()).newLine()
-                .styledText("I      I", color.value()).newLine()
+                .text("  i______i", color.value()).newLine()
+                .text("  I______I ", color.value()).newLine()
+                .text("  I      I", color.value()).newLine()
+                .text("  I______I", color.value()).newLine()
+                .text(" /      /I", color.value()).newLine()
+                .text("(______( I", color.value()).newLine()
+                .text("I \"    I \"", color.value()).newLine()
+                .text("I      I", color.value()).newLine()
                 .exitCode(CommandExitCode.SUCCESS)
                 .build();
         }
         
         return CommandOutput.builder()
-            .styledText("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠿⠿⠷⣶⣄⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⢀⣀⡀⠙⣷⡀⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⠀⠀⠀⡀⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠘⠿⠃⠀⢸⣿⣿⣿⣿   Quack", "#cbd5e1").newLine()
-            .styledText("⠀⣠⡿⠛⢷⣦⡀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⠟", "#cbd5e1").newLine()
-            .styledText("⢰⡿⠁⠀⠀⠙⢿⣦⣤⣤⣼⣿⣄⠀⠀⠀⠀⠀⢴⡟⠛⠋⠁⠀", "#cbd5e1").newLine()
-            .styledText("⣿⠇⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠈⣿⡀⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀", "#cbd5e1").newLine()
-            .styledText("⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠿⠿⠷⣶⣄⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⢀⣀⡀⠙⣷⡀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠀⠀⠀⡀⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠘⠿⠃⠀⢸⣿⣿⣿⣿   Quack", "#cbd5e1").newLine()
+            .text("⠀⣠⡿⠛⢷⣦⡀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⠟", "#cbd5e1").newLine()
+            .text("⢰⡿⠁⠀⠀⠙⢿⣦⣤⣤⣼⣿⣄⠀⠀⠀⠀⠀⢴⡟⠛⠋⠁⠀", "#cbd5e1").newLine()
+            .text("⣿⠇⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠈⣿⡀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠀⠹⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⡿⠁⠀⠀⠀⠀", "#cbd5e1").newLine()
+            .text("⠀⠀⠀⠉⠙⠛⠿⠶⣶⣶⣶⣶⣶⠶⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀", "#cbd5e1").newLine()
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }

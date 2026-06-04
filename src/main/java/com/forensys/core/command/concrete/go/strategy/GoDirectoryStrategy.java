@@ -31,7 +31,7 @@ public class GoDirectoryStrategy implements GoStrategy {
         if (next == null) {
             context.clearAllExecution();
             return CommandOutput.builder()
-                .styledText("Directory not found: " + target, "#ef4444")
+                .text("Directory not found: " + target, "#ef4444")
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -39,7 +39,7 @@ public class GoDirectoryStrategy implements GoStrategy {
         if (next.getMetadata().blocked()) {
             requestPassword(next);
             return CommandOutput.builder()
-                .styledText("Directory " + next.getMetadata().name() + " is blocked, plase type the password to continue...", "#38bdf8")
+                .text("Directory " + next.getMetadata().name() + " is blocked, plase type the password to continue...", "#38bdf8")
                 .exitCode(CommandExitCode.PAUSE)
                 .build();
         }
@@ -52,7 +52,7 @@ public class GoDirectoryStrategy implements GoStrategy {
             if (!(next.getMetadata().password().equals(password))) {
                 context.clearAllExecution();
                 return CommandOutput.builder()
-                        .styledText("Wrong password for " + next.getMetadata().name(), "#ef4444")
+                        .text("Wrong password for " + next.getMetadata().name(), "#ef4444")
                         .exitCode(CommandExitCode.FAILURE)
                         .build();
             }
@@ -66,7 +66,7 @@ public class GoDirectoryStrategy implements GoStrategy {
         context.setCurrentDirectory(next);
         ((GoExecutionContext) context.getExecutionContext()).incrementIndex();
         return CommandOutput.builder()
-            .styledText("Moved to Directory: " + next.getMetadata().name(), "#cbd5e1")
+            .text("Moved to Directory: " + next.getMetadata().name(), "#cbd5e1")
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }

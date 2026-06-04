@@ -32,7 +32,7 @@ public class ClearCommand extends TerminalCommand {
     public CommandOutput execute(ParsedCommandArgs args) {
         CommandOutputBuilder outputBuilder = new CommandOutputBuilder();
         if (!args.positionals().isEmpty()) {
-            return outputBuilder.styledText("Command clear does not accept arguments", "#ef4444").exitCode(CommandExitCode.FAILURE).build();
+            return outputBuilder.text("Command clear does not accept arguments", "#ef4444").exitCode(CommandExitCode.FAILURE).build();
         }
         return outputBuilder.clearScreen(true).exitCode(CommandExitCode.SUCCESS).build();
     }

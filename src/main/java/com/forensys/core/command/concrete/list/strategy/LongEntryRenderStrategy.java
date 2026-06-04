@@ -21,9 +21,9 @@ public class LongEntryRenderStrategy implements EntryRenderStrategy {
         );
 
         builder
-            .styledText(header, "#ffffff")
+            .text(header, "#ffffff")
             .newLine()
-            .styledText("-".repeat(header.length()), "#ffffff")
+            .text("-".repeat(header.length()), "#ffffff")
             .newLine();
     }
 
@@ -32,7 +32,7 @@ public class LongEntryRenderStrategy implements EntryRenderStrategy {
         FileMetadata metadata = entry.getMetadata();
 
         builder
-            .styledText(
+            .text(
                 FORMAT.formatted(
                     metadata.hidden(),
                     metadata.blocked(),

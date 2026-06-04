@@ -12,9 +12,9 @@ public class GeneralMessageStrategy implements MessageStrategy {
     public CommandOutput build() {
         CommandOutputBuilder outputBuilder = CommandOutput.builder();
         
-        outputBuilder.styledText("Help for commands:", "#cbd5e1").newLine();
+        outputBuilder.text("Help for commands:", "#cbd5e1").newLine();
         for (TerminalCommand command : CommandRegistry.getInstance().getAll().values()) {
-            outputBuilder.styledText("\t" + command.getCommandName() + "\t" + command.getHelpMessage(), "#cbd5e1").newLine();
+            outputBuilder.text("\t" + command.getCommandName() + "\t" + command.getHelpMessage(), "#cbd5e1").newLine();
         }
         
         return outputBuilder.exitCode(CommandExitCode.SUCCESS).build();

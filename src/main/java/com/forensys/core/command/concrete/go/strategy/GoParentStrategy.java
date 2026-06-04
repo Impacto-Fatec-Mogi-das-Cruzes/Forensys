@@ -15,14 +15,14 @@ public class GoParentStrategy implements GoStrategy {
 		} catch (Exception e) {
 			context.clearAllExecution();
 			return CommandOutput.builder()
-					.styledText("Failed to go back to parent directory", "#ef4444")
+					.text("Failed to go back to parent directory", "#ef4444")
 					.exitCode(CommandExitCode.FAILURE)
 					.build();
 		}
 
 		((GoExecutionContext) context.getExecutionContext()).incrementIndex();
 		return CommandOutput.builder()
-				.styledText("Moved to parent directory", "#cbd5e1")
+				.text("Moved to parent directory", "#cbd5e1")
 				.exitCode(CommandExitCode.SUCCESS)
 				.build();
 	}

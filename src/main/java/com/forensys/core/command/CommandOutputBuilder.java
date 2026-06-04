@@ -13,7 +13,7 @@ public class CommandOutputBuilder {
         return this;
     }
 
-    public CommandOutputBuilder styledText(String text, String color, SegmentStyle... styles) {
+    public CommandOutputBuilder text(String text, String color, SegmentStyle... styles) {
         segments.add(new OutputSegment(text, color, styles));
         return this;
     }

@@ -15,7 +15,7 @@ public class GoRootStrategy implements GoStrategy {
 
         ((GoExecutionContext) context.getExecutionContext()).incrementIndex();
         return CommandOutput.builder()
-                .styledText("Returned to root directory", "#cbd5e1")
+                .text("Returned to root directory", "#cbd5e1")
                 .exitCode(CommandExitCode.SUCCESS)
                 .build();
     }
