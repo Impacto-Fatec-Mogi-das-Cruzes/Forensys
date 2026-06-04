@@ -5,7 +5,7 @@ import com.forensys.core.chat.ContactParser;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommandArgs;
-import com.forensys.core.command.SegmentStyle;
+import com.forensys.core.command.SegmentDecoration;
 import com.forensys.core.context.ApplicationContext;
 import com.forensys.core.filestructure.concrete.ChatFile;
 
@@ -16,7 +16,7 @@ public class RegisterSubCommand implements ChatSubCommand {
         
         if (args.positionals().size() < 2) {
             return CommandOutput.builder()
-                .text("Too few arguments passed for 'chat register'. Only one argument is required", "#ef4444", SegmentStyle.BOLD)
+                .text("Too few arguments passed for 'chat register'. Only one argument is required", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -33,7 +33,7 @@ public class RegisterSubCommand implements ChatSubCommand {
 
         if (entry == null) {
             return CommandOutput.builder()
-                .text("Contact not found", "#ef4444", SegmentStyle.BOLD)
+                .text("Contact not found", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -42,14 +42,14 @@ public class RegisterSubCommand implements ChatSubCommand {
 
         if (contact == null) {
             return CommandOutput.builder()
-                .text("Contact not found", "#ef4444", SegmentStyle.BOLD)
+                .text("Contact not found", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
         applicationContext.getContactList().addContact(contact);
 
         return CommandOutput.builder()
-            .text("Successfully registered new contact to contact list", "#38bdf8", SegmentStyle.BOLD)
+            .text("Successfully registered new contact to contact list", "#38bdf8", SegmentDecoration.BOLD)
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }

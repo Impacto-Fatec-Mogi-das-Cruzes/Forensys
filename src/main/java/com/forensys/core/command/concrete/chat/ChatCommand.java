@@ -4,7 +4,7 @@ import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandMetadata;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommandArgs;
-import com.forensys.core.command.SegmentStyle;
+import com.forensys.core.command.SegmentDecoration;
 import com.forensys.core.command.TerminalCommand;
 
 public class ChatCommand extends TerminalCommand {
@@ -35,7 +35,7 @@ public class ChatCommand extends TerminalCommand {
     public CommandOutput execute(ParsedCommandArgs args) {
         if (args.positionals().isEmpty()) {
             return CommandOutput.builder()
-                .text("No arguments passed to chat command, command requires at least one argument", "#ef4444", SegmentStyle.BOLD)
+                .text("No arguments passed to chat command, command requires at least one argument", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
@@ -44,7 +44,7 @@ public class ChatCommand extends TerminalCommand {
 
         if (command == null) {
             return CommandOutput.builder()
-                .text("Unkown argument", "#ef4444", SegmentStyle.BOLD)
+                .text("Unkown argument", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }

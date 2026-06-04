@@ -2,7 +2,7 @@ package com.forensys.service.terminal;
 
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.OutputSegment;
-import com.forensys.core.command.SegmentStyle;
+import com.forensys.core.command.SegmentDecoration;
 
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -25,7 +25,7 @@ public class HandleOutput {
         for (OutputSegment segment : output.getSegments()) {
             textSegment = new Text(segment.getText());
             textSegment.setStyle("-fx-fill: " + segment.getColor() + ";");
-            for (SegmentStyle style : segment.getStyles()) {
+            for (SegmentDecoration style : segment.getStyles()) {
                 textSegment.getStyleClass().add(style.styleClass());
             }
             container.getChildren().add(textSegment);

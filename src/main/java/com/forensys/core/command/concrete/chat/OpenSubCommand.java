@@ -3,7 +3,7 @@ package com.forensys.core.command.concrete.chat;
 import com.forensys.core.command.CommandExitCode;
 import com.forensys.core.command.CommandOutput;
 import com.forensys.core.command.ParsedCommandArgs;
-import com.forensys.core.command.SegmentStyle;
+import com.forensys.core.command.SegmentDecoration;
 import com.forensys.core.context.ApplicationContext;
 
 public class OpenSubCommand implements ChatSubCommand {
@@ -13,14 +13,14 @@ public class OpenSubCommand implements ChatSubCommand {
 
         if (args.positionals().size() > 1) {
             return CommandOutput.builder()
-                .text("Too many arguments passed for 'chat open' command", "#ef4444", SegmentStyle.BOLD)
+                .text("Too many arguments passed for 'chat open' command", "#ef4444", SegmentDecoration.BOLD)
                 .exitCode(CommandExitCode.FAILURE)
                 .build();
         }
         
         ApplicationContext.getInstance().openContactList();
         return CommandOutput.builder()
-            .text("Opening contact list...", "#38bdf8", SegmentStyle.BOLD)
+            .text("Opening contact list...", "#38bdf8", SegmentDecoration.BOLD)
             .exitCode(CommandExitCode.SUCCESS)
             .build();
     }

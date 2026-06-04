@@ -1,6 +1,6 @@
 package com.forensys.core.command;
 
-public enum SegmentStyle {
+public enum SegmentDecoration {
     BOLD("bold"),
     ITALIC("italic"),
     UNDERLINE("underline"),
@@ -9,7 +9,7 @@ public enum SegmentStyle {
 
     private final String styleClass;
 
-    SegmentStyle(String styleClass) {
+    SegmentDecoration(String styleClass) {
         this.styleClass = styleClass;
     }
 

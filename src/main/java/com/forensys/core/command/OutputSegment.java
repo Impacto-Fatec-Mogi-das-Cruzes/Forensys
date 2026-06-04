@@ -4,10 +4,10 @@ import com.forensys.common.HexColor;
 
 public final class OutputSegment {
     private final String text;
-    private final SegmentStyle[] styles;
+    private final SegmentDecoration[] styles;
     private final HexColor color;
 
-    public OutputSegment(String text, String color, SegmentStyle... styles) {
+    public OutputSegment(String text, String color, SegmentDecoration... styles) {
         this.text = text;
         this.color = HexColor.of(color);
         this.styles = styles;
@@ -17,7 +17,7 @@ public final class OutputSegment {
         return text;
     }
 
-    public SegmentStyle[] getStyles() {
+    public SegmentDecoration[] getStyles() {
         return styles;
     }
 
